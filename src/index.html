@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Sutton SignWriting Components</title>
+
+  <script type="module" src="/build/sgnw-components.esm.js"></script>
+  <script nomodule src="/build/sgnw-components.js"></script>
+
+</head>
+<body>
+  <a href="https://auth0.com/blog/creating-web-components-with-stencil/">Tutorial</a>
+  <br><br>
+  <a href="https://open-wc.org/guide/">WC Guide</a>
+  <br><br>
+  <a href="https://stenciljs.com/">Stencil</a>
+  <br><br>
+  <a href="https://github.com/ionic-team/ionic-framework/tree/master/core/src/components">Ionic components</a>
+  <br><br>
+  <a href="https://codesandbox.io/s/alx-menu-9z9ep">Sample Menu Component</a>
+  <br><br>
+
+  <hr>
+
+  <p>Symbol with iid <sgnw-symbol iid="1"></sgnw-symbol></p>
+  <p>Symbol with key <sgnw-symbol fsw="S20500-CZ2"></sgnw-symbol></p>
+  <p>Symbol with swu <sgnw-symbol swu="񆇡"></sgnw-symbol></p>
+
+  <p>Symbol as iid <sgnw-symbol>1</sgnw-symbol></p>
+  <p>Symbol as key <sgnw-symbol>S10004</sgnw-symbol></p>
+  <p>Symbol as swu <sgnw-symbol>񆇡</sgnw-symbol></p>
+
+  <p>Bad Symbol with iid <sgnw-symbol iid="S20500"></sgnw-symbol></p>
+  <p>Bad Symbol with key <sgnw-symbol fsw="S2050"></sgnw-symbol></p>
+  <p>Bad Symbol with swu <sgnw-symbol swu="AS1"></sgnw-symbol></p>
+
+  <hr>
+
+  <br><br><br>
+
+  <sgnw-rating max-value="5" value="4"></sgnw-rating>
+  <br><br>
+
+  <sgnw-palette></sgnw-palette>
+  <br><br>
+
+  <sgnw-signmaker fsw="AS10000M520x520S10000490x480">
+  </sgnw-signmaker>
+
+  <sgnw-sequence>
+  </sgnw-sequence>
+  <sgnw-signbox>
+    <sgnw-spatial x=450 y=510 fsw="S10000"></sgnw-symbol>
+  </sgnw-signbox>
+
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2020-07-24T21:45:03",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.17.0",
+    "typescriptVersion": "3.9.7"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/sgnw-rating/sgnw-rating.tsx",
+      "encapsulation": "shadow",
+      "tag": "sgnw-rating",
+      "readme": "# sgnw-rating\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "maxValue",
+          "type": "number",
+          "mutable": false,
+          "attr": "max-value",
+          "reflectToAttr": false,
+          "docs": "max number of stars",
+          "docsTags": [],
+          "default": "5",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "current number of stars",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "ratingUpdated",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "number of stars was updated",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "ratingUpdated",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sgnw-signbox/sgnw-signbox.tsx",
+      "encapsulation": "shadow",
+      "tag": "sgnw-signbox",
+      "readme": "# sgnw-signbox\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "mousedown",
+          "capture": true,
+          "passive": true
+        },
+        {
+          "event": "touchstart",
+          "capture": true,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sgnw-symbol/sgnw-symbol.tsx",
+      "encapsulation": "shadow",
+      "tag": "sgnw-symbol",
+      "readme": "# sgnw-symbol\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "fsw",
+          "type": "string",
+          "mutable": true,
+          "attr": "fsw",
+          "reflectToAttr": true,
+          "docs": "Formal SignWriting in ASCII (FSW) for symbol with optional style string",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iid",
+          "type": "number",
+          "mutable": true,
+          "attr": "iid",
+          "reflectToAttr": true,
+          "docs": "ISWA 2010 ID",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "styling",
+          "type": "object",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Styling Object for symbol",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "object"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "swu",
+          "type": "string",
+          "mutable": true,
+          "attr": "swu",
+          "reflectToAttr": true,
+          "docs": "SignWriting in Unicode (SWU) for symbol with optional style string",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "sgnw",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}

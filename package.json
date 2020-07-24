@@ -1,0 +1,37 @@
+{
+  "name": "@sutton-signwriting/sgnw-components",
+  "description": "a javascript package of web components for use with the SignWriting script.",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "module-bundle": "dist/custom-elements-bundle/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/sgnw-components/sgnw-components.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "build.json": "stencil build --docs-json docs.json",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.17.0",
+    "@types/jest": "^26.0.7",
+    "@types/puppeteer": "2.0.1",
+    "puppeteer": "2.1.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@sutton-signwriting/core": "^1.2.0",
+    "@sutton-signwriting/font-ttf": "^1.2.0"
+  }
+}
