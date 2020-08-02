@@ -1,6 +1,6 @@
 //
 
-import { Watch, Component, Event, EventEmitter, Element, State, Prop, Host, h } from '@stencil/core';
+import { Watch, Component, Element, State, Prop, Host, h } from '@stencil/core';
 
 // @ts-ignore
 import { key2id, key2swu, id2key, id2swu, swu2id, swu2fsw } from '@sutton-signwriting/core/convert/convert.min.mjs';
@@ -24,8 +24,6 @@ import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
 })
  
 export class SgnwSymbol {
-
-  @Event() onClick: EventEmitter;
 
   @Element() el: HTMLElement; //this.el
 

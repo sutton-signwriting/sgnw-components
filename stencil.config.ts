@@ -9,6 +9,9 @@ export const config: Config = {
   },
   outputTargets: [
     {
+      type: 'www'
+    },
+    {
       type: 'dist',
       esmLoaderPath: '../loader'
     },

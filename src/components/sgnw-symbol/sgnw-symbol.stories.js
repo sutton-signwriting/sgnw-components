@@ -1,5 +1,5 @@
 import readme from './readme.md';
-import { h } from 'jsx-dom';
+
 export default {
   title: 'The Symbol Component',
   component: 'sgnw-symbol',
@@ -9,8 +9,9 @@ export default {
   },
 };
 
-export const Default = () => <sgnw-symbol>S10000</sgnw-symbol>;
-
+export const Default = () => `
+  <sgnw-symbol>S10000</sgnw-symbol>
+`;
 export const ISWA_ID = () => `
   <sgnw-symbol>1</sgnw-symbol>
 `;

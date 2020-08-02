@@ -23,12 +23,18 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "wca": "wca analyze src",
-    "wca:build": "wca analyze src --outFile dist/custom-elements.json"
+    "wca.build": "wca analyze src --outFile dist/custom-elements.json",
+    "storybook": "start-storybook -s dist",
+    "storybook.build": "build-storybook -s dist -o docs"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.0",
     "@stencil/core": "^1.17.0",
+    "@storybook/addon-notes": "^5.3.19",
+    "@storybook/html": "^5.3.19",
     "@types/jest": "^26.0.7",
     "@types/puppeteer": "2.0.1",
+    "babel-loader": "^8.1.0",
     "puppeteer": "2.1.1",
     "web-component-analyzer": "^1.1.6"
   },
