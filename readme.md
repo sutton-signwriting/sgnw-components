@@ -19,6 +19,7 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 
 - Source: https://github.com/sutton-signwriting/sgnw-components
 - Distribution: https://unpkg.com/browse/@sutton-signwriting/sgnw-components/
+- Documentation: https://sutton-signwriting.github.io/sgnw-components/
 - Issue Tracker: https://github.com/sutton-signwriting/sgnw-components/issues
 - Online Discussion: https://gitter.im/sutton-signwriting/community
 
