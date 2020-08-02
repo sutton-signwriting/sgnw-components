@@ -1,8 +1,8 @@
 {
-  "timestamp": "2020-07-24T21:45:03",
+  "timestamp": "2020-08-02T13:50:46",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.17.0",
+    "version": "1.17.2",
     "typescriptVersion": "3.9.7"
   },
   "components": [
@@ -181,14 +181,7 @@
       ],
       "methods": [],
       "events": [],
-      "listeners": [
-        {
-          "event": "sgnw",
-          "target": "window",
-          "capture": false,
-          "passive": false
-        }
-      ],
+      "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
