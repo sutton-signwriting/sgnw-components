@@ -18,12 +18,6 @@ export const config: Config = {
       strict: true
     },
     {
-      type: 'www',
-      baseUrl: 'https://stenciljs.com/',
-      prerenderConfig: './prerender.config.ts',
-      serviceWorker: null // disable service workers
-    },
-    {
       type: 'dist-custom-elements-bundle'
     }
   ]

@@ -21,13 +21,16 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "wca": "wca analyze src",
+    "wca:build": "wca analyze src --outFile dist/custom-elements.json"
   },
   "devDependencies": {
     "@stencil/core": "^1.17.0",
     "@types/jest": "^26.0.7",
     "@types/puppeteer": "2.0.1",
-    "puppeteer": "2.1.1"
+    "puppeteer": "2.1.1",
+    "web-component-analyzer": "^1.1.6"
   },
   "license": "MIT",
   "dependencies": {
