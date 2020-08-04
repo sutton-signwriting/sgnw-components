@@ -1,0 +1,15 @@
+{
+  "entries": [
+    "./components/sgnw-rating/sgnw-rating.js",
+    "./components/sgnw-signbox/sgnw-signbox.js",
+    "./components/sgnw-symbol/sgnw-symbol.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.17.2",
+    "typescriptVersion": "3.9.7"
+  },
+  "collections": [],
+  "bundles": [],
+  "global": "./global/global.js"
+}
