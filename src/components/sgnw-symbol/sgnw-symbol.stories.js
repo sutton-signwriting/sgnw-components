@@ -1,20 +1,37 @@
 import {SgnwSymbol} from '../../../dist/collection/components/sgnw-symbol/sgnw-symbol';
 import docs from './sgnw-symbol.docs.mdx';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { h } from 'jsx-dom';
 
 export default {
   title: 'sgnw-components|Component/sgnw-symbol',
   component: SgnwSymbol,
-  parameters: { docs: { page: docs } },
-  excludeStories: /.*(Data|Fn)$/
+  parameters: { 
+    docs: { page: docs },
+    knobs: { disabled: true },
+    actions: { disabled: true }
+  },
+  excludeStories: /.*(Data|Fn)$/,
+  decorators: [withKnobs]
 };
 
-export const basic = () => `
-  <sgnw-symbol>S10000</sgnw-symbol>
-`;
-export const iswa = () => `
-  <sgnw-symbol>1</sgnw-symbol>
-`;
+export const fsw = () => {
+  const fsw = text('fsw','S10000');
+  return (
+    <sgnw-symbol 
+      fsw={fsw}
+      onClick={action('clicked')}
+    ></sgnw-symbol>
+  );
+}
+fsw.story = {
+  parameters: { 
+    knobs: { disabled: false },
+    actions: { disabled: false }
+  }
+};
 
-export const fsw = () => `
-  <sgnw-symbol fsw="S20500"></sgnw-symbol>
-`;
+export const swu = () => <sgnw-symbol swu="񄵡"></sgnw-symbol>;
+
+export const iswa = () => <sgnw-symbol iid="1"></sgnw-symbol>;
