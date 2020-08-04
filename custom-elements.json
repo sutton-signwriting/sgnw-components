@@ -1,0 +1,56 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "sgnw-rating",
+      "path": "./src/components.d.ts",
+      "properties": [
+        {
+          "name": "maxValue",
+          "description": "max number of stars",
+          "type": "number | undefined"
+        },
+        {
+          "name": "onRatingUpdated",
+          "description": "number of stars was updated",
+          "type": "((event: CustomEvent<any>) => void) | undefined"
+        },
+        {
+          "name": "value",
+          "description": "current number of stars",
+          "type": "number | undefined"
+        }
+      ]
+    },
+    {
+      "name": "sgnw-signbox",
+      "path": "./src/components.d.ts"
+    },
+    {
+      "name": "sgnw-symbol",
+      "path": "./src/components.d.ts",
+      "properties": [
+        {
+          "name": "fsw",
+          "description": "Formal SignWriting in ASCII (FSW) for symbol with optional style string",
+          "type": "string | undefined"
+        },
+        {
+          "name": "iid",
+          "description": "ISWA 2010 ID",
+          "type": "number | undefined"
+        },
+        {
+          "name": "styling",
+          "description": "Styling Object for symbol",
+          "type": "object | undefined"
+        },
+        {
+          "name": "swu",
+          "description": "SignWriting in Unicode (SWU) for symbol with optional style string",
+          "type": "string | undefined"
+        }
+      ]
+    }
+  ]
+}

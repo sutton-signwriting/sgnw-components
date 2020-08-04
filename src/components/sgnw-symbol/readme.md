@@ -1,6 +1,4 @@
 # sgnw-symbol
-WOW!
-
 
 <!-- Auto Generated Below -->
 
@@ -17,4 +15,4 @@ WOW!
 
 ----------------------------------------------
 
-Sutton SignWriting Component
+

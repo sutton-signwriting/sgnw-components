@@ -1,21 +1,20 @@
-import readme from './readme.md';
+import {SgnwSymbol} from '../../../dist/collection/components/sgnw-symbol/sgnw-symbol';
+import docs from './sgnw-symbol.docs.mdx';
 
 export default {
-  title: 'The Symbol Component',
-  component: 'sgnw-symbol',
-  parameters: {
-    notes: readme,
-    info: {inline: true}
-  },
+  title: 'sgnw-components|Component/sgnw-symbol',
+  component: SgnwSymbol,
+  parameters: { docs: { page: docs } },
+  excludeStories: /.*(Data|Fn)$/
 };
 
-export const Default = () => `
+export const basic = () => `
   <sgnw-symbol>S10000</sgnw-symbol>
 `;
-export const ISWA_ID = () => `
+export const iswa = () => `
   <sgnw-symbol>1</sgnw-symbol>
 `;
 
-export const FSW = () => `
+export const fsw = () => `
   <sgnw-symbol fsw="S20500"></sgnw-symbol>
 `;

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-08-02T13:50:46",
+  "timestamp": "2020-08-04T18:23:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.2",
@@ -110,7 +110,7 @@
       "filePath": "./src/components/sgnw-symbol/sgnw-symbol.tsx",
       "encapsulation": "shadow",
       "tag": "sgnw-symbol",
-      "readme": "# sgnw-symbol\n\n\n",
+      "readme": "# sgnw-symbol\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

@@ -24,26 +24,6 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 - Online Discussion: https://gitter.im/sutton-signwriting/community
 
 
-## Web Components
-A  variety of web components are planned such as 
-sgnw-symbol, sgnw-signbox, sgnw-sequence, sgnw-signmaker, sgnw-palette, sgnw-p, sgnw-vp.
-
-### sgnw-symbol
-Basic symbol example is functional.
-It supports Formal SignWriting in ASCII (fsw), SignWriting in Unicode (swu), and ISWA 2010 IDs (iid).
-
-The values can be explicitly defined as properties.
-
-    <sgnw-symbol fsw="S10000"></sgnw-symbol>
-    <sgnw-symbol swu="񆇡"></sgnw-symbol>
-    <sgnw-symbol iid="1"></sgnw-symbol>
-
-The values can be implicitly defined as the element contents.
-
-    <sgnw-symbol>S10000</sgnw-symbol>
-    <sgnw-symbol>񆇡</sgnw-symbol>
-    <sgnw-symbol>1</sgnw-symbol>
-
 ## Using the Sutton SignWriting Web Components
 
 ### Script tag

@@ -1,9 +1,11 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
+  preamble: 'The Sutton SignWriting Web Components',
   namespace: 'sgnw-components',
   globalScript: 'src/global/global.ts',
   taskQueue: 'async',
+  buildEs5: false,
   testing: {
     browserArgs: ['--no-sandbox', '--disable-setuid-sandbox']
   },
@@ -17,7 +19,7 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
-      footer: 'Sutton SignWriting Component',
+      footer: '',
       strict: true
     },
     {
@@ -25,8 +27,3 @@ export const config: Config = {
     }
   ]
 };
-// import { HelloWorld } from 'my-library/dist/custom-elements-bundle';
-// customElements.define('hello-world', HelloWorld);
-
-// import { defineCustomElements, HelloWorld } from 'my-library/dist/custom-elements-bundle';
-// defineCustomElements();
