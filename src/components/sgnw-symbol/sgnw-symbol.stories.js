@@ -1,22 +1,19 @@
 import {SgnwSymbol} from '../../../dist/collection/components/sgnw-symbol/sgnw-symbol';
 import docs from './sgnw-symbol.docs.mdx';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { h } from 'jsx-dom';
 
 export default {
-  title: 'sgnw-components|Component/sgnw-symbol',
+  title: 'sgnw-components/Component/sgnw-symbol',
   component: SgnwSymbol,
   parameters: { 
     docs: { page: docs },
-    knobs: { disabled: true },
     actions: { disabled: true }
-  },
-  decorators: [withKnobs]
+  }
 };
 
 export const fsw = () => {
-  const fsw = text('fsw','S10000');
+  const fsw = 'S10000'  ;
   return (
     <sgnw-symbol 
       fsw={fsw}
@@ -26,7 +23,6 @@ export const fsw = () => {
 }
 fsw.story = {
   parameters: { 
-    knobs: { disabled: false },
     actions: { disabled: false }
   }
 };

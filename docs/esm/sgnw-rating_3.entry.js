@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-f826a15c.js';
+import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-99335cd3.js';
 
 const sgnwRatingCss = ".rating{color:orange}";
 

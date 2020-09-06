@@ -1,6 +1,5 @@
 import {SgnwSymbol} from '../../../dist/collection/components/sgnw-symbol/sgnw-symbol';
 import docs from './sgnw-symbol.docs.mdx';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { h } from 'jsx-dom';
 
@@ -9,10 +8,8 @@ export default {
   component: SgnwSymbol,
   parameters: { 
     docs: { page: docs },
-    knobs: { disabled: true },
     actions: { disabled: true }
-  },
-  decorators: [withKnobs]
+  }
 };
 
 export const fsw = () => {

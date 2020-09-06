@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-ef075f17.js');
-const appGlobals = require('./app-globals-b1d5e126.js');
+const index = require('./index-fc94fd74.js');
+const appGlobals = require('./app-globals-5d1b2a08.js');
 
 const defineCustomElements = (win, options) => {
   if (typeof window === 'undefined') return Promise.resolve();

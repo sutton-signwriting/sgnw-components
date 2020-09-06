@@ -8,6 +8,9 @@
 
 This is an early release for testing and development.
 Feedback is welcome.
+Windows Edge browser is supported >= 79.
+To update Edge, download and reinstall.
+* https://www.microsoft.com/en-us/edge
 
 This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU) character sets, along with the associated query languages and style string.  See [draft-slevinski-formal-signwriting](https://tools.ietf.org/id/draft-slevinski-formal-signwriting-07.html) for detailed specification.
 

@@ -1,5 +1,5 @@
-import { b as bootstrapLazy } from './index-f826a15c.js';
-import { a as patchEsm, g as globalScripts } from './app-globals-4a111473.js';
+import { b as bootstrapLazy } from './index-99335cd3.js';
+import { a as patchEsm, g as globalScripts } from './app-globals-354f33cb.js';
 
 const defineCustomElements = (win, options) => {
   if (typeof window === 'undefined') return Promise.resolve();
