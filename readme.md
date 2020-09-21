@@ -31,8 +31,13 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 
 ### Script tag
 
-- Put a script tag similar to this `<script src='https://unpkg.com/@sutton-signwriting/sgnw-components@0.1.0/dist/sgnw-components.js'></script>` in the head of your index.html
-- Then you can use the elements anywhere in your template, JSX, html etc
+Put script tags similar to this
+
+    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.3.0/dist/sgnw-components/sgnw-components.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.3.0/dist/sgnw-components/sgnw-components.js"></script>
+
+
+Then you can use the elements anywhere in your template, JSX, html etc
 
 ### Node Modules
 - Run `npm install @sutton-signwriting/sgnw-components --save`

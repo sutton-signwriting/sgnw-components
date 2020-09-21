@@ -12,7 +12,7 @@ import { parse as parseFSW} from '@sutton-signwriting/core/fsw/fsw.min.mjs';
 import { parse as parseSWU } from '@sutton-signwriting/core/swu/swu.min.mjs';
 
 // @ts-ignore
-import { parse as parseStyle } from '@sutton-signwriting/core/style/style.min.mjs';
+import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style.min.mjs';
 
 // @ts-ignore
 import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
@@ -53,6 +53,9 @@ export class SgnwSymbol {
       if (fsw && fsw.symbol){
         this.iid = key2id(fsw.symbol); 
         this.swu = key2swu(fsw.symbol);
+        if (fsw.style){
+          this.styling = parseStyle(fsw.style)
+        }
       }
     }
   }
@@ -66,14 +69,18 @@ export class SgnwSymbol {
       if (swu && swu.symbol){
         this.iid = swu2id(swu.symbol); 
         this.fsw = swu2fsw(swu.symbol);
+        if (swu.style){
+          this.styling = parseStyle(swu.style)
+        }
       }
     }
   }
 
   /** Styling Object for symbol */
-  @Prop({mutable: true, reflect: true}) styling: object;
+  @Prop({mutable: true, reflect: true}) styling: object = {};
   @Watch('styling')
-  stylingUpdate(newValue: object, oldValue: object) {
+  stylingUpdate(newValue: object, oldValue: object){
+    console.log("watching");
     console.log(newValue,oldValue);
   }
 
@@ -88,54 +95,24 @@ export class SgnwSymbol {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
-    var iid, fsw, swu, styling;
-    if (this.fsw){
-      fsw = this.fsw;
-    } else if (this.swu){
-      swu = this.swu;
-    } else if (this.iid){
-      iid = this.iid;
-    }
-    if (this.styling){
-      styling = this.styling;
-    }
-    if ( ! (iid || fsw || swu)){
-      var contents = this.el.innerHTML;
-      var fswP = parseFSW.symbol(contents);
-      var swuP = parseSWU.symbol(contents);
-      var iidP = parseInt(contents);
-      if (fswP && fswP.symbol){
-        fsw = fswP.symbol + (fswP.style?fswP.style:"");
-      } else if (swuP && swuP.symbol){
-        swu = swuP.symbol;
-        swu = swuP.symbol + (swuP.style?swuP.style:"");
-      } else if (iidP > 0 && iidP < 65535){
-        iid = iidP
-      }
-    }
-    if (fsw) {
-      this.fsw = fsw;
+    if (this.fsw) {
       this.fswUpdate(this.fsw,"")
-    } else if (swu) {
-      this.swu = swu;
+    } else if (this.swu) {
       this.swuUpdate(this.swu,"")
     } else {
-      if (!iid) {
-        iid = 0;
+      if (!this.iid) {
+        this.iid = 0;
       }
-      this.iid = iid;
       this.iidUpdate(this.iid.toString(),"0")
-    }
-    if (styling){
-      this.styling = styling;
     }
   }
 
   render() {
     //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
+    console.log(this.styling)
 
     return (
-      <Host iid={this.iid} fsw={this.fsw} swu={this.swu} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.fsw):''}>
+      <Host iid={this.iid} fsw={this.fsw} swu={this.swu} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.fsw + (composeStyle(this.styling))):''}>
         <slot></slot>
       </Host>
     )

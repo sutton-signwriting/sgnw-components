@@ -1,15 +1,55 @@
-import { Story, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Story, Canvas, Description } from '@storybook/addon-docs/blocks';
 import readme from './readme.md'; 
 
 <Description markdown={readme} />
 
-## Basic Example
-A basic example.
-<Story id="sgnw-components-component-sgnw-symbol--fsw" />
+### FSW
+<div class="ion-text-center">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Basic Example</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <sgnw-symbol fsw="S10000" styling="-CZ2" />
+      <pre>&lt;sgnw-symbol fsw="S10000" styling="-CZ2" /></pre>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+    <sgnw-symbol fsw="S10000" />
+
+---
+
+### SWU
+<sgnw-symbol swu="񄵡" />
+
+    <sgnw-symbol swu="񄵡" />
+
+---
+
+### ISWA
+<sgnw-symbol iid="1" />
+
+    <sgnw-symbol iid="1" />
+
+## Implicit Values via contents
+
+### FSW
+<sgnw-symbol>S10010</sgnw-symbol>
+
+    <sgnw-symbol>S10010</sgnw-symbol>
+
+---
+
+### SWU
+<sgnw-symbol>񄵡</sgnw-symbol>
+
+    <sgnw-symbol>񄵡</sgnw-symbol>
+
+---
+
+### ISWA
+<sgnw-symbol>2</sgnw-symbol>
 
 
-A collection of samples.
-<Preview>
-  <Story id="sgnw-components-component-sgnw-symbol--iswa" />
-  <Story id="sgnw-components-component-sgnw-symbol--swu" />
-</Preview>
+    <sgnw-symbol>2</sgnw-symbol>

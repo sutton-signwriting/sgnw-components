@@ -9,7 +9,7 @@
 | --------- | --------- | ----------------------------------------------------------------------- | -------- | ----------- |
 | `fsw`     | `fsw`     | Formal SignWriting in ASCII (FSW) for symbol with optional style string | `string` | `undefined` |
 | `iid`     | `iid`     | ISWA 2010 ID                                                            | `number` | `undefined` |
-| `styling` | --        | Styling Object for symbol                                               | `object` | `undefined` |
+| `styling` | --        | Styling Object for symbol                                               | `object` | `{}`        |
 | `swu`     | `swu`     | SignWriting in Unicode (SWU) for symbol with optional style string      | `string` | `undefined` |
 
 
