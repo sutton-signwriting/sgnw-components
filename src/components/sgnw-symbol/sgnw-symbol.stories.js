@@ -28,14 +28,14 @@ export const FSW = (args) => (
   </ion-header>
 
   <ion-content class="ion-padding">
-    <sgnw-symbol fsw={args.fsw} styling={JSON.stringify(args.styling).replace(/"/g,"'")} />
-    <pre><code>&lt;sgnw-symbol fsw="{args.fsw}" styling="{JSON.stringify(args.styling).replace(/"/g,"'")}" /&gt;</code></pre>
+    <sgnw-symbol fsw={args.fsw} styling={args.styling} />
+    <pre><code>&lt;sgnw-symbol fsw="{args.fsw}" styling="{args.styling}" /&gt;</code></pre>
   </ion-content>
 </ion-app>
 );
 FSW.args = {
   fsw: 'S10000',
-  styling: {},
+  styling: '',
   onClick: action('clicked')
 };
 
@@ -49,13 +49,13 @@ export const SWU = (args) => (
 
   <ion-content class="ion-padding">
     <sgnw-symbol {...args} />
-    <pre><code>&lt;sgnw-symbol swu="{args.swu}" styling='{JSON.stringify(args.styling)}' /&gt;</code></pre>
+    <pre><code>&lt;sgnw-symbol swu="{args.swu}" styling="{args.styling}" /&gt;</code></pre>
   </ion-content>
 </ion-app>
 );
 SWU.args = {
   swu: '񄵡',
-  styling: {},
+  styling: '',
   onClick: action('clicked')
 };
 
@@ -69,12 +69,12 @@ export const ISWA = (args) => (
 
   <ion-content class="ion-padding">
     <sgnw-symbol {...args} />
-    <pre><code>&lt;sgnw-symbol iid="{args.iid}" styling='{JSON.stringify(args.styling)}' /&gt;</code></pre>
+    <pre><code>&lt;sgnw-symbol iid="{args.iid}" styling="{args.styling}" /&gt;</code></pre>
   </ion-content>
 </ion-app>
 );
 ISWA.args = {
   iid: 1,
-  styling: {},
+  styling: '',
   onClick: action('clicked')
 };

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2020-08-04T18:23:33",
+  "timestamp": "2020-09-26T23:11:59",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.17.2",
+    "version": "1.17.3",
     "typescriptVersion": "3.9.7"
   },
   "components": [
@@ -149,14 +149,15 @@
         },
         {
           "name": "styling",
-          "type": "object",
+          "type": "string",
           "mutable": true,
-          "reflectToAttr": false,
+          "attr": "styling",
+          "reflectToAttr": true,
           "docs": "Styling Object for symbol",
           "docsTags": [],
           "values": [
             {
-              "type": "object"
+              "type": "string"
             }
           ],
           "optional": false,

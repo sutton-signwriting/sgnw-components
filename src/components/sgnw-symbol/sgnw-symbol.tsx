@@ -27,6 +27,15 @@ export class SgnwSymbol {
 
   @Element() el: HTMLElement; //this.el
 
+  /** Styling Object for symbol */
+  @Prop({mutable: true, reflect: true}) styling: string;
+  @Watch('styling')
+  stylingUpdate(newValue: string, oldValue: string){
+    console.log("watching");
+    console.log(newValue,oldValue);
+    console.log(this.styling);
+  }
+
   /** ISWA 2010 ID  */
   @Prop({mutable: true, reflect: true}) iid: number;
   @Watch('iid')
@@ -54,7 +63,7 @@ export class SgnwSymbol {
         this.iid = key2id(fsw.symbol); 
         this.swu = key2swu(fsw.symbol);
         if (fsw.style){
-          this.styling = parseStyle(fsw.style)
+          this.styling = fsw.style
         }
       }
     }
@@ -70,18 +79,10 @@ export class SgnwSymbol {
         this.iid = swu2id(swu.symbol); 
         this.fsw = swu2fsw(swu.symbol);
         if (swu.style){
-          this.styling = parseStyle(swu.style)
+          this.styling = swu.style;
         }
       }
     }
-  }
-
-  /** Styling Object for symbol */
-  @Prop({mutable: true, reflect: true}) styling: object = {};
-  @Watch('styling')
-  stylingUpdate(newValue: object, oldValue: object){
-    console.log("watching");
-    console.log(newValue,oldValue);
   }
 
   @State() sgnw: boolean = window.sgnw;
@@ -109,10 +110,10 @@ export class SgnwSymbol {
 
   render() {
     //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
-    console.log(this.styling)
+    console.log("render",this.styling)
 
     return (
-      <Host iid={this.iid} fsw={this.fsw} swu={this.swu} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.fsw + (composeStyle(this.styling))):''}>
+      <Host iid={this.iid} fsw={this.fsw} swu={this.swu} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.fsw + (this.styling)):''}>
         <slot></slot>
       </Host>
     )

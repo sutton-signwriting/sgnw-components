@@ -43,7 +43,7 @@
         {
           "name": "styling",
           "description": "Styling Object for symbol",
-          "type": "object | undefined"
+          "type": "string | undefined"
         },
         {
           "name": "swu",

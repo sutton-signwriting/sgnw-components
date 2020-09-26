@@ -30,7 +30,7 @@ export namespace Components {
         /**
           * Styling Object for symbol
          */
-        "styling": object;
+        "styling": string;
         /**
           * SignWriting in Unicode (SWU) for symbol with optional style string
          */
@@ -91,7 +91,7 @@ declare namespace LocalJSX {
         /**
           * Styling Object for symbol
          */
-        "styling"?: object;
+        "styling"?: string;
         /**
           * SignWriting in Unicode (SWU) for symbol with optional style string
          */

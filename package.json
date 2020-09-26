@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "module-bundle": "dist/custom-elements-bundle/index.mjs",
@@ -15,6 +15,9 @@
     "dist/",
     "loader/"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "stencil build --docs",
     "build.json": "stencil build --docs-json docs.json",
@@ -35,11 +38,11 @@
     "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@ionic/core": "^5.3.3",
     "@stencil/core": "^1.17.0",
-    "@storybook/addon-actions": "^6.0.21",
-    "@storybook/addon-controls": "^6.0.21",
-    "@storybook/addon-docs": "^6.0.21",
-    "@storybook/addon-viewport": "^6.0.21",
-    "@storybook/html": "^6.0.21",
+    "@storybook/addon-actions": "^6.0.22",
+    "@storybook/addon-controls": "^6.0.22",
+    "@storybook/addon-docs": "^6.0.22",
+    "@storybook/addon-viewport": "^6.0.22",
+    "@storybook/html": "^6.0.22",
     "@types/jest": "^26.0.7",
     "@types/puppeteer": "2.0.1",
     "babel-loader": "^8.1.0",

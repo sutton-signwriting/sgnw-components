@@ -1,5 +1,8 @@
 export declare class SgnwSymbol {
     el: HTMLElement;
+    /** Styling Object for symbol */
+    styling: string;
+    stylingUpdate(newValue: string, oldValue: string): void;
     /** ISWA 2010 ID  */
     iid: number;
     iidUpdate(newValue: string, oldValue: string): void;
@@ -9,9 +12,6 @@ export declare class SgnwSymbol {
     /** SignWriting in Unicode (SWU) for symbol with optional style string */
     swu: string;
     swuUpdate(newValue: string, oldValue: string): void;
-    /** Styling Object for symbol */
-    styling: object;
-    stylingUpdate(newValue: object, oldValue: object): void;
     sgnw: boolean;
     connectedCallback(): void;
     render(): any;
