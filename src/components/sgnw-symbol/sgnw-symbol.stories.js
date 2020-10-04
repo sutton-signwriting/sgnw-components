@@ -28,14 +28,15 @@ export const FSW = (args) => (
   </ion-header>
 
   <ion-content class="ion-padding">
-    <sgnw-symbol fsw={args.fsw} styling={args.styling} />
-    <pre><code>&lt;sgnw-symbol fsw="{args.fsw}" styling="{args.styling}" /&gt;</code></pre>
+    <sgnw-symbol {...args} />
+    <pre><code>&lt;sgnw-symbol {args.keys.map( key => key + '="' + args[key] + '"').join(" ")} /&gt;</code></pre>
   </ion-content>
 </ion-app>
 );
 FSW.args = {
   fsw: 'S10000',
   styling: '',
+  keys: ['fsw','styling'],
   onClick: action('clicked')
 };
 

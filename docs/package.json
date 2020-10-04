@@ -1,28 +1,28 @@
 {
-  "_from": "@ionic/core",
-  "_id": "@ionic/core@5.3.3",
+  "_from": "@ionic/core@5.3.4",
+  "_id": "@ionic/core@5.3.4",
   "_inBundle": false,
-  "_integrity": "sha512-vXZQAPdLM0XimXJ+8pSQijIYliD+WiBQy3zkRG5czXsVkhCdwd095XgZ7pcdmWDstUKxtB1BzxJgKntjJw0Tdg==",
+  "_integrity": "sha512-4UVzj+Vd7o0VJ06dReG01PvttnLLPSzUVgXSYMBKKR849Pvuh5Q9t5s4GEEQgGoxhv1S6Ai+zphWGFMvviOyfw==",
   "_location": "/@ionic/core",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "@ionic/core",
+    "raw": "@ionic/core@5.3.4",
     "name": "@ionic/core",
     "escapedName": "@ionic%2fcore",
     "scope": "@ionic",
-    "rawSpec": "",
+    "rawSpec": "5.3.4",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "5.3.4"
   },
   "_requiredBy": [
     "#DEV:/",
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/@ionic/core/-/core-5.3.3.tgz",
-  "_shasum": "674c741186f162f1170da067af707bf623dd7971",
-  "_spec": "@ionic/core",
+  "_resolved": "https://registry.npmjs.org/@ionic/core/-/core-5.3.4.tgz",
+  "_shasum": "46c133bfc5cc1bb1207c8cdbb0b9c2a3f2c9c9ae",
+  "_spec": "@ionic/core@5.3.4",
   "_where": "/mnt/c/Users/slevi/Desktop/SSW/sgnw-components",
   "author": {
     "name": "Ionic Team"
@@ -131,5 +131,5 @@
     "validate": "npm run lint && npm run test && npm run build && npm run test.treeshake"
   },
   "types": "dist/types/interface.d.ts",
-  "version": "5.3.3"
+  "version": "5.3.4"
 }

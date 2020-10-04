@@ -33,8 +33,8 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 
 Put script tags similar to this
 
-    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.5.0/dist/sgnw-components/sgnw-components.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.5.0/dist/sgnw-components/sgnw-components.js"></script>
+    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.6.0/dist/sgnw-components/sgnw-components.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.6.0/dist/sgnw-components/sgnw-components.js"></script>
 
 
 Then you can use the elements anywhere in your template, JSX, html etc

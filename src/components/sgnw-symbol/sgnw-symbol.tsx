@@ -17,24 +17,17 @@ import { parse as parseStyle, compose as composeStyle } from '@sutton-signwritin
 // @ts-ignore
 import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
 
+import { rgb2hex, rgba2hex } from '../../global/global';
+
 @Component({
   tag: 'sgnw-symbol',
   styleUrl: 'sgnw-symbol.css',
   shadow: true
 })
- 
+
 export class SgnwSymbol {
 
   @Element() el: HTMLElement; //this.el
-
-  /** Styling Object for symbol */
-  @Prop({mutable: true, reflect: true}) styling: string;
-  @Watch('styling')
-  stylingUpdate(newValue: string, oldValue: string){
-    console.log("watching");
-    console.log(newValue,oldValue);
-    console.log(this.styling);
-  }
 
   /** ISWA 2010 ID  */
   @Prop({mutable: true, reflect: true}) iid: number;
@@ -57,13 +50,19 @@ export class SgnwSymbol {
   @Prop({mutable: true, reflect: true}) fsw: string;
   @Watch('fsw')
   fswUpdate(newValue: string, oldValue: string) {
-    if (newValue!=oldValue) {
-      var fsw = parseFSW.symbol(newValue);
-      if (fsw && fsw.symbol){
-        this.iid = key2id(fsw.symbol); 
-        this.swu = key2swu(fsw.symbol);
-        if (fsw.style){
-          this.styling = fsw.style
+    const len = 6;
+    console.log("fsw",this.fsw, "-", newValue, "-", oldValue)
+    const tooLong = typeof newValue === 'string' && newValue.length > len;
+    if (tooLong){
+      this.fsw = this.fsw.substring(0,len);
+    } else {
+      if (newValue!=oldValue) {
+        console.log("fswU",this.fsw, "-", newValue, "-", oldValue)
+        var fsw = parseFSW.symbol(newValue);
+        if (fsw && fsw.symbol){
+          this.fsw = fsw.symbol
+          this.iid = key2id(fsw.symbol); 
+          this.swu = key2swu(fsw.symbol);
         }
       }
     }
@@ -78,12 +77,12 @@ export class SgnwSymbol {
       if (swu && swu.symbol){
         this.iid = swu2id(swu.symbol); 
         this.fsw = swu2fsw(swu.symbol);
-        if (swu.style){
-          this.styling = swu.style;
-        }
       }
     }
   }
+
+  /** Style String for symbol */
+  @Prop({mutable: true, reflect: true}) styling: string;
 
   @State() sgnw: boolean = window.sgnw;
 
@@ -109,11 +108,26 @@ export class SgnwSymbol {
   }
 
   render() {
+    let styleStr = '';
+    if (this.styling){
+      styleStr = this.styling;
+    } else {
+      let css = window.getComputedStyle(this.el, null);
+      const styleObj = {
+        "padding": css.getPropertyValue("padding"),
+        "background": rgba2hex(css.getPropertyValue("background-color")),
+        "detail": [
+          rgb2hex(css.getPropertyValue("color")),
+          rgb2hex(css.getPropertyValue("background-color"))
+        ],
+        "zoom": parseInt(css.getPropertyValue("font-size").slice(0,-2))/30
+      }
+      styleStr = composeStyle(styleObj)
+    }
     //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
-    console.log("render",this.styling)
 
     return (
-      <Host iid={this.iid} fsw={this.fsw} swu={this.swu} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.fsw + (this.styling)):''}>
+      <Host iid={this.iid} fsw={this.fsw} swu={this.swu} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.fsw + (styleStr)):''}>
         <slot></slot>
       </Host>
     )

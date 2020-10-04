@@ -42,7 +42,7 @@
         },
         {
           "name": "styling",
-          "description": "Styling Object for symbol",
+          "description": "Style String for symbol",
           "type": "string | undefined"
         },
         {

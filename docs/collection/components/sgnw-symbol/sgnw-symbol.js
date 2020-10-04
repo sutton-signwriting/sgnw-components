@@ -7,15 +7,13 @@ import { parse as parseFSW } from '@sutton-signwriting/core/fsw/fsw.min.mjs';
 // @ts-ignore
 import { parse as parseSWU } from '@sutton-signwriting/core/swu/swu.min.mjs';
 // @ts-ignore
+import { compose as composeStyle } from '@sutton-signwriting/core/style/style.min.mjs';
+// @ts-ignore
 import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
+import { rgb2hex, rgba2hex } from '../../global/global';
 export class SgnwSymbol {
     constructor() {
         this.sgnw = window.sgnw;
-    }
-    stylingUpdate(newValue, oldValue) {
-        console.log("watching");
-        console.log(newValue, oldValue);
-        console.log(this.styling);
     }
     iidUpdate(newValue, oldValue) {
         var iid = parseInt(newValue);
@@ -32,13 +30,20 @@ export class SgnwSymbol {
         }
     }
     fswUpdate(newValue, oldValue) {
-        if (newValue != oldValue) {
-            var fsw = parseFSW.symbol(newValue);
-            if (fsw && fsw.symbol) {
-                this.iid = key2id(fsw.symbol);
-                this.swu = key2swu(fsw.symbol);
-                if (fsw.style) {
-                    this.styling = fsw.style;
+        const len = 6;
+        console.log("fsw", this.fsw, "-", newValue, "-", oldValue);
+        const tooLong = typeof newValue === 'string' && newValue.length > len;
+        if (tooLong) {
+            this.fsw = this.fsw.substring(0, len);
+        }
+        else {
+            if (newValue != oldValue) {
+                console.log("fswU", this.fsw, "-", newValue, "-", oldValue);
+                var fsw = parseFSW.symbol(newValue);
+                if (fsw && fsw.symbol) {
+                    this.fsw = fsw.symbol;
+                    this.iid = key2id(fsw.symbol);
+                    this.swu = key2swu(fsw.symbol);
                 }
             }
         }
@@ -49,9 +54,6 @@ export class SgnwSymbol {
             if (swu && swu.symbol) {
                 this.iid = swu2id(swu.symbol);
                 this.fsw = swu2fsw(swu.symbol);
-                if (swu.style) {
-                    this.styling = swu.style;
-                }
             }
         }
     }
@@ -78,9 +80,25 @@ export class SgnwSymbol {
         }
     }
     render() {
+        let styleStr = '';
+        if (this.styling) {
+            styleStr = this.styling;
+        }
+        else {
+            let css = window.getComputedStyle(this.el, null);
+            const styleObj = {
+                "padding": css.getPropertyValue("padding"),
+                "background": rgba2hex(css.getPropertyValue("background-color")),
+                "detail": [
+                    rgb2hex(css.getPropertyValue("color")),
+                    rgb2hex(css.getPropertyValue("background-color"))
+                ],
+                "zoom": parseInt(css.getPropertyValue("font-size").slice(0, -2)) / 30
+            };
+            styleStr = composeStyle(styleObj);
+        }
         //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
-        console.log("render", this.styling);
-        return (h(Host, { iid: this.iid, fsw: this.fsw, swu: this.swu, styling: this.styling, innerHTML: this.sgnw ? symbolSvg(this.fsw + (this.styling)) : '' },
+        return (h(Host, { iid: this.iid, fsw: this.fsw, swu: this.swu, styling: this.styling, innerHTML: this.sgnw ? symbolSvg(this.fsw + (styleStr)) : '' },
             h("slot", null)));
     }
     static get is() { return "sgnw-symbol"; }
@@ -92,23 +110,6 @@ export class SgnwSymbol {
         "$": ["sgnw-symbol.css"]
     }; }
     static get properties() { return {
-        "styling": {
-            "type": "string",
-            "mutable": true,
-            "complexType": {
-                "original": "string",
-                "resolved": "string",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": "Styling Object for symbol"
-            },
-            "attribute": "styling",
-            "reflect": true
-        },
         "iid": {
             "type": "number",
             "mutable": true,
@@ -159,6 +160,23 @@ export class SgnwSymbol {
             },
             "attribute": "swu",
             "reflect": true
+        },
+        "styling": {
+            "type": "string",
+            "mutable": true,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": "Style String for symbol"
+            },
+            "attribute": "styling",
+            "reflect": true
         }
     }; }
     static get states() { return {
@@ -166,9 +184,6 @@ export class SgnwSymbol {
     }; }
     static get elementRef() { return "el"; }
     static get watchers() { return [{
-            "propName": "styling",
-            "methodName": "stylingUpdate"
-        }, {
             "propName": "iid",
             "methodName": "iidUpdate"
         }, {

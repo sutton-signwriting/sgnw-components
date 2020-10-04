@@ -28,7 +28,7 @@ export namespace Components {
          */
         "iid": number;
         /**
-          * Styling Object for symbol
+          * Style String for symbol
          */
         "styling": string;
         /**
@@ -89,7 +89,7 @@ declare namespace LocalJSX {
          */
         "iid"?: number;
         /**
-          * Styling Object for symbol
+          * Style String for symbol
          */
         "styling"?: string;
         /**
