@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "module-bundle": "dist/custom-elements-bundle/index.mjs",
@@ -27,10 +27,8 @@
     "generate": "stencil generate",
     "wca": "wca analyze src",
     "wca.build": "wca analyze src --outFile custom-elements.json",
-    "prestorybook": "npm run wca.build",
-    "storybook": "start-storybook -s ./dist,./node_modules/@ionic/core",
-    "prestorybook.build": "npm run wca.build",
-    "storybook.build": "build-storybook -s ./dist,./node_modules/@ionic/core -o docs"
+    "storybook": "start-storybook -s ./dist",
+    "storybook.build": "build-storybook -s ./dist -o docs"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",

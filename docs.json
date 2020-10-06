@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-26T23:11:59",
+  "timestamp": "2020-10-06T13:59:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.3",
@@ -69,6 +69,74 @@
           "passive": false
         }
       ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sgnw-sign/sgnw-sign.tsx",
+      "encapsulation": "shadow",
+      "tag": "sgnw-sign",
+      "readme": "# sgnw-sign\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "fsw",
+          "type": "string",
+          "mutable": true,
+          "attr": "fsw",
+          "reflectToAttr": true,
+          "docs": "Formal SignWriting in ASCII (FSW) for sign with optional style string",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "styling",
+          "type": "string",
+          "mutable": true,
+          "attr": "styling",
+          "reflectToAttr": true,
+          "docs": "Style String for sign",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "swu",
+          "type": "string",
+          "mutable": true,
+          "attr": "swu",
+          "reflectToAttr": true,
+          "docs": "SignWriting in Unicode (SWU) for sign with optional style string",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
@@ -153,7 +221,7 @@
           "mutable": true,
           "attr": "styling",
           "reflectToAttr": true,
-          "docs": "Styling Object for symbol",
+          "docs": "Style String for symbol",
           "docsTags": [],
           "values": [
             {

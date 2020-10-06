@@ -16,6 +16,20 @@ export namespace Components {
          */
         "value": number;
     }
+    interface SgnwSign {
+        /**
+          * Formal SignWriting in ASCII (FSW) for sign with optional style string
+         */
+        "fsw": string;
+        /**
+          * Style String for sign
+         */
+        "styling": string;
+        /**
+          * SignWriting in Unicode (SWU) for sign with optional style string
+         */
+        "swu": string;
+    }
     interface SgnwSignbox {
     }
     interface SgnwSymbol {
@@ -44,6 +58,12 @@ declare global {
         prototype: HTMLSgnwRatingElement;
         new (): HTMLSgnwRatingElement;
     };
+    interface HTMLSgnwSignElement extends Components.SgnwSign, HTMLStencilElement {
+    }
+    var HTMLSgnwSignElement: {
+        prototype: HTMLSgnwSignElement;
+        new (): HTMLSgnwSignElement;
+    };
     interface HTMLSgnwSignboxElement extends Components.SgnwSignbox, HTMLStencilElement {
     }
     var HTMLSgnwSignboxElement: {
@@ -58,6 +78,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sgnw-rating": HTMLSgnwRatingElement;
+        "sgnw-sign": HTMLSgnwSignElement;
         "sgnw-signbox": HTMLSgnwSignboxElement;
         "sgnw-symbol": HTMLSgnwSymbolElement;
     }
@@ -76,6 +97,20 @@ declare namespace LocalJSX {
           * current number of stars
          */
         "value"?: number;
+    }
+    interface SgnwSign {
+        /**
+          * Formal SignWriting in ASCII (FSW) for sign with optional style string
+         */
+        "fsw"?: string;
+        /**
+          * Style String for sign
+         */
+        "styling"?: string;
+        /**
+          * SignWriting in Unicode (SWU) for sign with optional style string
+         */
+        "swu"?: string;
     }
     interface SgnwSignbox {
     }
@@ -99,6 +134,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sgnw-rating": SgnwRating;
+        "sgnw-sign": SgnwSign;
         "sgnw-signbox": SgnwSignbox;
         "sgnw-symbol": SgnwSymbol;
     }
@@ -108,6 +144,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sgnw-rating": LocalJSX.SgnwRating & JSXBase.HTMLAttributes<HTMLSgnwRatingElement>;
+            "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
             "sgnw-signbox": LocalJSX.SgnwSignbox & JSXBase.HTMLAttributes<HTMLSgnwSignboxElement>;
             "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
         }

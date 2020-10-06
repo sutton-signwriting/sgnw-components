@@ -23,6 +23,27 @@
       ]
     },
     {
+      "name": "sgnw-sign",
+      "path": "./src/components.d.ts",
+      "properties": [
+        {
+          "name": "fsw",
+          "description": "Formal SignWriting in ASCII (FSW) for sign with optional style string",
+          "type": "string | undefined"
+        },
+        {
+          "name": "styling",
+          "description": "Style String for sign",
+          "type": "string | undefined"
+        },
+        {
+          "name": "swu",
+          "description": "SignWriting in Unicode (SWU) for sign with optional style string",
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
       "name": "sgnw-signbox",
       "path": "./src/components.d.ts"
     },

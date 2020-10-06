@@ -8,6 +8,12 @@ export const SgnwRating: {
   new (): SgnwRating;
 };
 
+interface SgnwSign extends Components.SgnwSign, HTMLElement {}
+export const SgnwSign: {
+  prototype: SgnwSign;
+  new (): SgnwSign;
+};
+
 interface SgnwSignbox extends Components.SgnwSignbox, HTMLElement {}
 export const SgnwSignbox: {
   prototype: SgnwSignbox;

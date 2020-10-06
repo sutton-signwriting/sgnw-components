@@ -1,6 +1,7 @@
 {
   "entries": [
     "./components/sgnw-rating/sgnw-rating.js",
+    "./components/sgnw-sign/sgnw-sign.js",
     "./components/sgnw-signbox/sgnw-signbox.js",
     "./components/sgnw-symbol/sgnw-symbol.js"
   ],
