@@ -50,6 +50,18 @@ export namespace Components {
          */
         "swu": string;
     }
+    interface SgnwUni8String {
+        /**
+          * SignWriting in Unicode 8 (uni8) for symbol
+         */
+        "uni": string;
+    }
+    interface SgnwUni8Symbol {
+        /**
+          * SignWriting in Unicode 8 (uni8) for symbol
+         */
+        "uni": string;
+    }
 }
 declare global {
     interface HTMLSgnwRatingElement extends Components.SgnwRating, HTMLStencilElement {
@@ -76,11 +88,25 @@ declare global {
         prototype: HTMLSgnwSymbolElement;
         new (): HTMLSgnwSymbolElement;
     };
+    interface HTMLSgnwUni8StringElement extends Components.SgnwUni8String, HTMLStencilElement {
+    }
+    var HTMLSgnwUni8StringElement: {
+        prototype: HTMLSgnwUni8StringElement;
+        new (): HTMLSgnwUni8StringElement;
+    };
+    interface HTMLSgnwUni8SymbolElement extends Components.SgnwUni8Symbol, HTMLStencilElement {
+    }
+    var HTMLSgnwUni8SymbolElement: {
+        prototype: HTMLSgnwUni8SymbolElement;
+        new (): HTMLSgnwUni8SymbolElement;
+    };
     interface HTMLElementTagNameMap {
         "sgnw-rating": HTMLSgnwRatingElement;
         "sgnw-sign": HTMLSgnwSignElement;
         "sgnw-signbox": HTMLSgnwSignboxElement;
         "sgnw-symbol": HTMLSgnwSymbolElement;
+        "sgnw-uni8-string": HTMLSgnwUni8StringElement;
+        "sgnw-uni8-symbol": HTMLSgnwUni8SymbolElement;
     }
 }
 declare namespace LocalJSX {
@@ -132,11 +158,25 @@ declare namespace LocalJSX {
          */
         "swu"?: string;
     }
+    interface SgnwUni8String {
+        /**
+          * SignWriting in Unicode 8 (uni8) for symbol
+         */
+        "uni"?: string;
+    }
+    interface SgnwUni8Symbol {
+        /**
+          * SignWriting in Unicode 8 (uni8) for symbol
+         */
+        "uni"?: string;
+    }
     interface IntrinsicElements {
         "sgnw-rating": SgnwRating;
         "sgnw-sign": SgnwSign;
         "sgnw-signbox": SgnwSignbox;
         "sgnw-symbol": SgnwSymbol;
+        "sgnw-uni8-string": SgnwUni8String;
+        "sgnw-uni8-symbol": SgnwUni8Symbol;
     }
 }
 export { LocalJSX as JSX };
@@ -147,6 +187,8 @@ declare module "@stencil/core" {
             "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
             "sgnw-signbox": LocalJSX.SgnwSignbox & JSXBase.HTMLAttributes<HTMLSgnwSignboxElement>;
             "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
+            "sgnw-uni8-string": LocalJSX.SgnwUni8String & JSXBase.HTMLAttributes<HTMLSgnwUni8StringElement>;
+            "sgnw-uni8-symbol": LocalJSX.SgnwUni8Symbol & JSXBase.HTMLAttributes<HTMLSgnwUni8SymbolElement>;
         }
     }
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-06T13:59:39",
+  "timestamp": "2020-12-12T23:46:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.3",
@@ -238,6 +238,78 @@
           "attr": "swu",
           "reflectToAttr": true,
           "docs": "SignWriting in Unicode (SWU) for symbol with optional style string",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sgnw-uni8-string/sgnw-uni8-string.tsx",
+      "encapsulation": "shadow",
+      "tag": "sgnw-uni8-string",
+      "readme": "# sgnw-uni8-symbol\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "uni",
+          "type": "string",
+          "mutable": true,
+          "attr": "uni",
+          "reflectToAttr": true,
+          "docs": "SignWriting in Unicode 8 (uni8) for symbol",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sgnw-uni8-symbol/sgnw-uni8-symbol.tsx",
+      "encapsulation": "shadow",
+      "tag": "sgnw-uni8-symbol",
+      "readme": "# sgnw-uni8-symbol\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "uni",
+          "type": "string",
+          "mutable": true,
+          "attr": "uni",
+          "reflectToAttr": true,
+          "docs": "SignWriting in Unicode 8 (uni8) for symbol",
           "docsTags": [],
           "values": [
             {

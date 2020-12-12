@@ -2,14 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const global$1 = require('./global-8d73eec8.js');
+const index = require('./index-fc94fd74.js');
+const global$1 = require('./global-4674ea55.js');
 const fsw_min = require('./fsw.min-c9f56137.js');
 
 const sgnwSignCss = "";
 
 const SgnwSign = class {
     constructor(hostRef) {
-        global$1.registerInstance(this, hostRef);
+        index.registerInstance(this, hostRef);
         this.sgnw = window.sgnw;
     }
     fswUpdate(newValue, oldValue) {
@@ -67,9 +68,9 @@ const SgnwSign = class {
             styleStr = fsw_min.t(styleObj);
         }
         //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
-        return (global$1.h(global$1.Host, { fsw: this.fsw, swu: this.swu, styling: this.styling, innerHTML: this.sgnw ? fsw_min.k(this.fsw + (styleStr)) : '' }, global$1.h("slot", null)));
+        return (index.h(index.Host, { fsw: this.fsw, swu: this.swu, styling: this.styling, innerHTML: this.sgnw ? fsw_min.k(this.fsw + (styleStr)) : '' }, index.h("slot", null)));
     }
-    get el() { return global$1.getElement(this); }
+    get el() { return index.getElement(this); }
     static get watchers() { return {
         "fsw": ["fswUpdate"],
         "swu": ["swuUpdate"]

@@ -72,6 +72,28 @@
           "type": "string | undefined"
         }
       ]
+    },
+    {
+      "name": "sgnw-uni8-string",
+      "path": "./src/components.d.ts",
+      "properties": [
+        {
+          "name": "uni",
+          "description": "SignWriting in Unicode 8 (uni8) for symbol",
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "sgnw-uni8-symbol",
+      "path": "./src/components.d.ts",
+      "properties": [
+        {
+          "name": "uni",
+          "description": "SignWriting in Unicode 8 (uni8) for symbol",
+          "type": "string | undefined"
+        }
+      ]
     }
   ]
 }

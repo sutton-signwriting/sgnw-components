@@ -1,5 +1,7 @@
 // @ts-ignore
 import { cssAppend, cssLoaded } from '@sutton-signwriting/font-ttf/font/font.min.mjs';
+// @ts-ignore
+import { cssAppend as cssAppendUnicode8 } from '@sutton-signwriting/unicode8/font/font.min.mjs';
 window['sgnw'] = false;
 const event = new Event('sgnw');
 export const rgb2hex = function (rgba) {
@@ -34,4 +36,5 @@ export default function () {
         window['sgnw'] = true;
         window.dispatchEvent(event);
     });
+    cssAppendUnicode8();
 }

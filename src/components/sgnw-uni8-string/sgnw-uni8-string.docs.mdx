@@ -1,0 +1,27 @@
+import { Canvas, Description } from '@storybook/addon-docs/blocks';
+import readme from './readme.md'; 
+
+<Description markdown={readme} />
+
+### SignWriting in Unicode 8 (uni8) examples
+
+<p>This is a plain head <sgnw-uni8-string uni="𝧿" /></p>
+
+    <p>This is a plain head <sgnw-uni8-string uni="𝧿" /></p>
+
+<p>This is a complex face <sgnw-uni8-string uni="𝧿𝨊𝩀" /></p>
+
+    <p>This is a complex face <sgnw-uni8-string uni="𝧿𝨊𝩀" /></p>
+
+<p>This is a more complex face <sgnw-uni8-string uni="𝧿𝨊𝪛𝩀" /></p>
+
+    <p>This is a complex face <sgnw-uni8-string uni="𝧿𝨊𝪛𝩀" /></p>
+
+<h1 className="red">Header 1 with class <sgnw-uni8-string uni="𝧿𝨊𝩀" /></h1>
+
+    <h1 className="red">Header 1 with class <sgnw-uni8-string uni="𝧿𝨊𝩀" /></h1>
+
+
+<h2 style={{'color':'blue','backgroundColor':'yellow','padding':'10px'}}>Header 2 with inline style <sgnw-uni8-string uni="𝧿𝨊𝩀" /></h2>
+
+    <h2 style="color:blue;background-color:yellow;padding:10px">Header 2 with inline style <sgnw-uni8-string uni="𝧿𝨊𝩀" /></h2>

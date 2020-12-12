@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "module-bundle": "dist/custom-elements-bundle/index.mjs",
@@ -54,6 +54,7 @@
   "license": "MIT",
   "dependencies": {
     "@sutton-signwriting/core": "^1.2.0",
-    "@sutton-signwriting/font-ttf": "^1.2.0"
+    "@sutton-signwriting/font-ttf": "^1.2.0",
+    "@sutton-signwriting/unicode8": "^1.1.2"
   }
 }

@@ -3,7 +3,9 @@
     "./components/sgnw-rating/sgnw-rating.js",
     "./components/sgnw-sign/sgnw-sign.js",
     "./components/sgnw-signbox/sgnw-signbox.js",
-    "./components/sgnw-symbol/sgnw-symbol.js"
+    "./components/sgnw-symbol/sgnw-symbol.js",
+    "./components/sgnw-uni8-string/sgnw-uni8-string.js",
+    "./components/sgnw-uni8-symbol/sgnw-uni8-symbol.js"
   ],
   "compiler": {
     "name": "@stencil/core",

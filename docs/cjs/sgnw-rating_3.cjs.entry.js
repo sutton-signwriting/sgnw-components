@@ -2,15 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const global$1 = require('./global-8d73eec8.js');
+const index = require('./index-fc94fd74.js');
+const global$1 = require('./global-4674ea55.js');
 const fsw_min = require('./fsw.min-c9f56137.js');
 
 const sgnwRatingCss = ".rating{color:orange}";
 
 const SgnwRating = class {
     constructor(hostRef) {
-        global$1.registerInstance(this, hostRef);
-        this.ratingUpdated = global$1.createEvent(this, "ratingUpdated", 7);
+        index.registerInstance(this, hostRef);
+        this.ratingUpdated = index.createEvent(this, "ratingUpdated", 7);
         /** max number of stars */
         this.maxValue = 5;
         /** current number of stars */
@@ -32,16 +33,16 @@ const SgnwRating = class {
         let starList = [];
         for (let i = 1; i <= this.maxValue; i++) {
             if (i <= numberOfStars) {
-                starList.push(global$1.h("span", { class: "rating", onClick: () => this.setValue(i), onMouseOver: () => this.createStarList(i), onMouseOut: () => this.createStarList(this.value) }, "\u2605"));
+                starList.push(index.h("span", { class: "rating", onClick: () => this.setValue(i), onMouseOver: () => this.createStarList(i), onMouseOut: () => this.createStarList(this.value) }, "\u2605"));
             }
             else {
-                starList.push(global$1.h("span", { class: "rating", onClick: () => this.setValue(i), onMouseOver: () => this.createStarList(i), onMouseOut: () => this.createStarList(this.value) }, "\u2606"));
+                starList.push(index.h("span", { class: "rating", onClick: () => this.setValue(i), onMouseOver: () => this.createStarList(i), onMouseOut: () => this.createStarList(this.value) }, "\u2606"));
             }
         }
         this.starList = starList;
     }
     render() {
-        return (global$1.h("div", null, this.starList));
+        return (index.h("div", null, this.starList));
     }
     static get watchers() { return {
         "value": ["componentWillLoad"]
@@ -53,7 +54,7 @@ const sgnwSignboxCss = ":host{width:100%;height:400px;background-color:#333;disp
 
 const SgnwSignbox = class {
     constructor(hostRef) {
-        global$1.registerInstance(this, hostRef);
+        index.registerInstance(this, hostRef);
     }
     /** array of spatials */
     //  @Prop({mutable: true, reflect: true}) spatials: array;
@@ -68,7 +69,7 @@ const SgnwSignbox = class {
         console.log('touchstart');
     }
     render() {
-        return (global$1.h("div", null, global$1.h("slot", null)));
+        return (index.h("div", null, index.h("slot", null)));
     }
 };
 SgnwSignbox.style = sgnwSignboxCss;
@@ -77,7 +78,7 @@ const sgnwSymbolCss = "";
 
 const SgnwSymbol = class {
     constructor(hostRef) {
-        global$1.registerInstance(this, hostRef);
+        index.registerInstance(this, hostRef);
         this.sgnw = window.sgnw;
     }
     iidUpdate(newValue, oldValue) {
@@ -163,9 +164,9 @@ const SgnwSymbol = class {
             styleStr = fsw_min.t(styleObj);
         }
         //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
-        return (global$1.h(global$1.Host, { iid: this.iid, fsw: this.fsw, swu: this.swu, styling: this.styling, innerHTML: this.sgnw ? fsw_min.w(this.fsw + (styleStr)) : '' }, global$1.h("slot", null)));
+        return (index.h(index.Host, { iid: this.iid, fsw: this.fsw, swu: this.swu, styling: this.styling, innerHTML: this.sgnw ? fsw_min.w(this.fsw + (styleStr)) : '' }, index.h("slot", null)));
     }
-    get el() { return global$1.getElement(this); }
+    get el() { return index.getElement(this); }
     static get watchers() { return {
         "iid": ["iidUpdate"],
         "fsw": ["fswUpdate"],

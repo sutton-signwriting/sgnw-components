@@ -1,0 +1,31 @@
+import { Canvas, Description } from '@storybook/addon-docs/blocks';
+import readme from './readme.md'; 
+
+<Description markdown={readme} />
+
+### SignWriting in Unicode 8 (uni8) examples
+
+<p>This is a symbol base <sgnw-uni8-symbol uni="𝠀" /></p>
+
+    <p>This is a basic symbol <sgnw-uni8-symbol uni="𝠀" /></p>
+
+<p>This is a symbol base plus fill <sgnw-uni8-symbol uni="𝠀𝪛" /></p>
+
+    <p>This is a symbol base plus fill <sgnw-uni8-symbol uni="𝠀𝪛" /></p>
+
+<p>This is a symbol base plus rotation <sgnw-uni8-symbol uni="𝠀𝪡" /></p>
+
+    <p>This is a symbol base plus rotation <sgnw-uni8-symbol uni="𝠀𝪡" /></p>
+
+<p>This is a symbol base plus fill and rotation <sgnw-uni8-symbol uni="𝠀𝪛𝪡" /></p>
+
+    <p>This is a symbol base plus rotation <sgnw-uni8-symbol uni="𝠀𝪛𝪡" /></p>
+
+<h1 className="red">Header 1 with class <sgnw-uni8-symbol uni="𝠀𝪛𝪡" /></h1>
+
+    <h1 className="red">Header 1 with class <sgnw-uni8-symbol uni="𝠀𝪛𝪡" /></h1>
+
+
+<h2 style={{'color':'blue','backgroundColor':'yellow','padding':'10px'}}>Header 2 with inline style <sgnw-uni8-symbol uni="𝠀𝪛𝪡" /></h2>
+
+    <h2 style="color:blue;background-color:yellow;padding:10px">Header 2 with inline style <sgnw-uni8-symbol uni="𝠀𝪛𝪡" /></h2>

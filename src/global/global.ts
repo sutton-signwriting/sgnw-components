@@ -1,6 +1,8 @@
 
 // @ts-ignore
 import { cssAppend, cssLoaded } from '@sutton-signwriting/font-ttf/font/font.min.mjs';
+// @ts-ignore
+import { cssAppend as cssAppendUnicode8 } from '@sutton-signwriting/unicode8/font/font.min.mjs';
 
 declare global {
   interface Window { sgnw: boolean; }
@@ -41,5 +43,6 @@ export default function() { // or export default async function()
   cssLoaded( ()=> {
     window['sgnw'] = true;
     window.dispatchEvent(event);
-  })
+  });
+  cssAppendUnicode8();
 }

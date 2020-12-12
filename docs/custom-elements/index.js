@@ -4,6 +4,9 @@ export { setAssetPath } from '@stencil/core/internal/client';
 /* Sutton SignWriting TrueType Font Module v1.2.0 (https://github.com/sutton-signwriting/font-ttf), author: Steve Slevinski (https://SteveSlevinski.me), license: MIT */
 const t=function(t=""){if(!document.getElementById("SgnwFontCss")){const n=document.createElement("style");n.setAttribute("id","SgnwFontCss"),n.appendChild(document.createTextNode(`\n  @font-face {\n    font-family: "SuttonSignWritingLine";\n    src: \n      local('SuttonSignWritingLine'),\n      ${t?`url('${t}SuttonSignWritingLine.ttf') format('truetype'),`:""}\n      url('https://cdn.jsdelivr.net/npm/@sutton-signwriting/font-ttf@1.0.0/font/SuttonSignWritingLine.ttf') format('truetype');\n  }\n  @font-face {\n    font-family: "SuttonSignWritingFill";\n    src: \n      local('SuttonSignWritingFill'),\n      ${t?`url('${t}SuttonSignWritingFill.ttf') format('truetype'),`:""}\n      url('https://cdn.jsdelivr.net/npm/@sutton-signwriting/font-ttf@1.0.0/font/SuttonSignWritingFill.ttf') format('truetype');\n  }\n  @font-face {\n    font-family: "SuttonSignWritingOneD";\n    src: \n      local('SuttonSignWritingOneD'),\n      ${t?`url('${t}SuttonSignWritingOneD.ttf') format('truetype'),`:""}\n      url('https://cdn.jsdelivr.net/npm/@sutton-signwriting/font-ttf@1.0.0/font/SuttonSignWritingOneD.ttf') format('truetype');\n  }\n    `)),document.head.appendChild(n);}};let n={};const e=document.createElement("canvas");e.width=152,e.height=152;const i=e.getContext("2d"),o=function(t){if(t in n)return [...n[t]];i.clearRect(0,0,152,152),i.font="60px 'SuttonSignWritingLine'",i.fillText(String.fromCodePoint(t+983040),0,0);const e=i.getImageData(0,0,152,152).data;let o,r,l,f;t:for(o=151;o>=0;o--)for(r=0;r<152;r+=1)for(f=0;f<4;f+=1)if(l=4*o+4*r*152+f,e[l])break t;var c=o;t:for(r=151;r>=0;r--)for(o=0;o<c;o+=1)for(f=0;f<4;f+=1)if(l=4*o+4*r*152+f,e[l])break t;var u=r+1;if(c=Math.ceil(c/2),u=Math.ceil(u/2),14394==t&&(c=19),[10468,10480,10496,10512,10500,10532,10548,10862,10878,10894,11058,11074,11476,11488,11492,11504,11508,11520,10516,10910,10926,11042,11082,10942].includes(t)&&(c=20),31921==t&&(c=22),38460==t&&(c=23),[20164,20212].includes(t)&&(c=25),31894==t&&(c=28),46698==t&&(c=29),29606==t&&(c=30),44855==t&&(c=40),32667==t&&(c=50),[11088,11474,11490,11506].includes(t)&&(u=20),6285==t&&(u=21),40804==t&&(u=31),41475==t&&(u=36),0==c&&0==u){const n={9:[15,30],10:[21,30],11:[30,15],12:[30,21],13:[15,30],14:[21,30]};t in n&&(c=n[t][0],u=n[t][1]);}return 0!=c||0!=u?(n[t]=[c,u],[c,u]):void 0},l=function(t){return String.fromCodePoint(t+1048576)},c=function(t){let n=!1,e=!1;u(()=>{n=!0;}),a(()=>{e=!0;});const i=setInterval((function(){n&&e&&(clearInterval(i),t());}),100);},u=function(t){if(o(1))t();else {const n=setInterval((function(){o(1)&&(clearInterval(n),t());}),100);}},a=function(t){const n=function(){const t=document.createElement("canvas");t.width=15,t.height=30;const n=t.getContext("2d");n.font="30px 'SuttonSignWritingFill'",n.fillText(l(1),0,0);return !n.getImageData(0,0,15,30).data.every(t=>0===t)};if(n())t();else {const e=setInterval((function(){n()&&(clearInterval(e),t());}),100);}};
 
+/* Sutton SignWriting Unicode 8 Module v1.1.2 (https://github.com/sutton-signwriting/unicode8), author: Steve Slevinski (https://SteveSlevinski.me), license: MIT */
+const n$1=function(n=""){if(!document.getElementById("SgnwUnicode8FontCss")){const t=document.createElement("style");t.setAttribute("id","SgnwUnicode8FontCss"),t.appendChild(document.createTextNode(`\n    @font-face {\n      font-family: "NotoSansSignWriting";\n      src: \n        local('NotoSansSignWriting'),\n        local('Noto Sans SignWriting'),\n        local('Noto_Sans_SignWriting'),\n        local('Noto Sans SignWriting Regular'),\n        local('Noto_Sans_SignWriting_Regular'),\n        ${n?`url('${n}NotoSansSignWriting-Regular.otf') format('truetype'),`:""}\n        url('https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts/unhinted/otf/NotoSansSignWriting/NotoSansSignWriting-Regular.otf') format('opentype');\n    }\n    `)),document.head.appendChild(t);}};
+
 // @ts-ignore
 window['sgnw'] = false;
 const event = new Event('sgnw');
@@ -39,6 +42,7 @@ function appGlobalScript () {
         window['sgnw'] = true;
         window.dispatchEvent(event);
     });
+    n$1();
 }
 
 const globalScripts = appGlobalScript;
@@ -90,7 +94,7 @@ const SgnwRating = class extends HTMLElement {
 };
 
 /* Sutton SignWriting Core Module v1.2.0 (https://github.com/sutton-signwriting/core), author: Steve Slevinski (https://SteveSlevinski.me), license: MIT */
-let e$1={symbol:"S[123][0-9a-f]{2}[0-5][0-9a-f]",coord:"[0-9]{3}x[0-9]{3}",sort:"A",box:"[BLMR]"};e$1.prefix=`(?:${e$1.sort}(?:${e$1.symbol})+)`,e$1.spatial=`${e$1.symbol}${e$1.coord}`,e$1.signbox=`${e$1.box}${e$1.coord}(?:${e$1.spatial})*`,e$1.sign=`${e$1.prefix}?${e$1.signbox}`,e$1.sortable=`${e$1.prefix}${e$1.signbox}`;let o$1={symbol:"(?:(?:\ud8c0[\udc01-\udfff])|(?:[\ud8c1-\ud8fc][\udc00-\udfff])|(?:\ud8fd[\udc00-\udc80]))",coord:"(?:\ud836[\udc0c-\uddff]){2}",sort:"𝠀",box:"\ud836[\udc01-\udc04]"};o$1.prefix=`(?:${o$1.sort}(?:${o$1.symbol})+)`,o$1.spatial=`${o$1.symbol}${o$1.coord}`,o$1.signbox=`${o$1.box}${o$1.coord}(?:${o$1.spatial})*`,o$1.sign=`${o$1.prefix}?${o$1.signbox}`,o$1.sortable=`${o$1.prefix}${o$1.signbox}`;const r=e=>({A:"𝠀",B:"𝠁",L:"𝠂",M:"𝠃",R:"𝠄"})[e],n$1=e=>parseInt(e.codePointAt(0))-120844+250,c$1=e=>String.fromCodePoint(120844+parseInt(e)-250),s=e=>[n$1(e.slice(0,2)),n$1(e.slice(2,4))],i$1=e=>e.map(e=>c$1(e)).join(""),a$1=e=>e.split("x").map(e=>parseInt(e)),l$1=e=>parseInt(e.codePointAt(0)),f=e=>String.fromCodePoint(e),g=e=>l$1(e)-262144,d=e=>f(e+262144),x=e=>1+96*(parseInt(e.slice(1,4),16)-256)+16*parseInt(e.slice(4,5),16)+parseInt(e.slice(5,6),16),u$1=e=>{const o=e-1,t=parseInt(o/96),r=parseInt((o-96*t)/16),n=parseInt(o-96*t-16*r);return "S"+(t+256).toString(16)+r.toString(16)+n.toString(16)},$=e=>{const o=l$1(e)-262145,t=parseInt(o/96),r=parseInt((o-96*t)/16),n=parseInt(o-96*t-16*r);return "S"+(t+256).toString(16)+r.toString(16)+n.toString(16)},b=e=>f(262145+96*(parseInt(e.slice(1,4),16)-256)+16*parseInt(e.slice(4,5),16)+parseInt(e.slice(5,6),16)),m=e=>{if(!e)return "";let t=e.replace(/𝠀/g,"A").replace(/𝠁/g,"B").replace(/𝠂/g,"L").replace(/𝠃/g,"M").replace(/𝠄/g,"R");const r=t.match(new RegExp(o$1.symbol,"g"));r&&r.forEach((function(e){t=t.replace(e,$(e));}));const n=t.match(new RegExp(o$1.coord,"g"));return n&&n.forEach((function(e){t=t.replace(e,s(e).join("x"));})),t},I=o=>{if(!o)return "";const t=o.match(new RegExp(e$1.prefix,"g"));t&&t.forEach((function(e){o=o.replace(e,"𝠀"+e.slice(1).match(/.{6}/g).map(e=>b(e)).join(""));}));const n=o.match(new RegExp(e$1.box+e$1.coord,"g"));n&&n.forEach((function(e){o=o.replace(e,r(e.slice(0,1))+i$1(a$1(e.slice(1,8))));}));const c=o.match(new RegExp(e$1.spatial,"g"));return c&&c.forEach((function(e){o=o.replace(e,b(e.slice(0,6))+i$1(a$1(e.slice(6,13))));})),o};
+let e$1={symbol:"S[123][0-9a-f]{2}[0-5][0-9a-f]",coord:"[0-9]{3}x[0-9]{3}",sort:"A",box:"[BLMR]"};e$1.prefix=`(?:${e$1.sort}(?:${e$1.symbol})+)`,e$1.spatial=`${e$1.symbol}${e$1.coord}`,e$1.signbox=`${e$1.box}${e$1.coord}(?:${e$1.spatial})*`,e$1.sign=`${e$1.prefix}?${e$1.signbox}`,e$1.sortable=`${e$1.prefix}${e$1.signbox}`;let o$1={symbol:"(?:(?:\ud8c0[\udc01-\udfff])|(?:[\ud8c1-\ud8fc][\udc00-\udfff])|(?:\ud8fd[\udc00-\udc80]))",coord:"(?:\ud836[\udc0c-\uddff]){2}",sort:"𝠀",box:"\ud836[\udc01-\udc04]"};o$1.prefix=`(?:${o$1.sort}(?:${o$1.symbol})+)`,o$1.spatial=`${o$1.symbol}${o$1.coord}`,o$1.signbox=`${o$1.box}${o$1.coord}(?:${o$1.spatial})*`,o$1.sign=`${o$1.prefix}?${o$1.signbox}`,o$1.sortable=`${o$1.prefix}${o$1.signbox}`;const r=e=>({A:"𝠀",B:"𝠁",L:"𝠂",M:"𝠃",R:"𝠄"})[e],n$2=e=>parseInt(e.codePointAt(0))-120844+250,c$1=e=>String.fromCodePoint(120844+parseInt(e)-250),s=e=>[n$2(e.slice(0,2)),n$2(e.slice(2,4))],i$1=e=>e.map(e=>c$1(e)).join(""),a$1=e=>e.split("x").map(e=>parseInt(e)),l$1=e=>parseInt(e.codePointAt(0)),f=e=>String.fromCodePoint(e),g=e=>l$1(e)-262144,d=e=>f(e+262144),x=e=>1+96*(parseInt(e.slice(1,4),16)-256)+16*parseInt(e.slice(4,5),16)+parseInt(e.slice(5,6),16),u$1=e=>{const o=e-1,t=parseInt(o/96),r=parseInt((o-96*t)/16),n=parseInt(o-96*t-16*r);return "S"+(t+256).toString(16)+r.toString(16)+n.toString(16)},$=e=>{const o=l$1(e)-262145,t=parseInt(o/96),r=parseInt((o-96*t)/16),n=parseInt(o-96*t-16*r);return "S"+(t+256).toString(16)+r.toString(16)+n.toString(16)},b=e=>f(262145+96*(parseInt(e.slice(1,4),16)-256)+16*parseInt(e.slice(4,5),16)+parseInt(e.slice(5,6),16)),m=e=>{if(!e)return "";let t=e.replace(/𝠀/g,"A").replace(/𝠁/g,"B").replace(/𝠂/g,"L").replace(/𝠃/g,"M").replace(/𝠄/g,"R");const r=t.match(new RegExp(o$1.symbol,"g"));r&&r.forEach((function(e){t=t.replace(e,$(e));}));const n=t.match(new RegExp(o$1.coord,"g"));return n&&n.forEach((function(e){t=t.replace(e,s(e).join("x"));})),t},I=o=>{if(!o)return "";const t=o.match(new RegExp(e$1.prefix,"g"));t&&t.forEach((function(e){o=o.replace(e,"𝠀"+e.slice(1).match(/.{6}/g).map(e=>b(e)).join(""));}));const n=o.match(new RegExp(e$1.box+e$1.coord,"g"));n&&n.forEach((function(e){o=o.replace(e,r(e.slice(0,1))+i$1(a$1(e.slice(1,8))));}));const c=o.match(new RegExp(e$1.spatial,"g"));return c&&c.forEach((function(e){o=o.replace(e,b(e.slice(0,6))+i$1(a$1(e.slice(6,13))));})),o};
 
 /* Sutton SignWriting Core Module v1.2.0 (https://github.com/sutton-signwriting/core), author: Steve Slevinski (https://SteveSlevinski.me), license: MIT */
 let o$2={symbol:"S[123][0-9a-f]{2}[0-5][0-9a-f]",coord:"[0-9]{3}x[0-9]{3}",sort:"A",box:"[BLMR]"};o$2.prefix=`(?:${o$2.sort}(?:${o$2.symbol})+)`,o$2.spatial=`${o$2.symbol}${o$2.coord}`,o$2.signbox=`${o$2.box}${o$2.coord}(?:${o$2.spatial})*`,o$2.sign=`${o$2.prefix}?${o$2.signbox}`,o$2.sortable=`${o$2.prefix}${o$2.signbox}`;let s$1={colorize:"C",colorhex:"(?:[0-9a-fA-F]{3}){1,2}",colorname:"[a-zA-Z]+",padding:"P[0-9]{2}",zoom:"Z(?:[0-9]+(?:\\.[0-9]+)?|x)",zoomsym:"Z[0-9]{2},[0-9]+(?:\\.[0-9]+)?(?:,[0-9]{3}x[0-9]{3})?",classbase:"-?[_a-zA-Z][_a-zA-Z0-9-]{0,100}",id:"[a-zA-Z][_a-zA-Z0-9-]{0,100}"};s$1.colorbase=`(?:${s$1.colorhex}|${s$1.colorname})`,s$1.color=`_${s$1.colorbase}_`,s$1.colors=`_${s$1.colorbase}(?:,${s$1.colorbase})?_`,s$1.background=`G${s$1.color}`,s$1.detail=`D${s$1.colors}`,s$1.detailsym=`D[0-9]{2}${s$1.colors}`,s$1.classes=`${s$1.classbase}(?: ${s$1.classbase})*`,s$1.full=`-(${s$1.colorize})?(${s$1.padding})?(${s$1.background})?(${s$1.detail})?(${s$1.zoom})?(?:-((?:${s$1.detailsym})*)((?:${s$1.zoomsym})*))?(?:-(${s$1.classes})?!(?:(${s$1.id})!)?)?`;const t$1=o=>o.split("x").map(o=>parseInt(o)),e$2={symbol:e=>{const r=`^(${o$2.symbol})(${o$2.coord})?(${s$1.full})?`,l="string"==typeof e?e.match(new RegExp(r)):void 0;return {symbol:l?l[1]:void 0,coord:l&&l[2]?t$1(l[2]):void 0,style:l?l[3]:void 0}},sign:e=>{const r=`^(${o$2.prefix})?(${o$2.signbox})(${s$1.full})?`,l="string"==typeof e?e.match(new RegExp(r)):void 0;return l?{sequence:l[1]?l[1].slice(1).match(/.{6}/g):void 0,box:l[2][0],max:t$1(l[2].slice(1,8)),spatials:l[2].length<9?void 0:l[2].slice(8).match(/(.{13})/g).map(o=>({symbol:o.slice(0,6),coord:[parseInt(o.slice(6,9)),parseInt(o.slice(10,13))]})),style:l[3]}:{}}},r$1={symbol:t=>{if("string"==typeof t.symbol){const e=(t.symbol.match(o$2.symbol)||[""])[0];if(e){return e+((((t.coord&&t.coord[0]||"").toString()+"x"+(t.coord&&t.coord[1]||"").toString()).match(o$2.coord)||[""])[0]||"")+("string"==typeof t.style&&(t.style.match(s$1.full)||[""])[0]||"")}}},sign:t=>{let e="string"!=typeof t.box?"M":(t.box+"M").match(o$2.box);const r=(((t.max&&t.max[0]||"").toString()+"x"+(t.max&&t.max[1]||"").toString()).match(o$2.coord)||[""])[0]||"";if(!r)return;let l="";t.sequence&&Array.isArray(t.sequence)&&(l=(l=t.sequence.map(s=>(s.match(o$2.symbol)||[""])[0]).join(""))?"A"+l:"");let a="";return t.spatials&&Array.isArray(t.spatials)&&(a=t.spatials.map(s=>{if("string"==typeof s.symbol){const t=(s.symbol.match(o$2.symbol)||[""])[0];if(t){const e=(((s.coord&&s.coord[0]||"").toString()+"x"+(s.coord&&s.coord[1]||"").toString()).match(o$2.coord)||[""])[0]||"";if(e)return t+e}}return ""}).join("")),l+e+r+a+("string"==typeof t.style&&(t.style.match(s$1.full)||[""])[0]||"")}};
@@ -307,18 +311,58 @@ const SgnwSymbol = class extends HTMLElement {
     static get style() { return sgnwSymbolCss; }
 };
 
+/* Sutton SignWriting Unicode 8 Module v1.1.2 (https://github.com/sutton-signwriting/unicode8), author: Steve Slevinski (https://SteveSlevinski.me), license: MIT */
+let e$5={base:"(?:\ud836[\udc00-\ude8b])",fill:"(?:\ud836[\ude9b-\ude9f])",rotation:"(?:\ud836[\udea1-\udeaf])"};e$5.full=`(${e$5.base})(${e$5.fill})?(${e$5.rotation})?`;let l$4={full:`(?:${e$5.full})+`};const u$2=u=>{const t=`^(${l$4.full})`,r=("string"==typeof u?u.match(new RegExp(t)):[])||[];return r[1]?[...r[1].matchAll(new RegExp(e$5.full,"g"))].map(e=>e[0]):[]},t$5=e=>{if(Array.isArray(e))return e.join("")};
+
+const sgnwUni8StringCss = "span{font-family:NotoSansSignWriting}";
+
+const SgnwUni8String = class extends HTMLElement {
+    constructor() {
+        super();
+        this.__registerHost();
+        attachShadow(this);
+    }
+    render() {
+        return (h(Host, { uni: this.uni }, h("span", null, t$5(u$2(this.uni)))));
+    }
+    get el() { return this; }
+    static get style() { return sgnwUni8StringCss; }
+};
+
+/* Sutton SignWriting Unicode 8 Module v1.1.2 (https://github.com/sutton-signwriting/unicode8), author: Steve Slevinski (https://SteveSlevinski.me), license: MIT */
+let t$6={base:"(?:\ud836[\udc00-\ude8b])",fill:"(?:\ud836[\ude9b-\ude9f])",rotation:"(?:\ud836[\udea1-\udeaf])"};t$6.full=`(${t$6.base})(${t$6.fill})?(${t$6.rotation})?`;const o$6=o=>{const e="^"+t$6.full,l=("string"==typeof o?o.match(new RegExp(e)):[])||[];return {base:l[1]?l[1]:void 0,fill:l[2]?l[2]:void 0,rotation:l[3]?l[3]:void 0}},e$6=t=>{if("object"!=typeof t||null===t)return;const o=(t.base?t.base:"")+(t.fill?t.fill:"")+(t.rotation?t.rotation:"");return o||void 0};
+
+const sgnwUni8SymbolCss = "span{font-family:NotoSansSignWriting}";
+
+const SgnwUni8Symbol = class extends HTMLElement {
+    constructor() {
+        super();
+        this.__registerHost();
+        attachShadow(this);
+    }
+    render() {
+        return (h(Host, { uni: this.uni }, h("span", null, e$6(o$6(this.uni)))));
+    }
+    get el() { return this; }
+    static get style() { return sgnwUni8SymbolCss; }
+};
+
 globalScripts();
 const SgnwRating$1 = /*@__PURE__*/proxyCustomElement(SgnwRating, [1,"sgnw-rating",{"maxValue":[2,"max-value"],"value":[1538],"starList":[32]},[[0,"ratingUpdated","logUpdate"]]]);
 const SgnwSign$1 = /*@__PURE__*/proxyCustomElement(SgnwSign, [1,"sgnw-sign",{"fsw":[1537],"swu":[1537],"styling":[1537],"sgnw":[32]}]);
 const SgnwSignbox$1 = /*@__PURE__*/proxyCustomElement(SgnwSignbox, [1,"sgnw-signbox",null,[[3,"mousedown","handleMouseDown"],[3,"touchstart","handleTouchStart"]]]);
 const SgnwSymbol$1 = /*@__PURE__*/proxyCustomElement(SgnwSymbol, [1,"sgnw-symbol",{"iid":[1538],"fsw":[1537],"swu":[1537],"styling":[1537],"sgnw":[32]}]);
+const SgnwUni8String$1 = /*@__PURE__*/proxyCustomElement(SgnwUni8String, [1,"sgnw-uni8-string",{"uni":[1537]}]);
+const SgnwUni8Symbol$1 = /*@__PURE__*/proxyCustomElement(SgnwUni8Symbol, [1,"sgnw-uni8-symbol",{"uni":[1537]}]);
 const defineCustomElements = (opts) => {
   if (typeof customElements !== 'undefined') {
     [
       SgnwRating$1,
   SgnwSign$1,
   SgnwSignbox$1,
-  SgnwSymbol$1
+  SgnwSymbol$1,
+  SgnwUni8String$1,
+  SgnwUni8Symbol$1
     ].forEach(cmp => {
       if (!customElements.get(cmp.is)) {
         customElements.define(cmp.is, cmp, opts);
@@ -327,4 +371,4 @@ const defineCustomElements = (opts) => {
   }
 };
 
-export { SgnwRating$1 as SgnwRating, SgnwSign$1 as SgnwSign, SgnwSignbox$1 as SgnwSignbox, SgnwSymbol$1 as SgnwSymbol, defineCustomElements };
+export { SgnwRating$1 as SgnwRating, SgnwSign$1 as SgnwSign, SgnwSignbox$1 as SgnwSignbox, SgnwSymbol$1 as SgnwSymbol, SgnwUni8String$1 as SgnwUni8String, SgnwUni8Symbol$1 as SgnwUni8Symbol, defineCustomElements };

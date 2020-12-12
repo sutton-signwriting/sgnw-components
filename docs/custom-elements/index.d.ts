@@ -26,6 +26,18 @@ export const SgnwSymbol: {
   new (): SgnwSymbol;
 };
 
+interface SgnwUni8String extends Components.SgnwUni8String, HTMLElement {}
+export const SgnwUni8String: {
+  prototype: SgnwUni8String;
+  new (): SgnwUni8String;
+};
+
+interface SgnwUni8Symbol extends Components.SgnwUni8Symbol, HTMLElement {}
+export const SgnwUni8Symbol: {
+  prototype: SgnwUni8Symbol;
+  new (): SgnwUni8Symbol;
+};
+
 /**
  * Utility to define all custom elements within this package using the tag name provided in the component's source. 
  * When defining each custom element, it will also check it's safe to define by:
