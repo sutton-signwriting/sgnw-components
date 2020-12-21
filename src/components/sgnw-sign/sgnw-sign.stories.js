@@ -20,18 +20,11 @@ export default {
 //]};
 
 export const FSW = (args) => (
-<ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Formal SignWriting in ASCII (FSW)</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content class="ion-padding">
-    <sgnw-sign {...args} />
+  <div>
+    <h2>Formal SignWriting in ASCII (FSW)</h2>
+    <h2><sgnw-sign {...args} /></h2>
     <pre><code>&lt;sgnw-sign fsw="{args.fsw}" styling="{args.styling}" /&gt;</code></pre>
-  </ion-content>
-</ion-app>
+  </div>
 );
 FSW.args = {
   fsw: 'AS14c00S14c08S22520S22520S22a07S22a11S33e00M541x567S33e00482x483S14c00513x534S14c08466x536S22a07521x500S22a11463x500S22520509x520S22520463x519',
@@ -40,18 +33,11 @@ FSW.args = {
 };
 
 export const SWU = (args) => (
-<ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>SignWriting in Unicode (SWU)</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content class="ion-padding">
-    <sgnw-sign {...args} />
+  <div>
+    <h2>SignWriting in Unicode (SWU)</h2>
+    <h2><sgnw-sign {...args} /></h2>
     <pre><code>&lt;sgnw-sign swu="{args.swu}" styling="{args.styling}" /&gt;</code></pre>
-  </ion-content>
-</ion-app>
+  </div>
 );
 SWU.args = {
   swu: '𝠀񁳴񁳶񉌍񉌕񁳲񁳸𝠃𝤭𝤩񁳼𝣭𝣤񁳴𝤉𝣤񉌍𝤡𝣺񉌕𝣠𝣺񁳺𝣭𝤑񁳲𝤉𝤑',

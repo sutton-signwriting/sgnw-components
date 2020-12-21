@@ -51,13 +51,11 @@ export class SgnwSymbol {
   @Watch('fsw')
   fswUpdate(newValue: string, oldValue: string) {
     const len = 6;
-    console.log("fsw",this.fsw, "-", newValue, "-", oldValue)
     const tooLong = typeof newValue === 'string' && newValue.length > len;
     if (tooLong){
       this.fsw = this.fsw.substring(0,len);
     } else {
       if (newValue!=oldValue) {
-        console.log("fswU",this.fsw, "-", newValue, "-", oldValue)
         var fsw = parseFSW.symbol(newValue);
         if (fsw && fsw.symbol){
           this.fsw = fsw.symbol

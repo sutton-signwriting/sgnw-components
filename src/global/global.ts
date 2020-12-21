@@ -1,4 +1,6 @@
 
+import '@ionic/core';
+
 // @ts-ignore
 import { cssAppend, cssLoaded } from '@sutton-signwriting/font-ttf/font/font.min.mjs';
 // @ts-ignore

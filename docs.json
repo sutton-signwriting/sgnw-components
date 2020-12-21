@@ -1,81 +1,11 @@
 {
-  "timestamp": "2020-12-12T23:46:04",
+  "timestamp": "2020-12-21T01:41:29",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.17.3",
-    "typescriptVersion": "3.9.7"
+    "version": "2.3.0",
+    "typescriptVersion": "4.0.5"
   },
   "components": [
-    {
-      "filePath": "./src/components/sgnw-rating/sgnw-rating.tsx",
-      "encapsulation": "shadow",
-      "tag": "sgnw-rating",
-      "readme": "# sgnw-rating\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "maxValue",
-          "type": "number",
-          "mutable": false,
-          "attr": "max-value",
-          "reflectToAttr": false,
-          "docs": "max number of stars",
-          "docsTags": [],
-          "default": "5",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "value",
-          "type": "number",
-          "mutable": true,
-          "attr": "value",
-          "reflectToAttr": true,
-          "docs": "current number of stars",
-          "docsTags": [],
-          "default": "0",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "ratingUpdated",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "number of stars was updated",
-          "docsTags": []
-        }
-      ],
-      "listeners": [
-        {
-          "event": "ratingUpdated",
-          "capture": false,
-          "passive": false
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
     {
       "filePath": "./src/components/sgnw-sign/sgnw-sign.tsx",
       "encapsulation": "shadow",
@@ -137,36 +67,6 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/sgnw-signbox/sgnw-signbox.tsx",
-      "encapsulation": "shadow",
-      "tag": "sgnw-signbox",
-      "readme": "# sgnw-signbox\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [
-        {
-          "event": "mousedown",
-          "capture": true,
-          "passive": true
-        },
-        {
-          "event": "touchstart",
-          "capture": true,
-          "passive": true
-        }
-      ],
       "styles": [],
       "slots": [],
       "parts": [],
@@ -254,9 +154,137 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "sgnw-symbol-picker"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "sgnw-symbol-picker": [
+          "sgnw-symbol"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/sgnw-symbol-picker/sgnw-symbol-picker.tsx",
+      "encapsulation": "shadow",
+      "tag": "sgnw-symbol-picker",
+      "readme": "# sgnw-symbol-picker\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "fsw",
+          "type": "string",
+          "mutable": false,
+          "attr": "fsw",
+          "reflectToAttr": true,
+          "docs": "Formal SignWriting in ASCII (FSW) for symbol",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iid",
+          "type": "number",
+          "mutable": false,
+          "attr": "iid",
+          "reflectToAttr": true,
+          "docs": "ISWA 2010 ID for symbol",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "swu",
+          "type": "string",
+          "mutable": false,
+          "attr": "swu",
+          "reflectToAttr": true,
+          "docs": "SignWriting in Unicode (SWU) for symbol",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "uni",
+          "type": "string",
+          "mutable": false,
+          "attr": "uni",
+          "reflectToAttr": true,
+          "docs": "SignWriting in Unicode 8 (uni8) for symbol",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-card",
+        "ion-item",
+        "ion-range",
+        "ion-label",
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "ion-button",
+        "ion-icon",
+        "ion-title",
+        "sgnw-symbol",
+        "ion-input"
+      ],
+      "dependencyGraph": {
+        "sgnw-symbol-picker": [
+          "ion-card",
+          "ion-item",
+          "ion-range",
+          "ion-label",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button",
+          "ion-icon",
+          "ion-title",
+          "sgnw-symbol",
+          "ion-input"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "./src/components/sgnw-uni8-string/sgnw-uni8-string.tsx",

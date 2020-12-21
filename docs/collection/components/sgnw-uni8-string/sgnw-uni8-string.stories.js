@@ -20,18 +20,11 @@ let nose = convert.fsw2uni("S33100")
 let smile = convert.fsw2uni("S34000")
 
 export const Head = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) head</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-string {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) head</h2>
+    <h2><sgnw-uni8-string {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 Head.args = {
   uni: head,
@@ -39,18 +32,11 @@ Head.args = {
 };
 
 export const Head_Eyes_Smile = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) head eyes smile</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-string {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) head eyes smile</h2>
+    <h2><sgnw-uni8-string {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 Head_Eyes_Smile.args = {
   uni: head + eyes + smile,
@@ -58,18 +44,11 @@ Head_Eyes_Smile.args = {
 };
 
 export const Head_Eye_Smile = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) head eye smile</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-string {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) head eye smile</h2>
+    <h2><sgnw-uni8-string {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 Head_Eye_Smile.args = {
   uni: head + eye + smile,
@@ -77,18 +56,11 @@ Head_Eye_Smile.args = {
 };
 
 export const All = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) all</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-string {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) all</h2>
+    <h2><sgnw-uni8-string {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-string uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 All.args = {
   uni: head + eye + nose + smile,

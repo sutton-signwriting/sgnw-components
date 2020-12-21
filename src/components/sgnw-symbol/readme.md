@@ -13,6 +13,19 @@
 | `swu`     | `swu`     | SignWriting in Unicode (SWU) for symbol with optional style string      | `string` | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [sgnw-symbol-picker](../sgnw-symbol-picker)
+
+### Graph
+```mermaid
+graph TD;
+  sgnw-symbol-picker --> sgnw-symbol
+  style sgnw-symbol fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 

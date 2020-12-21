@@ -13,18 +13,11 @@ export default {
 };
 
 export const Base = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) base</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-symbol {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) base</h2>
+    <h2><sgnw-uni8-symbol {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 Base.args = {
   uni: convert.fsw2uni("S10000"),
@@ -32,18 +25,11 @@ Base.args = {
 };
 
 export const Base_Fill = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) base</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-symbol {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) base</h2>
+    <h2><sgnw-uni8-symbol {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 Base_Fill.args = {
   uni: convert.fsw2uni("S10010"),
@@ -51,18 +37,11 @@ Base_Fill.args = {
 };
 
 export const Base_Rotation = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) base</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-symbol {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) base</h2>
+    <h2><sgnw-uni8-symbol {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 Base_Rotation.args = {
   uni: convert.fsw2uni("S10001"),
@@ -70,18 +49,11 @@ Base_Rotation.args = {
 };
 
 export const Base_Both = (args) => (
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>SignWriting in Unicode 8 (uni8) base</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <sgnw-uni8-symbol {...args} />
-      <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
-    </ion-content>
-  </ion-app>
+  <div>
+    <h2>SignWriting in Unicode 8 (uni8) base</h2>
+    <h2><sgnw-uni8-symbol {...args} /></h2>
+    <pre><code class="uni8">&lt;sgnw-uni8-symbol uni="{args.uni}" /&gt;</code></pre>
+  </div>
 );
 Base_Both.args = {
   uni: convert.fsw2uni("S10011"),

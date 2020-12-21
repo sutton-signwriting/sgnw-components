@@ -1,12 +1,6 @@
 /* SgnwComponents custom elements bundle */
 
-import { Components } from "../types/components";
-
-interface SgnwRating extends Components.SgnwRating, HTMLElement {}
-export const SgnwRating: {
-  prototype: SgnwRating;
-  new (): SgnwRating;
-};
+import { Components, JSX } from "../types/components";
 
 interface SgnwSign extends Components.SgnwSign, HTMLElement {}
 export const SgnwSign: {
@@ -14,16 +8,16 @@ export const SgnwSign: {
   new (): SgnwSign;
 };
 
-interface SgnwSignbox extends Components.SgnwSignbox, HTMLElement {}
-export const SgnwSignbox: {
-  prototype: SgnwSignbox;
-  new (): SgnwSignbox;
-};
-
 interface SgnwSymbol extends Components.SgnwSymbol, HTMLElement {}
 export const SgnwSymbol: {
   prototype: SgnwSymbol;
   new (): SgnwSymbol;
+};
+
+interface SgnwSymbolPicker extends Components.SgnwSymbolPicker, HTMLElement {}
+export const SgnwSymbolPicker: {
+  prototype: SgnwSymbolPicker;
+  new (): SgnwSymbolPicker;
 };
 
 interface SgnwUni8String extends Components.SgnwUni8String, HTMLElement {}
@@ -61,5 +55,7 @@ export declare const defineCustomElements: (opts?: any) => void;
  * will have to ensure the static assets are copied to its build directory.
  */
 export declare const setAssetPath: (path: string) => void;
+
+export { Components, JSX };
 
 export * from '../types';

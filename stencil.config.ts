@@ -4,6 +4,7 @@ export const config: Config = {
   preamble: 'The Sutton SignWriting Web Components',
   namespace: 'sgnw-components',
   globalScript: 'src/global/global.ts',
+  globalStyle: 'src/global/global.css',
   taskQueue: 'async',
   buildEs5: false,
   testing: {
@@ -11,11 +12,11 @@ export const config: Config = {
   },
   outputTargets: [
     {
-      type: 'www'
+      type: 'dist',
+      esmLoaderPath: '../loader',
     },
     {
-      type: 'dist',
-      esmLoaderPath: '../loader'
+      type: 'dist-custom-elements-bundle',
     },
     {
       type: 'docs-readme',
@@ -23,7 +24,8 @@ export const config: Config = {
       strict: true
     },
     {
-      type: 'dist-custom-elements-bundle'
-    }
-  ]
+      type: 'www',
+      serviceWorker: null, // disable service workers
+    },
+  ],
 };

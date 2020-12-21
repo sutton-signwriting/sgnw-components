@@ -6,16 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
 export namespace Components {
-    interface SgnwRating {
-        /**
-          * max number of stars
-         */
-        "maxValue": number;
-        /**
-          * current number of stars
-         */
-        "value": number;
-    }
     interface SgnwSign {
         /**
           * Formal SignWriting in ASCII (FSW) for sign with optional style string
@@ -29,8 +19,6 @@ export namespace Components {
           * SignWriting in Unicode (SWU) for sign with optional style string
          */
         "swu": string;
-    }
-    interface SgnwSignbox {
     }
     interface SgnwSymbol {
         /**
@@ -50,6 +38,24 @@ export namespace Components {
          */
         "swu": string;
     }
+    interface SgnwSymbolPicker {
+        /**
+          * Formal SignWriting in ASCII (FSW) for symbol
+         */
+        "fsw": string;
+        /**
+          * ISWA 2010 ID for symbol
+         */
+        "iid": number;
+        /**
+          * SignWriting in Unicode (SWU) for symbol
+         */
+        "swu": string;
+        /**
+          * SignWriting in Unicode 8 (uni8) for symbol
+         */
+        "uni": string;
+    }
     interface SgnwUni8String {
         /**
           * SignWriting in Unicode 8 (uni8) for symbol
@@ -64,29 +70,23 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLSgnwRatingElement extends Components.SgnwRating, HTMLStencilElement {
-    }
-    var HTMLSgnwRatingElement: {
-        prototype: HTMLSgnwRatingElement;
-        new (): HTMLSgnwRatingElement;
-    };
     interface HTMLSgnwSignElement extends Components.SgnwSign, HTMLStencilElement {
     }
     var HTMLSgnwSignElement: {
         prototype: HTMLSgnwSignElement;
         new (): HTMLSgnwSignElement;
     };
-    interface HTMLSgnwSignboxElement extends Components.SgnwSignbox, HTMLStencilElement {
-    }
-    var HTMLSgnwSignboxElement: {
-        prototype: HTMLSgnwSignboxElement;
-        new (): HTMLSgnwSignboxElement;
-    };
     interface HTMLSgnwSymbolElement extends Components.SgnwSymbol, HTMLStencilElement {
     }
     var HTMLSgnwSymbolElement: {
         prototype: HTMLSgnwSymbolElement;
         new (): HTMLSgnwSymbolElement;
+    };
+    interface HTMLSgnwSymbolPickerElement extends Components.SgnwSymbolPicker, HTMLStencilElement {
+    }
+    var HTMLSgnwSymbolPickerElement: {
+        prototype: HTMLSgnwSymbolPickerElement;
+        new (): HTMLSgnwSymbolPickerElement;
     };
     interface HTMLSgnwUni8StringElement extends Components.SgnwUni8String, HTMLStencilElement {
     }
@@ -101,29 +101,14 @@ declare global {
         new (): HTMLSgnwUni8SymbolElement;
     };
     interface HTMLElementTagNameMap {
-        "sgnw-rating": HTMLSgnwRatingElement;
         "sgnw-sign": HTMLSgnwSignElement;
-        "sgnw-signbox": HTMLSgnwSignboxElement;
         "sgnw-symbol": HTMLSgnwSymbolElement;
+        "sgnw-symbol-picker": HTMLSgnwSymbolPickerElement;
         "sgnw-uni8-string": HTMLSgnwUni8StringElement;
         "sgnw-uni8-symbol": HTMLSgnwUni8SymbolElement;
     }
 }
 declare namespace LocalJSX {
-    interface SgnwRating {
-        /**
-          * max number of stars
-         */
-        "maxValue"?: number;
-        /**
-          * number of stars was updated
-         */
-        "onRatingUpdated"?: (event: CustomEvent<any>) => void;
-        /**
-          * current number of stars
-         */
-        "value"?: number;
-    }
     interface SgnwSign {
         /**
           * Formal SignWriting in ASCII (FSW) for sign with optional style string
@@ -137,8 +122,6 @@ declare namespace LocalJSX {
           * SignWriting in Unicode (SWU) for sign with optional style string
          */
         "swu"?: string;
-    }
-    interface SgnwSignbox {
     }
     interface SgnwSymbol {
         /**
@@ -158,6 +141,24 @@ declare namespace LocalJSX {
          */
         "swu"?: string;
     }
+    interface SgnwSymbolPicker {
+        /**
+          * Formal SignWriting in ASCII (FSW) for symbol
+         */
+        "fsw"?: string;
+        /**
+          * ISWA 2010 ID for symbol
+         */
+        "iid"?: number;
+        /**
+          * SignWriting in Unicode (SWU) for symbol
+         */
+        "swu"?: string;
+        /**
+          * SignWriting in Unicode 8 (uni8) for symbol
+         */
+        "uni"?: string;
+    }
     interface SgnwUni8String {
         /**
           * SignWriting in Unicode 8 (uni8) for symbol
@@ -171,10 +172,9 @@ declare namespace LocalJSX {
         "uni"?: string;
     }
     interface IntrinsicElements {
-        "sgnw-rating": SgnwRating;
         "sgnw-sign": SgnwSign;
-        "sgnw-signbox": SgnwSignbox;
         "sgnw-symbol": SgnwSymbol;
+        "sgnw-symbol-picker": SgnwSymbolPicker;
         "sgnw-uni8-string": SgnwUni8String;
         "sgnw-uni8-symbol": SgnwUni8Symbol;
     }
@@ -183,10 +183,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "sgnw-rating": LocalJSX.SgnwRating & JSXBase.HTMLAttributes<HTMLSgnwRatingElement>;
             "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
-            "sgnw-signbox": LocalJSX.SgnwSignbox & JSXBase.HTMLAttributes<HTMLSgnwSignboxElement>;
             "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
+            "sgnw-symbol-picker": LocalJSX.SgnwSymbolPicker & JSXBase.HTMLAttributes<HTMLSgnwSymbolPickerElement>;
             "sgnw-uni8-string": LocalJSX.SgnwUni8String & JSXBase.HTMLAttributes<HTMLSgnwUni8StringElement>;
             "sgnw-uni8-symbol": LocalJSX.SgnwUni8Symbol & JSXBase.HTMLAttributes<HTMLSgnwUni8SymbolElement>;
         }
