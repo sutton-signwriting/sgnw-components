@@ -46,7 +46,7 @@ Then you can use the elements anywhere in your template, JSX, html etc
 
 ### In a stencil-starter app
 - Run `npm install @sutton-signwriting/sgnw-components --save`
-- Add an import to the npm packages `import @sutton-signwriting/sgnw-components;`
+- Add an import to the npm packages `import '@sutton-signwriting/sgnw-components';`
 - Then you can use the element anywhere in your template, JSX, html etc
 
 
