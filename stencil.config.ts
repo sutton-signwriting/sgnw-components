@@ -5,14 +5,10 @@ export const config: Config = {
   namespace: 'sgnw-components',
   globalScript: 'src/global/global.ts',
   globalStyle: 'src/global/global.css',
-  taskQueue: 'async',
-  buildEs5: false,
-  testing: {
-    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox']
-  },
   outputTargets: [
     {
       type: 'dist',
+      empty: false,
       esmLoaderPath: '../loader',
     },
     {
@@ -25,6 +21,7 @@ export const config: Config = {
     },
     {
       type: 'www',
+      dir: 'docs',
       serviceWorker: null, // disable service workers
     },
   ],

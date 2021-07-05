@@ -2,27 +2,27 @@
 import { Component, Element, State, Prop, Host, h } from '@stencil/core';
 
 // @ts-ignore
-import { parse as parseSWU, compose as composeSWU } from '@sutton-signwriting/core/swu/swu.min.mjs';
+import { parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw.min.mjs';
 
 // @ts-ignore
 import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style.min.mjs';
 
 // @ts-ignore
-import { signSvg } from '@sutton-signwriting/font-ttf/swu/swu.min.mjs';
+import { signSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
 
 import { rgb2hex, rgba2hex } from '../../global/global';
 
 @Component({
-  tag: 'sgnw-sign',
-  styleUrl: 'sgnw-sign.css',
+  tag: 'fsw-sign',
+  styleUrl: 'fsw-sign.css',
   shadow: true
 })
 
-export class SgnwSign {
+export class FswSign {
 
   @Element() el: HTMLElement; //this.el
 
-  /** SWU string for sign */
+  /** FSW string for sign */
   @Prop({mutable: true, reflect: true}) sign: string;
   /** Style String for sign */
   @Prop({mutable: true, reflect: true}) styling: string;
@@ -31,12 +31,12 @@ export class SgnwSign {
 
   connectedCallback(){
     if (!this.sign){
-      let sign = parseSWU.sign(this.el.innerHTML);
+      let sign = parseFSW.sign(this.el.innerHTML);
       if (sign.style) {
         this.styling = sign.style;
       }
       sign.style = "";
-      this.sign=composeSWU.sign(sign)
+      this.sign=composeFSW.sign(sign)
     }
     if (!this.sgnw){
       let self = this;

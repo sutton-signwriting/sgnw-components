@@ -1,16 +1,10 @@
-# @sutton-signwriting/sgnw-components
+# sgnw-components
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sutton-signwriting/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![version](https://img.shields.io/npm/v/@sutton-signwriting/sgnw-components)](https://www.npmjs.com/package/@sutton-signwriting/sgnw-components)
 [![npm downloads](https://img.shields.io/npm/dm/@sutton-signwriting/sgnw-components)](https://npm-stat.com/charts.html?package=@sutton-signwriting/sgnw-components&from=2020-07-24)
 
 @sutton-signwriting/sgnw-components is a javascript package for the browser that includes a collection of web components built with https://stenciljs.com/
-
-This is an early release for testing and development.
-Feedback is welcome.
-Windows Edge browser is supported >= 79.
-To update Edge, download and reinstall.
-* https://www.microsoft.com/en-us/edge
 
 This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU) character sets, along with the associated query languages and style string.  See [draft-slevinski-formal-signwriting](https://tools.ietf.org/id/draft-slevinski-formal-signwriting-07.html) for detailed specification.
 
@@ -27,19 +21,18 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 - Online Discussion: https://gitter.im/sutton-signwriting/community
 
 
-## Using the Sutton SignWriting Web Components
+## Using the components
 
 ### Script tag
 
 Put script tags similar to this
 
-    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.9.0/dist/sgnw-components/sgnw-components.esm.js"></script>
-    <link href="https://unpkg.com/@sutton-signwriting/sgnw-components@0.9.0/dist/sgnw-components/sgnw-components.css" rel="stylesheet">
-
+    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.10.0/dist/sgnw-components/sgnw-components.esm.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/@sutton-signwriting/sgnw-components@0.10.0/dist/sgnw-components/sgnw-components.css"/>
 
 Then you can use the elements anywhere in your template, JSX, html etc
 
-### Node Modules
+### Node modules
 - Run `npm install @sutton-signwriting/sgnw-components --save`
 - Put a script tag similar to this `<script src='node_modules/@sutton-signwriting/sgnw-components/dist/sgnw-components.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
@@ -53,7 +46,7 @@ Then you can use the elements anywhere in your template, JSX, html etc
 ## License
 MIT
 
-## SignWriting General Interest
+## SignWriting links
 - SignWriting Website: https://signwriting.org/
 - Wikipedia page: https://en.wikipedia.org/wiki/SignWriting
 - Email Discussion: https://www.signwriting.org/forums/swlist/

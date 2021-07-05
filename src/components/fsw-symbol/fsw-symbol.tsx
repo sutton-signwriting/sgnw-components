@@ -2,41 +2,41 @@
 import { Component, Element, State, Prop, Host, h } from '@stencil/core';
 
 // @ts-ignore
-import { parse as parseSWU, compose as composeSWU } from '@sutton-signwriting/core/swu/swu.min.mjs';
+import { parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw.min.mjs';
 
 // @ts-ignore
 import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style.min.mjs';
 
 // @ts-ignore
-import { signSvg } from '@sutton-signwriting/font-ttf/swu/swu.min.mjs';
+import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
 
 import { rgb2hex, rgba2hex } from '../../global/global';
 
 @Component({
-  tag: 'sgnw-sign',
-  styleUrl: 'sgnw-sign.css',
+  tag: 'fsw-symbol',
+  styleUrl: 'fsw-symbol.css',
   shadow: true
 })
 
-export class SgnwSign {
+export class FswSymbol {
 
   @Element() el: HTMLElement; //this.el
 
-  /** SWU string for sign */
-  @Prop({mutable: true, reflect: true}) sign: string;
-  /** Style String for sign */
+  /** FSW character for symbol */
+  @Prop({mutable: true, reflect: true}) symbol: string;
+  /** Style String for symbol */
   @Prop({mutable: true, reflect: true}) styling: string;
 
   @State() sgnw: boolean = window.sgnw;
 
   connectedCallback(){
-    if (!this.sign){
-      let sign = parseSWU.sign(this.el.innerHTML);
-      if (sign.style) {
-        this.styling = sign.style;
+    if (!this.symbol){
+      let symbol = parseFSW.symbol(this.el.innerHTML);
+      if (symbol.style) {
+        this.styling = symbol.style;
       }
-      sign.style = "";
-      this.sign=composeSWU.sign(sign)
+      symbol.style = "";
+      this.symbol=composeFSW.symbol(symbol)
     }
     if (!this.sgnw){
       let self = this;
@@ -66,9 +66,8 @@ export class SgnwSign {
       styleStr = composeStyle(styleObj)
     }
     //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
-
     return (
-      <Host sign={this.sign} styling={this.styling} innerHTML={this.sgnw?signSvg(this.sign + (styleStr)):''}>
+      <Host symbol={this.symbol} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.symbol + (styleStr)):''}>
         <slot></slot>
       </Host>
     )

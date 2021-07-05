@@ -6,70 +6,60 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface SgnwSign {
+    interface FswSign {
         /**
-          * Formal SignWriting in ASCII (FSW) for sign with optional style string
+          * FSW string for sign
          */
-        "fsw": string;
+        "sign": string;
         /**
           * Style String for sign
          */
         "styling": string;
-        /**
-          * SignWriting in Unicode (SWU) for sign with optional style string
-         */
-        "swu": string;
     }
-    interface SgnwSymbol {
-        /**
-          * Formal SignWriting in ASCII (FSW) for symbol with optional style string
-         */
-        "fsw": string;
-        /**
-          * ISWA 2010 ID
-         */
-        "iid": number;
+    interface FswSymbol {
         /**
           * Style String for symbol
          */
         "styling": string;
         /**
-          * SignWriting in Unicode (SWU) for symbol with optional style string
+          * FSW character for symbol
          */
-        "swu": string;
+        "symbol": string;
     }
-    interface SgnwSymbolPicker {
+    interface SgnwSign {
         /**
-          * Formal SignWriting in ASCII (FSW) for symbol
+          * SWU string for sign
          */
-        "fsw": string;
+        "sign": string;
         /**
-          * ISWA 2010 ID for symbol
+          * Style String for sign
          */
-        "iid": number;
-        /**
-          * SignWriting in Unicode (SWU) for symbol
-         */
-        "swu": string;
-        /**
-          * SignWriting in Unicode 8 (uni8) for symbol
-         */
-        "uni": string;
+        "styling": string;
     }
-    interface SgnwUni8String {
+    interface SgnwSymbol {
         /**
-          * SignWriting in Unicode 8 (uni8) for symbol
+          * Style String for symbol
          */
-        "uni": string;
-    }
-    interface SgnwUni8Symbol {
+        "styling": string;
         /**
-          * SignWriting in Unicode 8 (uni8) for symbol
+          * SWU character for symbol
          */
-        "uni": string;
+        "symbol": string;
     }
 }
 declare global {
+    interface HTMLFswSignElement extends Components.FswSign, HTMLStencilElement {
+    }
+    var HTMLFswSignElement: {
+        prototype: HTMLFswSignElement;
+        new (): HTMLFswSignElement;
+    };
+    interface HTMLFswSymbolElement extends Components.FswSymbol, HTMLStencilElement {
+    }
+    var HTMLFswSymbolElement: {
+        prototype: HTMLFswSymbolElement;
+        new (): HTMLFswSymbolElement;
+    };
     interface HTMLSgnwSignElement extends Components.SgnwSign, HTMLStencilElement {
     }
     var HTMLSgnwSignElement: {
@@ -82,112 +72,69 @@ declare global {
         prototype: HTMLSgnwSymbolElement;
         new (): HTMLSgnwSymbolElement;
     };
-    interface HTMLSgnwSymbolPickerElement extends Components.SgnwSymbolPicker, HTMLStencilElement {
-    }
-    var HTMLSgnwSymbolPickerElement: {
-        prototype: HTMLSgnwSymbolPickerElement;
-        new (): HTMLSgnwSymbolPickerElement;
-    };
-    interface HTMLSgnwUni8StringElement extends Components.SgnwUni8String, HTMLStencilElement {
-    }
-    var HTMLSgnwUni8StringElement: {
-        prototype: HTMLSgnwUni8StringElement;
-        new (): HTMLSgnwUni8StringElement;
-    };
-    interface HTMLSgnwUni8SymbolElement extends Components.SgnwUni8Symbol, HTMLStencilElement {
-    }
-    var HTMLSgnwUni8SymbolElement: {
-        prototype: HTMLSgnwUni8SymbolElement;
-        new (): HTMLSgnwUni8SymbolElement;
-    };
     interface HTMLElementTagNameMap {
+        "fsw-sign": HTMLFswSignElement;
+        "fsw-symbol": HTMLFswSymbolElement;
         "sgnw-sign": HTMLSgnwSignElement;
         "sgnw-symbol": HTMLSgnwSymbolElement;
-        "sgnw-symbol-picker": HTMLSgnwSymbolPickerElement;
-        "sgnw-uni8-string": HTMLSgnwUni8StringElement;
-        "sgnw-uni8-symbol": HTMLSgnwUni8SymbolElement;
     }
 }
 declare namespace LocalJSX {
-    interface SgnwSign {
+    interface FswSign {
         /**
-          * Formal SignWriting in ASCII (FSW) for sign with optional style string
+          * FSW string for sign
          */
-        "fsw"?: string;
+        "sign"?: string;
         /**
           * Style String for sign
          */
         "styling"?: string;
-        /**
-          * SignWriting in Unicode (SWU) for sign with optional style string
-         */
-        "swu"?: string;
     }
-    interface SgnwSymbol {
-        /**
-          * Formal SignWriting in ASCII (FSW) for symbol with optional style string
-         */
-        "fsw"?: string;
-        /**
-          * ISWA 2010 ID
-         */
-        "iid"?: number;
+    interface FswSymbol {
         /**
           * Style String for symbol
          */
         "styling"?: string;
         /**
-          * SignWriting in Unicode (SWU) for symbol with optional style string
+          * FSW character for symbol
          */
-        "swu"?: string;
+        "symbol"?: string;
     }
-    interface SgnwSymbolPicker {
+    interface SgnwSign {
         /**
-          * Formal SignWriting in ASCII (FSW) for symbol
+          * SWU string for sign
          */
-        "fsw"?: string;
+        "sign"?: string;
         /**
-          * ISWA 2010 ID for symbol
+          * Style String for sign
          */
-        "iid"?: number;
-        /**
-          * SignWriting in Unicode (SWU) for symbol
-         */
-        "swu"?: string;
-        /**
-          * SignWriting in Unicode 8 (uni8) for symbol
-         */
-        "uni"?: string;
+        "styling"?: string;
     }
-    interface SgnwUni8String {
+    interface SgnwSymbol {
         /**
-          * SignWriting in Unicode 8 (uni8) for symbol
+          * Style String for symbol
          */
-        "uni"?: string;
-    }
-    interface SgnwUni8Symbol {
+        "styling"?: string;
         /**
-          * SignWriting in Unicode 8 (uni8) for symbol
+          * SWU character for symbol
          */
-        "uni"?: string;
+        "symbol"?: string;
     }
     interface IntrinsicElements {
+        "fsw-sign": FswSign;
+        "fsw-symbol": FswSymbol;
         "sgnw-sign": SgnwSign;
         "sgnw-symbol": SgnwSymbol;
-        "sgnw-symbol-picker": SgnwSymbolPicker;
-        "sgnw-uni8-string": SgnwUni8String;
-        "sgnw-uni8-symbol": SgnwUni8Symbol;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "fsw-sign": LocalJSX.FswSign & JSXBase.HTMLAttributes<HTMLFswSignElement>;
+            "fsw-symbol": LocalJSX.FswSymbol & JSXBase.HTMLAttributes<HTMLFswSymbolElement>;
             "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
             "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
-            "sgnw-symbol-picker": LocalJSX.SgnwSymbolPicker & JSXBase.HTMLAttributes<HTMLSgnwSymbolPickerElement>;
-            "sgnw-uni8-string": LocalJSX.SgnwUni8String & JSXBase.HTMLAttributes<HTMLSgnwUni8StringElement>;
-            "sgnw-uni8-symbol": LocalJSX.SgnwUni8Symbol & JSXBase.HTMLAttributes<HTMLSgnwUni8SymbolElement>;
         }
     }
 }

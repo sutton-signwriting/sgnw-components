@@ -1,21 +1,14 @@
 //
-
-import { Watch, Component, Element, State, Prop, Host, h } from '@stencil/core';
-
-// @ts-ignore
-import { key2id, key2swu, id2key, id2swu, swu2id, swu2fsw } from '@sutton-signwriting/core/convert/convert.min.mjs';
+import { Component, Element, State, Prop, Host, h } from '@stencil/core';
 
 // @ts-ignore
-import { parse as parseFSW} from '@sutton-signwriting/core/fsw/fsw.min.mjs';
-
-// @ts-ignore
-import { parse as parseSWU } from '@sutton-signwriting/core/swu/swu.min.mjs';
+import { parse as parseSWU, compose as composeSWU } from '@sutton-signwriting/core/swu/swu.min.mjs';
 
 // @ts-ignore
 import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style.min.mjs';
 
 // @ts-ignore
-import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
+import { symbolSvg } from '@sutton-signwriting/font-ttf/swu/swu.min.mjs';
 
 import { rgb2hex, rgba2hex } from '../../global/global';
 
@@ -29,62 +22,22 @@ export class SgnwSymbol {
 
   @Element() el: HTMLElement; //this.el
 
-  /** ISWA 2010 ID  */
-  @Prop({mutable: true, reflect: true}) iid: number;
-  @Watch('iid')
-  iidUpdate(newValue: string, oldValue: string) {
-    var iid = parseInt(newValue);
-    if (!isNaN(iid)){
-      if (newValue!=oldValue) {
-        if (iid > 0 && iid < 65535) {
-          this.fsw = id2key(iid); 
-          this.swu = id2swu(iid);
-        }
-      }
-    } else {
-      this.iid=0
-    }
-  }
-
-  /** Formal SignWriting in ASCII (FSW) for symbol with optional style string */
-  @Prop({mutable: true, reflect: true}) fsw: string;
-  @Watch('fsw')
-  fswUpdate(newValue: string, oldValue: string) {
-    const len = 6;
-    const tooLong = typeof newValue === 'string' && newValue.length > len;
-    if (tooLong){
-      this.fsw = this.fsw.substring(0,len);
-    } else {
-      if (newValue!=oldValue) {
-        var fsw = parseFSW.symbol(newValue);
-        if (fsw && fsw.symbol){
-          this.fsw = fsw.symbol
-          this.iid = key2id(fsw.symbol); 
-          this.swu = key2swu(fsw.symbol);
-        }
-      }
-    }
-  }
-
-  /** SignWriting in Unicode (SWU) for symbol with optional style string */
-  @Prop({mutable: true, reflect: true}) swu: string;
-  @Watch('swu')
-  swuUpdate(newValue: string, oldValue: string) {
-    if (newValue!=oldValue) {
-      var swu = parseSWU.symbol(newValue);
-      if (swu && swu.symbol){
-        this.iid = swu2id(swu.symbol); 
-        this.fsw = swu2fsw(swu.symbol);
-      }
-    }
-  }
-
+  /** SWU character for symbol */
+  @Prop({mutable: true, reflect: true}) symbol: string;
   /** Style String for symbol */
   @Prop({mutable: true, reflect: true}) styling: string;
 
   @State() sgnw: boolean = window.sgnw;
 
   connectedCallback(){
+    if (!this.symbol){
+      let symbol = parseSWU.symbol(this.el.innerHTML);
+      if (symbol.style) {
+        this.styling = symbol.style;
+      }
+      symbol.style = "";
+      this.symbol=composeSWU.symbol(symbol)
+    }
     if (!this.sgnw){
       let self = this;
       function handleSgnw(){
@@ -92,16 +45,6 @@ export class SgnwSymbol {
         window.removeEventListener("sgnw", handleSgnw, false);  
       }
       window.addEventListener('sgnw', handleSgnw, false);
-    }
-    if (this.fsw) {
-      this.fswUpdate(this.fsw,"")
-    } else if (this.swu) {
-      this.swuUpdate(this.swu,"")
-    } else {
-      if (!this.iid) {
-        this.iid = 0;
-      }
-      this.iidUpdate(this.iid.toString(),"0")
     }
   }
 
@@ -123,9 +66,8 @@ export class SgnwSymbol {
       styleStr = composeStyle(styleObj)
     }
     //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
-
     return (
-      <Host iid={this.iid} fsw={this.fsw} swu={this.swu} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.fsw + (styleStr)):''}>
+      <Host symbol={this.symbol} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.symbol + (styleStr)):''}>
         <slot></slot>
       </Host>
     )
