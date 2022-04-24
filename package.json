@@ -24,7 +24,7 @@
     "analyze": "cem analyze --stencil --globs 'src/components/*/*.tsx' --outdir dist",
     "postanalyze": "node md-cem.js",
     "predocs": "node md-combine.js",
-    "docs": "generate-md --layout ./src/layout --input ./src/docs --output ./src",
+    "docs": "markdown-to-html --source ./src/docs/index.md --output ./src/index.html --config src/docs.json",
     "prebuild": "npm run clean && npm run analyze && npm run docs",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
@@ -33,13 +33,13 @@
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.8",
     "@custom-elements-manifest/to-markdown": "^0.0.7",
-    "@stencil/core": "^2.6.0",
-    "markdown-styles": "^3.2.0",
+    "@stencil/core": "^2.15.1",
+    "markdown-to-html-cli": "^3.4.11",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "@sutton-signwriting/core": "^1.3.0",
-    "@sutton-signwriting/font-ttf": "^1.2.0"
+    "@sutton-signwriting/core": "^1.4.2",
+    "@sutton-signwriting/font-ttf": "^1.3.2"
   },
   "license": "MIT"
 }

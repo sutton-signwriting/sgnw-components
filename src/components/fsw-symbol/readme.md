@@ -32,6 +32,19 @@
 | `symbol`  | `symbol`  | FSW character for symbol | `string` | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [fsw-vp](../fsw-vp)
+
+### Graph
+```mermaid
+graph TD;
+  fsw-vp --> fsw-symbol
+  style fsw-symbol fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 

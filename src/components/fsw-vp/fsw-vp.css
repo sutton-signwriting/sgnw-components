@@ -1,0 +1,23 @@
+:host {
+  writing-mode: vertical-lr; 
+  border-left: 1px solid blue; 
+  height: 100%;
+  font-size: 30px;
+} 
+  
+span.outside { border-left: 1px solid green; vertical-align: top; } 
+span.middle { vertical-align: bottom; } 
+span.inside { border-left: 1px dashed red; } 
+
+div {
+  writing-mode: horizontal-tb;
+  display: inline-block; 
+  padding: 10px;
+}
+fsw-sign, fsw-symbol { 
+  writing-mode: horizontal-tb; 
+  display: inline-block; 
+  vertical-align: middle; 
+  padding: 20px; 
+  box-sizing: content-box; 
+}

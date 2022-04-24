@@ -55,7 +55,6 @@ export class FswSign {
     } else {
       let css = window.getComputedStyle(this.el, null);
       const styleObj = {
-        "padding": css.getPropertyValue("padding"),
         "background": rgba2hex(css.getPropertyValue("background-color")),
         "detail": [
           rgb2hex(css.getPropertyValue("color")),

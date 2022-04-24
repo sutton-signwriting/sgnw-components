@@ -7,7 +7,7 @@ if (!fs.existsSync('./src/docs')){
 const readme = fs.readFileSync('./readme.md','utf8');
 const intro = fs.readFileSync('./src/components.md','utf8');
 
-const list = ['sgnw-symbol','sgnw-sign','fsw-symbol','fsw-sign'];
+const list = ['sgnw-symbol','sgnw-sign','fsw-symbol','fsw-sign','fsw-vp'];
 const components = list.map( item => {
   const md = fs.readFileSync('./src/components/' + item + '/readme.md','utf8');
   return md.replace(/# /g, '### ')

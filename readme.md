@@ -1,4 +1,4 @@
-# sgnw-components
+# Sutton SignWriting Web Components
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sutton-signwriting/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![version](https://img.shields.io/npm/v/@sutton-signwriting/sgnw-components)](https://www.npmjs.com/package/@sutton-signwriting/sgnw-components)
@@ -10,7 +10,8 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 
 > Author: https://SteveSlevinski.me  
 > Channel: https://www.youtube.com/channel/UCXu4AXlG0rXFtk_5SzumDow  
-> Support: https://www.patreon.com/signwriting  
+> Sponsor: https://www.patreon.com/signwriting  
+> Donate: https://paypal.me/signwriting
 
 ## Useful links
 
