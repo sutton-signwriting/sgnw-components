@@ -1,6 +1,6 @@
 
 // @ts-ignore
-import { cssAppend, cssLoaded } from '@sutton-signwriting/font-ttf/font/font.min.mjs';
+import { cssAppend, cssLoaded } from '@sutton-signwriting/font-ttf/font/font';
 
 declare global {
   interface Window { sgnw: boolean; }

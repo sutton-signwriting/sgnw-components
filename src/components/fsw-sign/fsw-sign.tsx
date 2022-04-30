@@ -2,13 +2,13 @@
 import { Component, Element, State, Prop, Host, h } from '@stencil/core';
 
 // @ts-ignore
-import { parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw.min.mjs';
+import { parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw';
 
 // @ts-ignore
-import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style.min.mjs';
+import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style';
 
 // @ts-ignore
-import { signSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
+import { signSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
 import { rgb2hex, rgba2hex } from '../../global/global';
 

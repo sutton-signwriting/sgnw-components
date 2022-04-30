@@ -2,13 +2,13 @@
 import { Component, Element, State, Prop, Host, h, Watch } from '@stencil/core';
 
 // @ts-ignore
-import { re as reFSW, parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw.min.mjs';
+import { info, re as reFSW, parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw';
 
 // @ts-ignore
-import { re as reStyle, parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style.min.mjs';
+import { re as reStyle, parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style';
 
 // @ts-ignore
-import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw.min.mjs';
+import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
 @Component({
   tag: 'fsw-vp',
@@ -56,7 +56,11 @@ export class FswVp {
           output.push({other:other});
         }
         other = "";
-        output.push({[type]:val});
+        if (type == "sign" || type == "spatial"){
+          output.push({[type]:val, info: info(val)});
+        } else {
+          output.push({[type]:val});
+        }
       }
     };
     if (other && other != " "){
@@ -80,19 +84,23 @@ export class FswVp {
 
   render() {
     return (
-      <Host text={this.text}><span class="outside"><span class="middle"><span class="inside">
-        {this.items.map( (item) => {
-          if (item['sign']){
-            return <fsw-sign>{item['sign']}</fsw-sign>
-          } else if (item['spatial']){
-            return <fsw-symbol>{item['spatial']}</fsw-symbol>
-          } else if (item['img']){
-            return <div innerHTML={item['img']}></div>
-          } else {
-            return <div>{item['other']}</div>
-          }
-        })}
-      </span></span></span></Host>
+      <Host text={this.text}>
+        <span>
+          {this.items.map( (item) => {
+            if (item['sign']){
+              item['info']['right'] = (500 - parseInt(item['info']['width'])/2) - parseInt(item['info']["minX"])
+              return <fsw-sign style={{"width": item['info']['width'] + "px", "height": item['info']['height'] + "px", right: item['info']['right'] + "px"}}>{item['sign']}</fsw-sign>
+            } else if (item['spatial']){
+              item['info']['right'] = (500-parseInt(item['info']["minX"]))
+              return <fsw-symbol style={{"width": item['info']['width'] + "px", "height": item['info']['height'] + "px"}}>{item['spatial']}</fsw-symbol>
+            } else if (item['img']){
+              return <div innerHTML={item['img']}></div>
+            } else {
+              return <div>{item['other']}</div>
+            }
+          })}
+        </span>
+      </Host>
     )
   }
 }
