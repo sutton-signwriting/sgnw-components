@@ -21,12 +21,12 @@ export class FswVp {
   @Element() el: HTMLElement; //this.el
 
   /** FSW text */
-  @Prop({mutable: true, reflect: true}) text: string;
+  @Prop({mutable: true, reflect: true}) vp: string;
 
   @State() sgnw: boolean = window.sgnw;
   @State() items: object[] = [];
 
-  @Watch('text')
+  @Watch('vp')
   parseText(newValue: string) {
     //parse it here.
     const sign =  `${reFSW.sign}(${reStyle.full})?`;
@@ -70,7 +70,7 @@ export class FswVp {
   }
 
   connectedCallback(){
-    this.text = this.el.innerHTML;
+    this.vp = this.el.innerHTML;
 
     if (!this.sgnw){
       let self = this;
@@ -84,7 +84,7 @@ export class FswVp {
 
   render() {
     return (
-      <Host text={this.text}>
+      <Host vp={this.vp}>
         <span>
           {this.items.map( (item) => {
             if (item['sign']){

@@ -12,7 +12,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     {
-      type: 'dist-custom-elements-bundle',
+      type: 'dist-custom-elements',
     },
     {
       type: 'docs-readme',
@@ -22,6 +22,8 @@ export const config: Config = {
     {
       type: 'www',
       dir: 'docs',
+      indexHtml: 'docs/index.html',
+      empty: false,
       serviceWorker: null, // disable service workers
     },
   ],

@@ -1,25 +1,16 @@
 # fsw-symbol
 
-<p>This is a basic symbol <fsw-symbol>S10000</fsw-symbol></p>
+the fsw-symbol element can be used to create an symbol image
 
-    <p>This is a basic symbol <fsw-symbol>S10000</fsw-symbol></p>
+## fsw-symbol with text inside
+<fsw-symbol>S10000</fsw-symbol>
 
-<p>You can also use the "symbol" attribute <fsw-symbol symbol="S10000" /></p>
+    <fsw-symbol>S10000</fsw-symbol>
 
-    <p>You can also use the "symbol" attribute <fsw-symbol symbol="S10000" /></p>
+## fsw-symbol with symbol attribute
+<fsw-symbol symbol="S10020"></fsw-symbol>
 
-<h1 class="red">Header 1 with class <fsw-symbol symbol="S10000" /></h1>
-
-    <h1 class="red">Header 1 with class <fsw-symbol symbol="S10000" /></h1>
-
-<h2 style="color:blue;background-color:yellow;padding:10px">Header 2 with inline style <fsw-symbol symbol="S10000" /></h2>
-
-    <h2 style="color:blue;background-color:yellow;padding:10px">Header 2 with inline style <fsw-symbol <fsw-symbol symbol="S10000" /> /></h2>
-
-
-<h3 class="red">Header 3 with styling override <fsw-symbol symbol="S10000" styling="-CZ2" /></h3>
-
-    <h3 class="red">Header 3 with styling override <fsw-symbol symbol="S10000" styling="-CZ2" /></h3>
+    <fsw-symbol symbol="S10020"></fsw-symbol>
 
 <!-- Auto Generated Below -->
 

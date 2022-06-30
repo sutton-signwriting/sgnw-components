@@ -1,14 +1,14 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "0.10.0",
+  "version": "1.0.0-alpha.1",
   "type": "module",
   "customElements": "dist/custom-elements.json",
   "main": "dist/index.cjs.js",
-  "module": "dist/custom-elements/index.js",
+  "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
-  "types": "dist/custom-elements/index.d.ts",
+  "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/sgnw-components/sgnw-components.esm.js",
@@ -20,21 +20,27 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "clean": "rimraf src/docs docs/* dist/types dist/collection dist/custom-elements dist/esm dist/sgnw-components dist/cjs dist/index*",
+    "clean": "rimraf src/docs docs/* dist/types dist/collection dist/custom-elements* dist/esm dist/sgnw-components dist/cjs dist/index*",
     "analyze": "cem analyze --stencil --globs 'src/components/*/*.tsx' --outdir dist",
     "postanalyze": "node md-cem.js",
     "predocs": "node md-combine.js",
-    "docs": "markdown-to-html --source ./src/docs/index.md --output ./src/index.html --config src/docs.json",
+    "docs": "npm run docs-index && npm run docs-fsw",
+    "docs-index": "markdown-to-html --source ./src/docs/index.md --output ./src/docs/index.html --config src/docs.json",
+    "docs-fsw": "markdown-to-html --source ./src/docs/fsw.md --output ./src/docs/fsw.html --config src/docs.json",
+    "postdocs": "cp ./src/docs/*.html ./docs/.",
     "prebuild": "npm run clean && npm run analyze && npm run docs",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "layout": "generate-md --export mixu-bootstrap-2col --output ./src/layout-export"
+    "server": "cd docs && npx http-server"
   },
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.4.8",
-    "@custom-elements-manifest/to-markdown": "^0.0.7",
-    "@stencil/core": "^2.15.1",
-    "markdown-to-html-cli": "^3.4.11",
+    "@babel/core": "^7.18.2",
+    "@custom-elements-manifest/analyzer": "^0.6.3",
+    "@custom-elements-manifest/to-markdown": "^0.1.0",
+    "@stencil/core": "^2.17.0",
+    "@types/node": "^16.11.38",
+    "babel-loader": "^8.2.5",
+    "markdown-to-html-cli": "^3.4.12",
     "rimraf": "^3.0.2"
   },
   "dependencies": {

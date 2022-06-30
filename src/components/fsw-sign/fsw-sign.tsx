@@ -10,7 +10,7 @@ import { parse as parseStyle, compose as composeStyle } from '@sutton-signwritin
 // @ts-ignore
 import { signSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
-import { rgb2hex, rgba2hex } from '../../global/global';
+import { cssValues } from '../../global/global';
 
 @Component({
   tag: 'fsw-sign',
@@ -53,15 +53,7 @@ export class FswSign {
     if (this.styling){
       styleStr = this.styling;
     } else {
-      let css = window.getComputedStyle(this.el, null);
-      const styleObj = {
-        "background": rgba2hex(css.getPropertyValue("background-color")),
-        "detail": [
-          rgb2hex(css.getPropertyValue("color")),
-          rgb2hex(css.getPropertyValue("background-color"))
-        ],
-        "zoom": parseInt(css.getPropertyValue("font-size").slice(0,-2))/30
-      }
+      const styleObj = cssValues(this.el);
       styleStr = composeStyle(styleObj)
     }
     //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;

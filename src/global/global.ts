@@ -36,6 +36,33 @@ export const rgba2hex = function(rgba: string) {
   })
 }
 
+export const md2mdx = function(md: string, tag: string){
+  let regex = new RegExp("\\.\\./(" + tag + ")-([a-z]+)","g");
+  return md.replace(regex,"./?path=/docs/fsw-components-$1-$2");
+}
+
+export const cssValues = function(el: Element){
+  let css = window.getComputedStyle(el, null);
+  let styleObj = {
+    "background": rgba2hex(css.getPropertyValue("background-color")),
+    "detail": [
+      rgb2hex(css.getPropertyValue("color")),
+      rgb2hex(css.getPropertyValue("background-color"))
+    ],
+    "zoom": parseInt(css.getPropertyValue("font-size").slice(0,-2))/30
+  }
+  let elem = el;
+  while(styleObj.detail[1] == "transparent"){
+    elem = elem.parentElement;
+    if (elem == null) {
+      elem = document.body;
+    }
+    css = window.getComputedStyle(elem, null);
+    styleObj.detail[1] = rgb2hex(css.getPropertyValue("background-color"));
+  }
+  return styleObj;
+}
+
 export default function() { // or export default async function()
   cssAppend();
   cssLoaded( ()=> {

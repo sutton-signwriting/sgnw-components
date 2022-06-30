@@ -30,7 +30,7 @@ export namespace Components {
         /**
           * FSW text
          */
-        "text": string;
+        "vp": string;
     }
     interface SgnwSign {
         /**
@@ -117,7 +117,7 @@ declare namespace LocalJSX {
         /**
           * FSW text
          */
-        "text"?: string;
+        "vp"?: string;
     }
     interface SgnwSign {
         /**
