@@ -12,8 +12,8 @@
 
 Put tags similar to this in HEAD
 
-    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@1.0.0/dist/sgnw-components/sgnw-components.esm.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/@sutton-signwriting/sgnw-components@1.0.0/dist/sgnw-components/sgnw-components.css"/>
+    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.12.0/dist/sgnw-components/sgnw-components.esm.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/@sutton-signwriting/sgnw-components@0.12.0/dist/sgnw-components/sgnw-components.css"/>
 
 Then use the elements anywhere in your template, JSX, html etc
 
@@ -24,7 +24,7 @@ Then use the elements anywhere in your template, JSX, html etc
 Put script tag in HEAD
 
     <script type="module">
-      import { defineCustomElements } from 'https://unpkg.com/@sutton-signwriting/sgnw-components@1.0.0/loader/index.es2017.mjs';
+      import { defineCustomElements } from 'https://unpkg.com/@sutton-signwriting/sgnw-components@0.12.0/loader/index.es2017.mjs';
       defineCustomElements();
     </script>
 

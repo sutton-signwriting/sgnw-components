@@ -98,22 +98,12 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
       <a href="changelog.html">Change Log</a>
     </p>
     <hr>
-    <p>
-      export default {
-      title: 'fsw-components/fsw-sign',
-      }
-    </p>
-    <p>
-      const Template = (args) => <code>&#x3C;fsw-sign sign="${args.sign}">&#x3C;/fsw-sign></code>;
-      const Template2 = (args) => <code>&#x3C;fsw-sign>${args.sign}&#x3C;/fsw-sign></code>;
-    </p>
-    <p>
-      export const SignOne = Template.bind({});
-      SignOne.args = { sign: 'AS10011S10019S2e704S2e748M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475', background: '#ff0' };
-    </p>
-    <p>
-      export const SignTwo = Template2.bind({});
-      SignTwo.args = { sign: 'AS14d13S14d15S2880cS28814S14d11S14d17M539x535S14d1b475x466S14d13503x466S2880c527x488S28814462x488S14d19475x511S14d11503x511', background: '#ff0' };
+    <h1 id="fsw-sign-examples"><a class="anchor" aria-hidden="true" tabindex="-1" href="#fsw-sign-examples"><span class="octicon octicon-link"></span></a>fsw-sign examples</h1>
+    <h2 id="the-fsw-sign-tag-as10011s10019s2e704s2e748m525x535s2e748483x510s10011501x466s2e704510x500s10019476x475"><a class="anchor" aria-hidden="true" tabindex="-1" href="#the-fsw-sign-tag-as10011s10019s2e704s2e748m525x535s2e748483x510s10011501x466s2e704510x500s10019476x475"><span class="octicon octicon-link"></span></a>The fsw-sign tag 
+      <fsw-sign styling="-CP10G_lightblue_Z2">AS10011S10019S2e704S2e748M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475</fsw-sign>
+    </h2>
+    <p>Text with 
+      <fsw-sign>AS10011S10019S2e704S2e748M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475</fsw-sign>
     </p>
     <script src="build/sgnw-components.esm.js" type="module"></script>
   <style>.markdown-body pre .copied {

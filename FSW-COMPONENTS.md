@@ -40,19 +40,6 @@ the fsw-symbol element can be used to create an symbol image
 | `symbol`  | `symbol`  | FSW character for symbol | `string` | `undefined` |
 
 
-### Dependencies
-
-#### Used by
-
- - [fsw-vp](#fsw-vp)
-
-#### Graph
-```mermaid
-graph TD;
-  fsw-vp --> fsw-symbol
-  
-```
-
 ----------------------------------------------
 
 
@@ -82,19 +69,6 @@ the fsw-sign element can be used to create a sign image
 | `sign`    | `sign`    | FSW string for sign   | `string` | `undefined` |
 | `styling` | `styling` | Style String for sign | `string` | `undefined` |
 
-
-### Dependencies
-
-#### Used by
-
- - [fsw-vp](#fsw-vp)
-
-#### Graph
-```mermaid
-graph TD;
-  fsw-vp --> fsw-sign
-  
-```
 
 ----------------------------------------------
 

@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "type": "module",
   "customElements": "dist/custom-elements.json",
   "main": "dist/index.cjs.js",
