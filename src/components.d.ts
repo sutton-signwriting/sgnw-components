@@ -26,12 +26,6 @@ export namespace Components {
          */
         "symbol": string;
     }
-    interface FswVp {
-        /**
-          * FSW text
-         */
-        "vp": string;
-    }
     interface SgnwSign {
         /**
           * SWU string for sign
@@ -66,12 +60,6 @@ declare global {
         prototype: HTMLFswSymbolElement;
         new (): HTMLFswSymbolElement;
     };
-    interface HTMLFswVpElement extends Components.FswVp, HTMLStencilElement {
-    }
-    var HTMLFswVpElement: {
-        prototype: HTMLFswVpElement;
-        new (): HTMLFswVpElement;
-    };
     interface HTMLSgnwSignElement extends Components.SgnwSign, HTMLStencilElement {
     }
     var HTMLSgnwSignElement: {
@@ -87,7 +75,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "fsw-sign": HTMLFswSignElement;
         "fsw-symbol": HTMLFswSymbolElement;
-        "fsw-vp": HTMLFswVpElement;
         "sgnw-sign": HTMLSgnwSignElement;
         "sgnw-symbol": HTMLSgnwSymbolElement;
     }
@@ -113,12 +100,6 @@ declare namespace LocalJSX {
          */
         "symbol"?: string;
     }
-    interface FswVp {
-        /**
-          * FSW text
-         */
-        "vp"?: string;
-    }
     interface SgnwSign {
         /**
           * SWU string for sign
@@ -142,7 +123,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "fsw-sign": FswSign;
         "fsw-symbol": FswSymbol;
-        "fsw-vp": FswVp;
         "sgnw-sign": SgnwSign;
         "sgnw-symbol": SgnwSymbol;
     }
@@ -153,7 +133,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "fsw-sign": LocalJSX.FswSign & JSXBase.HTMLAttributes<HTMLFswSignElement>;
             "fsw-symbol": LocalJSX.FswSymbol & JSXBase.HTMLAttributes<HTMLFswSymbolElement>;
-            "fsw-vp": LocalJSX.FswVp & JSXBase.HTMLAttributes<HTMLFswVpElement>;
             "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
             "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
         }

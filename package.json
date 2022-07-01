@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "1.0.0-alpha.1",
+  "version": "0.11.0",
   "type": "module",
   "customElements": "dist/custom-elements.json",
   "main": "dist/index.cjs.js",
@@ -22,12 +22,8 @@
   "scripts": {
     "clean": "rimraf src/docs docs/* dist/types dist/collection dist/custom-elements* dist/esm dist/sgnw-components dist/cjs dist/index*",
     "analyze": "cem analyze --stencil --globs 'src/components/*/*.tsx' --outdir dist",
-    "postanalyze": "node md-cem.js",
-    "predocs": "node md-combine.js",
-    "docs": "npm run docs-index && npm run docs-fsw",
-    "docs-index": "markdown-to-html --source ./src/docs/index.md --output ./src/docs/index.html --config src/docs.json",
-    "docs-fsw": "markdown-to-html --source ./src/docs/fsw.md --output ./src/docs/fsw.html --config src/docs.json",
-    "postdocs": "cp ./src/docs/*.html ./docs/.",
+    "postanalyze": "node docs-manifest.js",
+    "docs": "node docs-create.js",
     "prebuild": "npm run clean && npm run analyze && npm run docs",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",

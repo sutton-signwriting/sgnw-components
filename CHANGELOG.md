@@ -1,3 +1,11 @@
+[Read Me](README.md) | 
+[Using the Components](USAGE.md) | 
+[&lt;sgnw-components />](SGNW-COMPONENTS.md) | 
+[&lt;fsw-components />](FSW-COMPONENTS.md) | 
+[Change Log](CHANGELOG.md)
+
+---
+
 # Changelog
 All notable changes to this project will be documented in this file.
 
@@ -6,22 +14,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Todo
-- update parse for style string that drops empty style of '-'
-- clean up generated regular expressions for consistency
+- vertical paragraphs
 
 
-## [1.0.0] - 2022-06-30
-### Added
-- storybook for documentation
-- readme and changelog to storybook
-- sub-readme's stories.js
-- sgnw-components
-- - sgwn-symbol
-- * sgnw-sign
-- fsw-components
-- * fsw-symbol
-- - fsw-sign
+## [0.11.0] - 2022-06-30
+### Changed
+- documentation creation
 
+### Fixed
+- dependencies for security issues
 
-[Unreleased]: https://github.com/sutton-signwriting/sgnw-components/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/sutton-signwriting/sgnw-components/releases/tag/v1.0.0
+[Unreleased]: https://github.com/sutton-signwriting/sgnw-components/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/sutton-signwriting/sgnw-components/releases/tag/v0.11.0
