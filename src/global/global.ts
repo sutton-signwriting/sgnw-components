@@ -36,11 +36,6 @@ export const rgba2hex = function(rgba: string) {
   })
 }
 
-export const md2mdx = function(md: string, tag: string){
-  let regex = new RegExp("\\.\\./(" + tag + ")-([a-z]+)","g");
-  return md.replace(regex,"./?path=/docs/fsw-components-$1-$2");
-}
-
 export const cssValues = function(el: Element){
   let css = window.getComputedStyle(el, null);
   let styleObj = {
@@ -63,6 +58,15 @@ export const cssValues = function(el: Element){
   return styleObj;
 }
 
+export const mergeStyle = function( obj1: Object, obj2: Object){
+  const zoom1 = ('zoom' in obj1)?obj1['zoom']:1;
+  const zoom2 = ('zoom' in obj2)?obj2['zoom']:1;
+  return {
+    ...obj1,
+    ...obj2,
+    ...{zoom: zoom1 * zoom2}
+  }
+}
 export default function() { // or export default async function()
   cssAppend();
   cssLoaded( ()=> {

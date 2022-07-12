@@ -23,6 +23,19 @@ the sgnw-symbol element can be used to create a symbol image
 | `symbol`  | `symbol`  | SWU character for symbol | `string` | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [sgnw-vp](../sgnw-vp)
+
+### Graph
+```mermaid
+graph TD;
+  sgnw-vp --> sgnw-symbol
+  style sgnw-symbol fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 

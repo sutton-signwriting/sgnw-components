@@ -26,6 +26,16 @@ export namespace Components {
          */
         "symbol": string;
     }
+    interface FswVp {
+        /**
+          * Colorize flag
+         */
+        "colorize": boolean;
+        /**
+          * FSW text
+         */
+        "vp": string;
+    }
     interface SgnwSign {
         /**
           * SWU string for sign
@@ -46,6 +56,16 @@ export namespace Components {
          */
         "symbol": string;
     }
+    interface SgnwVp {
+        /**
+          * Colorize flag
+         */
+        "colorize": boolean;
+        /**
+          * SGNW text
+         */
+        "vp": string;
+    }
 }
 declare global {
     interface HTMLFswSignElement extends Components.FswSign, HTMLStencilElement {
@@ -60,6 +80,12 @@ declare global {
         prototype: HTMLFswSymbolElement;
         new (): HTMLFswSymbolElement;
     };
+    interface HTMLFswVpElement extends Components.FswVp, HTMLStencilElement {
+    }
+    var HTMLFswVpElement: {
+        prototype: HTMLFswVpElement;
+        new (): HTMLFswVpElement;
+    };
     interface HTMLSgnwSignElement extends Components.SgnwSign, HTMLStencilElement {
     }
     var HTMLSgnwSignElement: {
@@ -72,11 +98,19 @@ declare global {
         prototype: HTMLSgnwSymbolElement;
         new (): HTMLSgnwSymbolElement;
     };
+    interface HTMLSgnwVpElement extends Components.SgnwVp, HTMLStencilElement {
+    }
+    var HTMLSgnwVpElement: {
+        prototype: HTMLSgnwVpElement;
+        new (): HTMLSgnwVpElement;
+    };
     interface HTMLElementTagNameMap {
         "fsw-sign": HTMLFswSignElement;
         "fsw-symbol": HTMLFswSymbolElement;
+        "fsw-vp": HTMLFswVpElement;
         "sgnw-sign": HTMLSgnwSignElement;
         "sgnw-symbol": HTMLSgnwSymbolElement;
+        "sgnw-vp": HTMLSgnwVpElement;
     }
 }
 declare namespace LocalJSX {
@@ -100,6 +134,16 @@ declare namespace LocalJSX {
          */
         "symbol"?: string;
     }
+    interface FswVp {
+        /**
+          * Colorize flag
+         */
+        "colorize"?: boolean;
+        /**
+          * FSW text
+         */
+        "vp"?: string;
+    }
     interface SgnwSign {
         /**
           * SWU string for sign
@@ -120,11 +164,23 @@ declare namespace LocalJSX {
          */
         "symbol"?: string;
     }
+    interface SgnwVp {
+        /**
+          * Colorize flag
+         */
+        "colorize"?: boolean;
+        /**
+          * SGNW text
+         */
+        "vp"?: string;
+    }
     interface IntrinsicElements {
         "fsw-sign": FswSign;
         "fsw-symbol": FswSymbol;
+        "fsw-vp": FswVp;
         "sgnw-sign": SgnwSign;
         "sgnw-symbol": SgnwSymbol;
+        "sgnw-vp": SgnwVp;
     }
 }
 export { LocalJSX as JSX };
@@ -133,8 +189,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "fsw-sign": LocalJSX.FswSign & JSXBase.HTMLAttributes<HTMLFswSignElement>;
             "fsw-symbol": LocalJSX.FswSymbol & JSXBase.HTMLAttributes<HTMLFswSymbolElement>;
+            "fsw-vp": LocalJSX.FswVp & JSXBase.HTMLAttributes<HTMLFswVpElement>;
             "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
             "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
+            "sgnw-vp": LocalJSX.SgnwVp & JSXBase.HTMLAttributes<HTMLSgnwVpElement>;
         }
     }
 }

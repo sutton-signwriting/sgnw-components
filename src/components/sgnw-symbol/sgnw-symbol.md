@@ -1,12 +1,29 @@
-# sgnw-symbol examples
+# sgnw-symbol in header
 
-<h2>The sgnw-symbol tag <sgnw-symbol styling="-CP10G_lightblue_Z2">񀀒</sgnw-symbol></h2>
+<h1><sgnw-symbol>񀀒</sgnw-symbol></h1>
 
-<p>Text with <sgnw-symbol>񆙡</sgnw-symbol></p>
+    <h1><sgnw-symbol>񀀒</sgnw-symbol></h1>
 
-<p class="swu">&lt;sgnw-symbol&gt;񀀒&lt;/sgnw-symbol&gt; as <sgnw-symbol>񀀒</sgnw-symbol>
-<p class="swu">&lt;sgnw-symbol&gt;񀀒-&lt;/sgnw-symbol&gt; as <sgnw-symbol>񀀒-</sgnw-symbol>
-<p class="swu">&lt;sgnw-symbol styling="-"&gt;񀀒&lt;/sgnw-symbol&gt; as <sgnw-symbol styling="-">񀀒</sgnw-symbol>
-<p class="swu">&lt;sgnw-symbol&gt;񀀒-Z1.5&lt;/sgnw-symbol&gt; as <sgnw-symbol>񀀒-Z1.5</sgnw-symbol>
-<p class="swu">&lt;sgnw-symbol styling="-C"&gt;񀀒&lt;/sgnw-symbol&gt; as <sgnw-symbol styling="-C">񀀒</sgnw-symbol>
-<p class="swu">&lt;sgnw-symbol styling="-C"&gt;񀀒-&lt;/sgnw-symbol&gt; as <sgnw-symbol styling="-C">񀀒-</sgnw-symbol>
+## sgnw-symbol in link
+
+<a href="#sgnw-symbol-in-link"><sgnw-symbol>񀀒</sgnw-symbol></a>
+
+    <a href="#sgnw-symbol-in-link"><sgnw-symbol>񀀒</sgnw-symbol></a>
+
+## sgnw-symbol with css style attribute
+
+<sgnw-symbol style="font-size:30px;color:red;background:yellow">񀀒</sgnw-symbol>
+
+    <sgnw-symbol style="font-size:30px;color:red;background:yellow">񀀒</sgnw-symbol>
+
+## sgnw-symbol with style string
+
+<sgnw-symbol>񀀒-P10G_yellow_D_red,yellow_Z2</sgnw-symbol>
+
+    <sgnw-symbol>񀀒-P10G_yellow_D_red,yellow_Z2</sgnw-symbol>
+
+## sgnw-symbol with style string attribute
+
+<sgnw-symbol styling="-P10G_yellow_D_red,yellow_Z2">񀀒</sgnw-symbol>
+
+    <sgnw-symbol styling="-P10G_yellow_D_red,yellow_Z2">񀀒</sgnw-symbol>

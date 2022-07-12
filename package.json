@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "0.12.0",
+  "version": "1.0.0",
   "type": "module",
   "customElements": "dist/custom-elements.json",
   "main": "dist/index.cjs.js",
@@ -14,7 +14,10 @@
   "unpkg": "dist/sgnw-components/sgnw-components.esm.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "LICENSE",
+    "package.json",
+    "README.md"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -22,8 +25,8 @@
   "scripts": {
     "clean": "rimraf src/docs docs/* dist/types dist/collection dist/custom-elements* dist/esm dist/sgnw-components dist/cjs dist/index*",
     "analyze": "cem analyze --stencil --globs 'src/components/*/*.tsx' --outdir dist",
-    "postanalyze": "node docs-manifest.js",
-    "docs": "node docs-create.js",
+    "postanalyze": "node tools/docs-manifest.js",
+    "docs": "node tools/docs-create.js",
     "prebuild": "npm run clean && npm run analyze && npm run docs",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",

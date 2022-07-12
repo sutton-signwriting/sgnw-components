@@ -10,7 +10,7 @@ import { parse as parseStyle, compose as composeStyle } from '@sutton-signwritin
 // @ts-ignore
 import { signSvg } from '@sutton-signwriting/font-ttf/swu/swu';
 
-import { rgb2hex, rgba2hex } from '../../global/global';
+import { cssValues, mergeStyle } from '../../global/global';
 
 @Component({
   tag: 'sgnw-sign',
@@ -33,7 +33,7 @@ export class SgnwSign {
     if (!this.sign){
       let sign = parseSWU.sign(this.el.innerHTML);
       if (sign.style) {
-        this.styling = sign.style;
+        this.styling =composeStyle(mergeStyle(parseStyle(sign.style),parseStyle(this.styling)));
       }
       sign.style = "";
       this.sign=composeSWU.sign(sign)
@@ -49,23 +49,7 @@ export class SgnwSign {
   }
 
   render() {
-    let styleStr = '';
-    if (this.styling){
-      styleStr = this.styling;
-    } else {
-      let css = window.getComputedStyle(this.el, null);
-      const styleObj = {
-        "padding": css.getPropertyValue("padding"),
-        "background": rgba2hex(css.getPropertyValue("background-color")),
-        "detail": [
-          rgb2hex(css.getPropertyValue("color")),
-          rgb2hex(css.getPropertyValue("background-color"))
-        ],
-        "zoom": parseInt(css.getPropertyValue("font-size").slice(0,-2))/30
-      }
-      styleStr = composeStyle(styleObj)
-    }
-    //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
+    const styleStr = composeStyle(mergeStyle(cssValues(this.el), parseStyle(this.styling)));
 
     return (
       <Host sign={this.sign} styling={this.styling} innerHTML={this.sgnw?signSvg(this.sign + (styleStr)):''}>

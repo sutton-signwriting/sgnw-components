@@ -23,6 +23,19 @@ the sgnw-sign element can be used to create a sign image
 | `styling` | `styling` | Style String for sign | `string` | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [sgnw-vp](../sgnw-vp)
+
+### Graph
+```mermaid
+graph TD;
+  sgnw-vp --> sgnw-sign
+  style sgnw-sign fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 

@@ -14,15 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Todo
-- vertical paragraphs
+- drag and drop
+- signmaker and signtext components
 
 
-## [0.11.0] - 2022-06-30
-### Changed
-- documentation creation
+## [1.0.0] - 2022-07-12
+### Added
+- documentation
+- components
+- - sgnw-symbol, sgnw-sign, sgnw-vp
+- - fsw-symbol, fsw-sign, fsw-vp
 
-### Fixed
-- dependencies for security issues
 
-[Unreleased]: https://github.com/sutton-signwriting/sgnw-components/compare/v0.11.0...HEAD
-[0.11.0]: https://github.com/sutton-signwriting/sgnw-components/releases/tag/v0.11.0
+[Unreleased]: https://github.com/sutton-signwriting/sgnw-components/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/sutton-signwriting/sgnw-components/releases/tag/v1.0.0

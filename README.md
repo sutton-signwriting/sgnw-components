@@ -28,6 +28,12 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 - Issue Tracker: https://github.com/sutton-signwriting/sgnw-components/issues
 - Online Discussion: https://gitter.im/sutton-signwriting/community
 
+## Documentation
+- [Using the Components](USAGE.md)
+- [&lt;sgnw-components />](SGNW-COMPONENTS.md)
+- [&lt;fsw-components />](FSW-COMPONENTS.md)
+- [Change Log](CHANGELOG.md)
+
 ## License
 [MIT](LICENSE)
 

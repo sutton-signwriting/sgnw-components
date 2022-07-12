@@ -1,4 +1,4 @@
 /*!
  * The Sutton SignWriting Web Components
  */
-import{p as s,b as n}from"./p-61fe031a.js";import{g}from"./p-4b26c717.js";(()=>{const n=import.meta.url,g={};return""!==n&&(g.resourcesUrl=new URL(".",n).href),s(g)})().then((s=>(g(),n([["p-d8b0dc50",[[1,"fsw-sign",{sign:[1537],styling:[1537],sgnw:[32]}]]],["p-b6d79647",[[1,"fsw-symbol",{symbol:[1537],styling:[1537],sgnw:[32]}]]],["p-8b08eecd",[[1,"sgnw-sign",{sign:[1537],styling:[1537],sgnw:[32]}]]],["p-39bb2471",[[1,"sgnw-symbol",{symbol:[1537],styling:[1537],sgnw:[32]}]]]],s))));
+import{p as s,b as n}from"./p-98376542.js";import{g}from"./p-111aee25.js";(()=>{const n=import.meta.url,g={};return""!==n&&(g.resourcesUrl=new URL(".",n).href),s(g)})().then((s=>(g(),n([["p-7494dc95",[[1,"fsw-vp",{vp:[1537],colorize:[1540],sgnw:[32],items:[32]}]]],["p-546b8a23",[[1,"sgnw-vp",{vp:[1537],colorize:[1540],sgnw:[32],items:[32]}]]],["p-b7f746ac",[[1,"fsw-sign",{sign:[1537],styling:[1537],sgnw:[32]}],[1,"fsw-symbol",{symbol:[1537],styling:[1537],sgnw:[32]}]]],["p-a3eb56ba",[[1,"sgnw-sign",{sign:[1537],styling:[1537],sgnw:[32]}],[1,"sgnw-symbol",{symbol:[1537],styling:[1537],sgnw:[32]}]]]],s))));

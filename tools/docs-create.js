@@ -62,7 +62,7 @@ html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/license.html', html,'utf8');
 
 const fsw = fs.readFileSync('./src/fsw-components.md','utf8');
-const fswList = ['fsw-symbol','fsw-sign'];
+const fswList = ['fsw-symbol','fsw-sign','fsw-vp'];
 const fswDetail = fswList.map( item => {
   const md = fs.readFileSync('./src/components/' + item + '/readme.md','utf8');
   return md.replace(/# /g, '## ').replace(/\.\.\//g, '#').replace(/style [a-z]+-[a-z]+ fill:#f9f,stroke:#333,stroke-width:4px/g, '')
@@ -70,6 +70,9 @@ const fswDetail = fswList.map( item => {
 md = header + "\n" + fsw + "\n" + fswDetail.join("\n");
 fs.writeFileSync('./FSW-COMPONENTS.md', md,'utf8');
 md = replaceCommon(md);
+fswList.map( item => {
+  md = md.replace(item + ')',item + ') with [additional examples](' + item + '.html)')
+})
 html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/fsw-components.html', html,'utf8');
 
@@ -81,7 +84,7 @@ fswList.map( item => {
 });
 
 const sgnw = fs.readFileSync('./src/sgnw-components.md','utf8');
-const sgnwList = ['sgnw-symbol','sgnw-sign'];
+const sgnwList = ['sgnw-symbol','sgnw-sign','sgnw-vp'];
 const sgnwDetail = sgnwList.map( item => {
   const md = fs.readFileSync('./src/components/' + item + '/readme.md','utf8');
   return md.replace(/# /g, '## ').replace(/\.\.\//g, '#').replace(/style [a-z]+-[a-z]+ fill:#f9f,stroke:#333,stroke-width:4px/g, '')
@@ -89,5 +92,17 @@ const sgnwDetail = sgnwList.map( item => {
 md = header + "\n" + sgnw + "\n" + sgnwDetail.join("\n");
 fs.writeFileSync('./SGNW-COMPONENTS.md', md,'utf8');
 md = replaceCommon(md);
+sgnwList.map( item => {
+  md = md.replace(item + ')',item + ') with [additional examples](' + item + '.html)')
+})
 html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/sgnw-components.html', html,'utf8');
+
+sgnwList.map( item => {
+  let md = fs.readFileSync('./src/components/' + item + '/' + item + '.md','utf8');
+  md = replaceCommon(header) + "\n" + md;
+  html = create({markdown: md, document: doc})
+  fs.writeFileSync('./docs/' + item + '.html', html,'utf8');
+});
+
+fs.copyFileSync('./src/steve.png', './docs/steve.png')

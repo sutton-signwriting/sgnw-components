@@ -24,6 +24,19 @@ the fsw-sign element can be used to create a sign image
 | `styling` | `styling` | Style String for sign | `string` | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [fsw-vp](../fsw-vp)
+
+### Graph
+```mermaid
+graph TD;
+  fsw-vp --> fsw-sign
+  style fsw-sign fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 

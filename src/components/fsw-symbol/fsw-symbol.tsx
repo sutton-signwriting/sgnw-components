@@ -10,7 +10,7 @@ import { parse as parseStyle, compose as composeStyle } from '@sutton-signwritin
 // @ts-ignore
 import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
-import { rgb2hex, rgba2hex } from '../../global/global';
+import { cssValues, mergeStyle } from '../../global/global';
 
 @Component({
   tag: 'fsw-symbol',
@@ -33,7 +33,7 @@ export class FswSymbol {
     if (!this.symbol){
       let symbol = parseFSW.symbol(this.el.innerHTML);
       if (symbol.style) {
-        this.styling = symbol.style;
+        this.styling = composeStyle(mergeStyle(parseStyle(symbol.style),parseStyle(this.styling)));
       }
       symbol.style = "";
       this.symbol=composeFSW.symbol(symbol)
@@ -49,22 +49,8 @@ export class FswSymbol {
   }
 
   render() {
-    let styleStr = '';
-    if (this.styling){
-      styleStr = this.styling;
-    } else {
-      let css = window.getComputedStyle(this.el, null);
-      const styleObj = {
-        "background": rgba2hex(css.getPropertyValue("background-color")),
-        "detail": [
-          rgb2hex(css.getPropertyValue("color")),
-          rgb2hex(css.getPropertyValue("background-color"))
-        ],
-        "zoom": parseInt(css.getPropertyValue("font-size").slice(0,-2))/30
-      }
-      styleStr = composeStyle(styleObj)
-    }
-    //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
+    const styleStr = composeStyle(mergeStyle(cssValues(this.el), parseStyle(this.styling)));
+
     return (
       <Host symbol={this.symbol} styling={this.styling} innerHTML={this.sgnw?symbolSvg(this.symbol + (styleStr)):''}>
         <slot></slot>

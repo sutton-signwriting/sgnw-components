@@ -10,7 +10,7 @@ import { parse as parseStyle, compose as composeStyle } from '@sutton-signwritin
 // @ts-ignore
 import { signSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
-import { cssValues } from '../../global/global';
+import { cssValues, mergeStyle } from '../../global/global';
 
 @Component({
   tag: 'fsw-sign',
@@ -33,7 +33,7 @@ export class FswSign {
     if (!this.sign){
       let sign = parseFSW.sign(this.el.innerHTML);
       if (sign.style) {
-        this.styling = sign.style;
+        this.styling = composeStyle(mergeStyle(parseStyle(sign.style),parseStyle(this.styling)));
       }
       sign.style = "";
       this.sign=composeFSW.sign(sign)
@@ -49,14 +49,7 @@ export class FswSign {
   }
 
   render() {
-    let styleStr = '';
-    if (this.styling){
-      styleStr = this.styling;
-    } else {
-      const styleObj = cssValues(this.el);
-      styleStr = composeStyle(styleObj)
-    }
-    //var svgSize = parseFloat(window.getComputedStyle(this.el).getPropertyValue("font-size").slice(0,-2))/30;
+    const styleStr = composeStyle(mergeStyle(cssValues(this.el), parseStyle(this.styling)));
 
     return (
       <Host sign={this.sign} styling={this.styling} innerHTML={this.sgnw?signSvg(this.sign + (styleStr)):''}>

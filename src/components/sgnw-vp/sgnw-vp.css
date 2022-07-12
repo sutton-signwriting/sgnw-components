@@ -1,0 +1,22 @@
+:host {
+  writing-mode: vertical-lr;
+  border-left: 1px solid blue;
+  border-right: 1px solid blue;
+  height: 100%;
+} 
+
+:host svg {
+  display: block;
+}
+
+:host span.outside { font-size: 0%; line-height: 0%; border-left: 1px solid blue; vertical-align: top; }
+:host span.middle { vertical-align: bottom; }
+:host span.inside { border-left: 1px dashed red; }
+
+
+sgnw-sign, sgnw-symbol { 
+  writing-mode: horizontal-tb; 
+  display: inline-block; 
+  vertical-align: middle; 
+  box-sizing: content-box; 
+}
