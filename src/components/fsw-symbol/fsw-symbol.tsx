@@ -1,16 +1,12 @@
-//
 import { Component, Element, State, Prop, Host, h } from '@stencil/core';
 
-// @ts-ignore
-import { parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw';
+import { parse as parseFSW } from '@sutton-signwriting/core/fsw/fsw';
 
-// @ts-ignore
-import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style';
+import { parse as parseStyle, compose as composeStyle, merge as mergeStyle } from '@sutton-signwriting/core/style/style';
 
-// @ts-ignore
 import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
-import { cssValues, mergeStyle } from '../../global/global';
+import { cssValues } from '../../global/global';
 
 @Component({
   tag: 'fsw-symbol',
@@ -22,7 +18,7 @@ export class FswSymbol {
 
   @Element() el: HTMLElement; //this.el
 
-  /** FSW character for symbol */
+  /** FSW key for symbol */
   @Prop({mutable: true, reflect: true}) symbol: string;
   /** Style String for symbol */
   @Prop({mutable: true, reflect: true}) styling: string;
@@ -35,8 +31,7 @@ export class FswSymbol {
       if (symbol.style) {
         this.styling = composeStyle(mergeStyle(parseStyle(symbol.style),parseStyle(this.styling)));
       }
-      symbol.style = "";
-      this.symbol=composeFSW.symbol(symbol)
+      this.symbol=symbol.symbol;
     }
     if (!this.sgnw){
       let self = this;

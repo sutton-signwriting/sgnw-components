@@ -1,0 +1,50 @@
+@import "../../global/global.css";
+
+:host {
+  border: 1px solid var(--font-color);
+  cursor: move;
+  font-size: 30px;
+  color: var(--font-color);
+  background: var(--bg-color);
+}
+
+:host.is-dragging { 
+  border:0px;
+  z-index: 1;
+  text-align: initial;
+  vertical-align: top;
+  line-height: 0px;
+  font-size: 0px;
+  background: transparent;
+}
+
+::slotted(svg) {
+  position: absolute;
+  display: block;
+  top: 2.5%;
+  bottom: 2.5%;
+  left: 2.5%;
+  right: 2.5%;
+  margin: auto;
+  max-width: 95%;
+  max-height: 95%;
+  cursor: default;
+}
+
+:host.is-dragging::slotted(svg) { 
+  top: 0;
+  bottom: initial;
+  left: 0;
+  right: initial;
+  margin: 0;
+  max-width: initial;
+  max-height: initial;
+}
+
+::slotted(svg g text.sym-line){
+  fill: var(--font-color) !important;
+}
+
+::slotted(svg g text.sym-fill) {
+  fill: var(--bg-color) !important;
+}

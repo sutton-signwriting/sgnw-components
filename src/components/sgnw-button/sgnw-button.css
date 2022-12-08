@@ -1,0 +1,39 @@
+@import "../../global/global.css";
+
+:host {
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
+  color: var(--font-color);
+  background-color: var(--button-color);
+  width: 5rem;
+  height: 4rem;
+}
+
+:host:hover {
+  background-color: var(--button-hover);
+}
+
+::slotted(svg) {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 5%;
+  right: 5%;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  cursor: default;
+}
+
+::slotted(svg g text.sym-line), ::slotted(svg path) {
+  fill: var(--font-color) !important;
+}
+
+::slotted(svg g text.sym-fill) {
+  fill: var(--button-color) !important;
+}
+
+:host:hover::slotted(svg g text.sym-fill) {
+  fill: var(--button-hover) !important;
+}

@@ -1,16 +1,16 @@
 # sgnw-symbol
 
-the sgnw-symbol element can be used to create a symbol image
+The sgnw-symbol component can be used to create a symbol image
 
-## sgnw-symbol with text inside
-<sgnw-symbol>񄵡</sgnw-symbol>
-
-    <sgnw-symbol>񄵡</sgnw-symbol>
-
-## fsw-symbol with symbol attribute
+## sgnw-symbol
 <sgnw-symbol symbol="񄵡"></sgnw-symbol>
 
     <sgnw-symbol symbol="񄵡"></sgnw-symbol>
+
+## sgnw-symbol with style string
+<sgnw-symbol symbol="񄵡" styling="-CZ2"></sgnw-symbol>
+
+    <sgnw-symbol symbol="񄵡" styling="-CZ2"></sgnw-symbol>
 
 <!-- Auto Generated Below -->
 

@@ -14,12 +14,12 @@
 
 @sutton-signwriting/sgnw-components is a javascript package for the browser that includes a collection of web components built with https://stenciljs.com/
 
-This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU) character sets, along with the associated query languages and style string.  See [draft-slevinski-formal-signwriting](https://tools.ietf.org/id/draft-slevinski-formal-signwriting-09.html) for detailed specification.
+This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU) character sets, along with the associated style string.  See [draft-slevinski-formal-signwriting](https://tools.ietf.org/id/draft-slevinski-formal-signwriting-09.html) for detailed specification.
 
 > Author: https://SteveSlevinski.me  
 > Channel: https://www.youtube.com/channel/UCXu4AXlG0rXFtk_5SzumDow  
 > Sponsor: https://www.patreon.com/signwriting  
-> Donate: https://paypal.me/signwriting
+> Donate: https://donate.sutton-signwriting.io
 
 ## Useful links
 - Source: https://github.com/sutton-signwriting/sgnw-components

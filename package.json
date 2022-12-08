@@ -1,7 +1,36 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "keywords": [
+    "SignWriting",
+    "sign language",
+    "web components",
+    "symbols",
+    "signs",
+    "vertical text",
+    "ASCII",
+    "Unicode"
+  ],
+  "homepage": "https://www.sutton-signwriting.io/sgnw-components/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sutton-signwriting/sgnw-components.git"
+  },
+  "bugs": "https://github.com/sutton-signwriting/sgnw-components/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Steve Slevinski",
+    "email": "slevinski@signwriting.org",
+    "url": "https://SteveSlevinski.me"
+  },
+  "funding": [
+    {
+      "type" : "patreon",
+      "url" : "https://www.patreon.com/signwriting"
+    },
+    "https://donate.sutton-signwriting.io"
+  ],
   "type": "module",
   "customElements": "dist/custom-elements.json",
   "main": "dist/index.cjs.js",
@@ -19,11 +48,8 @@
     "package.json",
     "README.md"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
-    "clean": "rimraf src/docs docs/* dist/types dist/collection dist/custom-elements* dist/esm dist/sgnw-components dist/cjs dist/index*",
+    "clean": "rimraf src/docs docs/* loader/* dist/types dist/collection dist/custom-elements* dist/esm dist/sgnw-components dist/cjs dist/index*",
     "analyze": "cem analyze --stencil --globs 'src/components/*/*.tsx' --outdir dist",
     "postanalyze": "node tools/docs-manifest.js",
     "docs": "node tools/docs-create.js",
@@ -43,8 +69,9 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "@sutton-signwriting/core": "^1.4.2",
-    "@sutton-signwriting/font-ttf": "^1.3.2"
-  },
-  "license": "MIT"
+    "@sutton-signwriting/core": "^1.5.4",
+    "@sutton-signwriting/font-ttf": "^1.4.2",
+    "@types/draggabilly": "^2.1.3",
+    "draggabilly": "^3.0.0"
+  }
 }

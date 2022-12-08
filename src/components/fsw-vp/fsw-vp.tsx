@@ -1,14 +1,8 @@
-//
 import { Component, Element, State, Prop, Host, h, Watch } from '@stencil/core';
 
-// @ts-ignore
-import { info, re as reFSW, parse as parseFSW, compose as composeFSW } from '@sutton-signwriting/core/fsw/fsw';
+import { info, parse as parseFSW } from '@sutton-signwriting/core/fsw/fsw';
 
-// @ts-ignore
-import { re as reStyle, parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style';
-
-// @ts-ignore
-import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
+import { compose as composeStyle } from '@sutton-signwriting/core/style/style';
 
 import { cssValues } from '../../global/global';
 

@@ -12,8 +12,8 @@
 
 Put tags similar to this in HEAD
 
-    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@1.0.0/dist/sgnw-components/sgnw-components.esm.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/@sutton-signwriting/sgnw-components@1.0.0/dist/sgnw-components/sgnw-components.css"/>
+    <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@1.1.0/dist/sgnw-components/sgnw-components.esm.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/@sutton-signwriting/sgnw-components@1.1.0/dist/sgnw-components/sgnw-components.css"/>
 
 Then use the elements anywhere in your template, JSX, html etc
 
@@ -24,7 +24,7 @@ Then use the elements anywhere in your template, JSX, html etc
 Put script tag in HEAD
 
     <script type="module">
-      import { defineCustomElements } from 'https://unpkg.com/@sutton-signwriting/sgnw-components@1.0.0/loader/index.es2017.mjs';
+      import { defineCustomElements } from 'https://unpkg.com/@sutton-signwriting/sgnw-components@1.1.0/loader/index.es2017.mjs';
       defineCustomElements();
     </script>
 
@@ -53,6 +53,10 @@ Then use the elements anywhere in your template, JSX, html etc
 - [sgnw-symbol](SGNW-COMPONENTS.md#sgnw-symbol)
 - [sgnw-sign](SGNW-COMPONENTS.md#sgnw-sign)
 - [sgnw-vp](SGNW-COMPONENTS.md#sgnw-vp)
+- [sgnw-button](SGNW-COMPONENTS.md#sgnw-button)
+- [sgnw-palette-symbol](SGNW-COMPONENTS.md#sgnw-palette-symbol)
+- [sgnw-palette](SGNW-COMPONENTS.md#sgnw-palette)
+- [sgnw-signbox](SGNW-COMPONENTS.md#sgnw-signbox)
 
 ---
 
@@ -63,5 +67,9 @@ Then use the elements anywhere in your template, JSX, html etc
 - [fsw-symbol](FSW-COMPONENTS.md#fsw-symbol)
 - [fsw-sign](FSW-COMPONENTS.md#fsw-sign)
 - [fsw-vp](FSW-COMPONENTS.md#fsw-vp)
+- [fsw-button](FSW-COMPONENTS.md#fsw-button)
+- [fsw-palette-symbol](FSW-COMPONENTS.md#fsw-palette-symbol)
+- [fsw-palette](FSW-COMPONENTS.md#fsw-palette)
+- [fsw-signbox](FSW-COMPONENTS.md#fsw-signbox)
 
 ---

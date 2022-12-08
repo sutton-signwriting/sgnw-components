@@ -1,3 +1,19 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:host {
+  --font-color: #424242;
+  --button-color: lightgray;
+  --button-hover: darkgray;
+  --bg-color: #fff;
+}
+
+[data-color-mode="dark"] :host,
+[data-theme="dark"] :host {
+  --font-color: #e1e1ff;
+  --button-color: gray;
+  --button-hover: darkgray;
+  --bg-color: #161625;
+}
 
 .swu {
   font-family:SuttonSignWritingOneD !important;

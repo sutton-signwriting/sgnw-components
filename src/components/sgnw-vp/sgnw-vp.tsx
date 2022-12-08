@@ -1,14 +1,9 @@
-//
+
 import { Component, Element, State, Prop, Host, h, Watch } from '@stencil/core';
 
-// @ts-ignore
-import { info, re as reSGNW, parse as parseSGNW, compose as composeSGNW } from '@sutton-signwriting/core/swu/swu';
+import { info, parse as parseSGNW } from '@sutton-signwriting/core/swu/swu';
 
-// @ts-ignore
-import { re as reStyle, parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style';
-
-// @ts-ignore
-import { symbolSvg } from '@sutton-signwriting/font-ttf/swu/swu';
+import { compose as composeStyle } from '@sutton-signwriting/core/style/style';
 
 import { cssValues } from '../../global/global';
 
@@ -22,7 +17,7 @@ export class SgnwVp {
 
   @Element() el: HTMLElement; //this.el
 
-  /** SGNW text */
+  /** SWU text */
   @Prop({mutable: true, reflect: true}) vp: string;
   /** Colorize flag */
   @Prop({mutable: true, reflect: true}) colorize: boolean;

@@ -6,6 +6,56 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FswButton {
+        /**
+          * FSW string for sign
+         */
+        "sign": string;
+        /**
+          * SVG icon
+         */
+        "svg": string;
+        /**
+          * FSW key for symbol
+         */
+        "symbol": string;
+    }
+    interface FswPalette {
+        /**
+          * set of symbols
+         */
+        "alphabet": object | string;
+        /**
+          * mid level symbol selection
+         */
+        "base": string;
+        /**
+          * top level symbol selection
+         */
+        "group": string;
+        /**
+          * flag for small and medium palette
+         */
+        "lower": boolean;
+        /**
+          * flag for small palette
+         */
+        "more": boolean;
+        /**
+          * orientation of palette
+         */
+        "orientation": "horizontal" | "vertical";
+        /**
+          * size of palette
+         */
+        "size": "small" | "medium" | "large";
+    }
+    interface FswPaletteSymbol {
+        /**
+          * FSW key for symbol
+         */
+        "symbol": string;
+    }
     interface FswSign {
         /**
           * FSW string for sign
@@ -16,13 +66,17 @@ export namespace Components {
          */
         "styling": string;
     }
+    interface FswSignbox {
+    }
+    interface FswSpatial {
+    }
     interface FswSymbol {
         /**
           * Style String for symbol
          */
         "styling": string;
         /**
-          * FSW character for symbol
+          * FSW key for symbol
          */
         "symbol": string;
     }
@@ -36,6 +90,56 @@ export namespace Components {
          */
         "vp": string;
     }
+    interface SgnwButton {
+        /**
+          * SWU string for sign
+         */
+        "sign": string;
+        /**
+          * SVG icon
+         */
+        "svg": string;
+        /**
+          * SWU character for symbol
+         */
+        "symbol": string;
+    }
+    interface SgnwPalette {
+        /**
+          * set of symbols
+         */
+        "alphabet": object | string;
+        /**
+          * mid level symbol selection
+         */
+        "base": string;
+        /**
+          * top level symbol selection
+         */
+        "group": string;
+        /**
+          * flag for small and medium palette
+         */
+        "lower": boolean;
+        /**
+          * flag for small palette
+         */
+        "more": boolean;
+        /**
+          * orientation of palette
+         */
+        "orientation": "horizontal" | "vertical";
+        /**
+          * size of palette
+         */
+        "size": "small" | "medium" | "large";
+    }
+    interface SgnwPaletteSymbol {
+        /**
+          * SWU character for symbol
+         */
+        "symbol": string;
+    }
     interface SgnwSign {
         /**
           * SWU string for sign
@@ -45,6 +149,8 @@ export namespace Components {
           * Style String for sign
          */
         "styling": string;
+    }
+    interface SgnwSignbox {
     }
     interface SgnwSymbol {
         /**
@@ -62,17 +168,55 @@ export namespace Components {
          */
         "colorize": boolean;
         /**
-          * SGNW text
+          * SWU text
          */
         "vp": string;
     }
 }
+export interface FswPaletteSymbolCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFswPaletteSymbolElement;
+}
+export interface SgnwPaletteSymbolCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSgnwPaletteSymbolElement;
+}
 declare global {
+    interface HTMLFswButtonElement extends Components.FswButton, HTMLStencilElement {
+    }
+    var HTMLFswButtonElement: {
+        prototype: HTMLFswButtonElement;
+        new (): HTMLFswButtonElement;
+    };
+    interface HTMLFswPaletteElement extends Components.FswPalette, HTMLStencilElement {
+    }
+    var HTMLFswPaletteElement: {
+        prototype: HTMLFswPaletteElement;
+        new (): HTMLFswPaletteElement;
+    };
+    interface HTMLFswPaletteSymbolElement extends Components.FswPaletteSymbol, HTMLStencilElement {
+    }
+    var HTMLFswPaletteSymbolElement: {
+        prototype: HTMLFswPaletteSymbolElement;
+        new (): HTMLFswPaletteSymbolElement;
+    };
     interface HTMLFswSignElement extends Components.FswSign, HTMLStencilElement {
     }
     var HTMLFswSignElement: {
         prototype: HTMLFswSignElement;
         new (): HTMLFswSignElement;
+    };
+    interface HTMLFswSignboxElement extends Components.FswSignbox, HTMLStencilElement {
+    }
+    var HTMLFswSignboxElement: {
+        prototype: HTMLFswSignboxElement;
+        new (): HTMLFswSignboxElement;
+    };
+    interface HTMLFswSpatialElement extends Components.FswSpatial, HTMLStencilElement {
+    }
+    var HTMLFswSpatialElement: {
+        prototype: HTMLFswSpatialElement;
+        new (): HTMLFswSpatialElement;
     };
     interface HTMLFswSymbolElement extends Components.FswSymbol, HTMLStencilElement {
     }
@@ -86,11 +230,35 @@ declare global {
         prototype: HTMLFswVpElement;
         new (): HTMLFswVpElement;
     };
+    interface HTMLSgnwButtonElement extends Components.SgnwButton, HTMLStencilElement {
+    }
+    var HTMLSgnwButtonElement: {
+        prototype: HTMLSgnwButtonElement;
+        new (): HTMLSgnwButtonElement;
+    };
+    interface HTMLSgnwPaletteElement extends Components.SgnwPalette, HTMLStencilElement {
+    }
+    var HTMLSgnwPaletteElement: {
+        prototype: HTMLSgnwPaletteElement;
+        new (): HTMLSgnwPaletteElement;
+    };
+    interface HTMLSgnwPaletteSymbolElement extends Components.SgnwPaletteSymbol, HTMLStencilElement {
+    }
+    var HTMLSgnwPaletteSymbolElement: {
+        prototype: HTMLSgnwPaletteSymbolElement;
+        new (): HTMLSgnwPaletteSymbolElement;
+    };
     interface HTMLSgnwSignElement extends Components.SgnwSign, HTMLStencilElement {
     }
     var HTMLSgnwSignElement: {
         prototype: HTMLSgnwSignElement;
         new (): HTMLSgnwSignElement;
+    };
+    interface HTMLSgnwSignboxElement extends Components.SgnwSignbox, HTMLStencilElement {
+    }
+    var HTMLSgnwSignboxElement: {
+        prototype: HTMLSgnwSignboxElement;
+        new (): HTMLSgnwSignboxElement;
     };
     interface HTMLSgnwSymbolElement extends Components.SgnwSymbol, HTMLStencilElement {
     }
@@ -105,15 +273,82 @@ declare global {
         new (): HTMLSgnwVpElement;
     };
     interface HTMLElementTagNameMap {
+        "fsw-button": HTMLFswButtonElement;
+        "fsw-palette": HTMLFswPaletteElement;
+        "fsw-palette-symbol": HTMLFswPaletteSymbolElement;
         "fsw-sign": HTMLFswSignElement;
+        "fsw-signbox": HTMLFswSignboxElement;
+        "fsw-spatial": HTMLFswSpatialElement;
         "fsw-symbol": HTMLFswSymbolElement;
         "fsw-vp": HTMLFswVpElement;
+        "sgnw-button": HTMLSgnwButtonElement;
+        "sgnw-palette": HTMLSgnwPaletteElement;
+        "sgnw-palette-symbol": HTMLSgnwPaletteSymbolElement;
         "sgnw-sign": HTMLSgnwSignElement;
+        "sgnw-signbox": HTMLSgnwSignboxElement;
         "sgnw-symbol": HTMLSgnwSymbolElement;
         "sgnw-vp": HTMLSgnwVpElement;
     }
 }
 declare namespace LocalJSX {
+    interface FswButton {
+        /**
+          * FSW string for sign
+         */
+        "sign"?: string;
+        /**
+          * SVG icon
+         */
+        "svg"?: string;
+        /**
+          * FSW key for symbol
+         */
+        "symbol"?: string;
+    }
+    interface FswPalette {
+        /**
+          * set of symbols
+         */
+        "alphabet"?: object | string;
+        /**
+          * mid level symbol selection
+         */
+        "base"?: string;
+        /**
+          * top level symbol selection
+         */
+        "group"?: string;
+        /**
+          * flag for small and medium palette
+         */
+        "lower"?: boolean;
+        /**
+          * flag for small palette
+         */
+        "more"?: boolean;
+        /**
+          * orientation of palette
+         */
+        "orientation"?: "horizontal" | "vertical";
+        /**
+          * size of palette
+         */
+        "size"?: "small" | "medium" | "large";
+    }
+    interface FswPaletteSymbol {
+        /**
+          * click event for the symbol palette
+         */
+        "onPaletteSymbolClick"?: (event: FswPaletteSymbolCustomEvent<string>) => void;
+        /**
+          * drop event for the signbox and sequence
+         */
+        "onPaletteSymbolDrop"?: (event: FswPaletteSymbolCustomEvent<{encoding:string,symbol:string,x:number,y:number}>) => void;
+        /**
+          * FSW key for symbol
+         */
+        "symbol"?: string;
+    }
     interface FswSign {
         /**
           * FSW string for sign
@@ -124,13 +359,17 @@ declare namespace LocalJSX {
          */
         "styling"?: string;
     }
+    interface FswSignbox {
+    }
+    interface FswSpatial {
+    }
     interface FswSymbol {
         /**
           * Style String for symbol
          */
         "styling"?: string;
         /**
-          * FSW character for symbol
+          * FSW key for symbol
          */
         "symbol"?: string;
     }
@@ -144,6 +383,64 @@ declare namespace LocalJSX {
          */
         "vp"?: string;
     }
+    interface SgnwButton {
+        /**
+          * SWU string for sign
+         */
+        "sign"?: string;
+        /**
+          * SVG icon
+         */
+        "svg"?: string;
+        /**
+          * SWU character for symbol
+         */
+        "symbol"?: string;
+    }
+    interface SgnwPalette {
+        /**
+          * set of symbols
+         */
+        "alphabet"?: object | string;
+        /**
+          * mid level symbol selection
+         */
+        "base"?: string;
+        /**
+          * top level symbol selection
+         */
+        "group"?: string;
+        /**
+          * flag for small and medium palette
+         */
+        "lower"?: boolean;
+        /**
+          * flag for small palette
+         */
+        "more"?: boolean;
+        /**
+          * orientation of palette
+         */
+        "orientation"?: "horizontal" | "vertical";
+        /**
+          * size of palette
+         */
+        "size"?: "small" | "medium" | "large";
+    }
+    interface SgnwPaletteSymbol {
+        /**
+          * click event for the symbol palette
+         */
+        "onPaletteSymbolClick"?: (event: SgnwPaletteSymbolCustomEvent<string>) => void;
+        /**
+          * drop event for the signbox and sequence
+         */
+        "onPaletteSymbolDrop"?: (event: SgnwPaletteSymbolCustomEvent<{encoding:string,symbol:string,x:number,y:number}>) => void;
+        /**
+          * SWU character for symbol
+         */
+        "symbol"?: string;
+    }
     interface SgnwSign {
         /**
           * SWU string for sign
@@ -153,6 +450,8 @@ declare namespace LocalJSX {
           * Style String for sign
          */
         "styling"?: string;
+    }
+    interface SgnwSignbox {
     }
     interface SgnwSymbol {
         /**
@@ -170,15 +469,24 @@ declare namespace LocalJSX {
          */
         "colorize"?: boolean;
         /**
-          * SGNW text
+          * SWU text
          */
         "vp"?: string;
     }
     interface IntrinsicElements {
+        "fsw-button": FswButton;
+        "fsw-palette": FswPalette;
+        "fsw-palette-symbol": FswPaletteSymbol;
         "fsw-sign": FswSign;
+        "fsw-signbox": FswSignbox;
+        "fsw-spatial": FswSpatial;
         "fsw-symbol": FswSymbol;
         "fsw-vp": FswVp;
+        "sgnw-button": SgnwButton;
+        "sgnw-palette": SgnwPalette;
+        "sgnw-palette-symbol": SgnwPaletteSymbol;
         "sgnw-sign": SgnwSign;
+        "sgnw-signbox": SgnwSignbox;
         "sgnw-symbol": SgnwSymbol;
         "sgnw-vp": SgnwVp;
     }
@@ -187,10 +495,19 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "fsw-button": LocalJSX.FswButton & JSXBase.HTMLAttributes<HTMLFswButtonElement>;
+            "fsw-palette": LocalJSX.FswPalette & JSXBase.HTMLAttributes<HTMLFswPaletteElement>;
+            "fsw-palette-symbol": LocalJSX.FswPaletteSymbol & JSXBase.HTMLAttributes<HTMLFswPaletteSymbolElement>;
             "fsw-sign": LocalJSX.FswSign & JSXBase.HTMLAttributes<HTMLFswSignElement>;
+            "fsw-signbox": LocalJSX.FswSignbox & JSXBase.HTMLAttributes<HTMLFswSignboxElement>;
+            "fsw-spatial": LocalJSX.FswSpatial & JSXBase.HTMLAttributes<HTMLFswSpatialElement>;
             "fsw-symbol": LocalJSX.FswSymbol & JSXBase.HTMLAttributes<HTMLFswSymbolElement>;
             "fsw-vp": LocalJSX.FswVp & JSXBase.HTMLAttributes<HTMLFswVpElement>;
+            "sgnw-button": LocalJSX.SgnwButton & JSXBase.HTMLAttributes<HTMLSgnwButtonElement>;
+            "sgnw-palette": LocalJSX.SgnwPalette & JSXBase.HTMLAttributes<HTMLSgnwPaletteElement>;
+            "sgnw-palette-symbol": LocalJSX.SgnwPaletteSymbol & JSXBase.HTMLAttributes<HTMLSgnwPaletteSymbolElement>;
             "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
+            "sgnw-signbox": LocalJSX.SgnwSignbox & JSXBase.HTMLAttributes<HTMLSgnwSignboxElement>;
             "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
             "sgnw-vp": LocalJSX.SgnwVp & JSXBase.HTMLAttributes<HTMLSgnwVpElement>;
         }

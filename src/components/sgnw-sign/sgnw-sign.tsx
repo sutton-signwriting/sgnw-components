@@ -1,16 +1,13 @@
-//
+
 import { Component, Element, State, Prop, Host, h } from '@stencil/core';
 
-// @ts-ignore
 import { parse as parseSWU, compose as composeSWU } from '@sutton-signwriting/core/swu/swu';
 
-// @ts-ignore
-import { parse as parseStyle, compose as composeStyle } from '@sutton-signwriting/core/style/style';
+import { parse as parseStyle, compose as composeStyle, merge as mergeStyle } from '@sutton-signwriting/core/style/style';
 
-// @ts-ignore
 import { signSvg } from '@sutton-signwriting/font-ttf/swu/swu';
 
-import { cssValues, mergeStyle } from '../../global/global';
+import { cssValues } from '../../global/global';
 
 @Component({
   tag: 'sgnw-sign',

@@ -1,6 +1,22 @@
 import fs from 'fs';
 import { create } from 'markdown-to-html-cli';
 
+const fswList = ['fsw-symbol','fsw-sign','fsw-vp','fsw-button','fsw-palette-symbol','fsw-palette','fsw-signbox'];
+const fswLinks = fswList.map( item => {
+  return '- ' + '[' + item + '](FSW-COMPONENTS.md#' + item + ')';
+})
+const fswLinksPlus = fswList.map( item => {
+  return '- ' + '[' + item + '](FSW-COMPONENTS.md#' + item + ') with [additional examples](' + item + '.html)';
+})
+
+const sgnwList = ['sgnw-symbol','sgnw-sign','sgnw-vp','sgnw-button','sgnw-palette-symbol','sgnw-palette','sgnw-signbox'];
+const sgnwLinks = sgnwList.map( item => {
+  return '- ' + '[' + item + '](SGNW-COMPONENTS.md#' + item + ')';
+})
+const sgnwLinksPlus = sgnwList.map( item => {
+  return '- ' + '[' + item + '](SGNW-COMPONENTS.md#' + item + ') with [additional examples](' + item + '.html)';
+})
+
 if (!fs.existsSync('./docs')){
   fs.mkdirSync('./docs');
 }
@@ -30,7 +46,7 @@ const header = `[Read Me](README.md) |
 ---
 `;
 
-let md, html;
+let md, mdTemp, html;
 let doc = {
   "title": "Sutton SignWriting Web Components",
   "description": "a javascript package for the browser that includes a collection of web components built with https://stenciljs.com/",
@@ -46,8 +62,15 @@ md = replaceCommon(readme);
 html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/index.html', html,'utf8');
 
-let usage = fs.readFileSync('./USAGE.md','utf8');
-md = replaceCommon(usage);
+const usage = fs.readFileSync('./src/usage.md','utf8');
+md = header + "\n" + usage;
+mdTemp = md.replace('- fsw-components',fswLinks.join("\n"))
+mdTemp = mdTemp.replace('- sgnw-components',sgnwLinks.join("\n"))
+fs.writeFileSync('./USAGE.md', mdTemp,'utf8');
+
+md = md.replace('- fsw-components',fswLinksPlus.join("\n"))
+md = md.replace('- sgnw-components',sgnwLinksPlus.join("\n"))
+md = replaceCommon(md);
 html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/usage.html', html,'utf8');
 
@@ -62,17 +85,16 @@ html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/license.html', html,'utf8');
 
 const fsw = fs.readFileSync('./src/fsw-components.md','utf8');
-const fswList = ['fsw-symbol','fsw-sign','fsw-vp'];
 const fswDetail = fswList.map( item => {
   const md = fs.readFileSync('./src/components/' + item + '/readme.md','utf8');
   return md.replace(/# /g, '## ').replace(/\.\.\//g, '#').replace(/style [a-z]+-[a-z]+ fill:#f9f,stroke:#333,stroke-width:4px/g, '')
 });
 md = header + "\n" + fsw + "\n" + fswDetail.join("\n");
-fs.writeFileSync('./FSW-COMPONENTS.md', md,'utf8');
+mdTemp = md.replace('- fsw-components',fswLinks.join("\n"))
+fs.writeFileSync('./FSW-COMPONENTS.md', mdTemp,'utf8');
+
+md = md.replace('- fsw-components',fswLinksPlus.join("\n"))
 md = replaceCommon(md);
-fswList.map( item => {
-  md = md.replace(item + ')',item + ') with [additional examples](' + item + '.html)')
-})
 html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/fsw-components.html', html,'utf8');
 
@@ -84,17 +106,16 @@ fswList.map( item => {
 });
 
 const sgnw = fs.readFileSync('./src/sgnw-components.md','utf8');
-const sgnwList = ['sgnw-symbol','sgnw-sign','sgnw-vp'];
 const sgnwDetail = sgnwList.map( item => {
   const md = fs.readFileSync('./src/components/' + item + '/readme.md','utf8');
   return md.replace(/# /g, '## ').replace(/\.\.\//g, '#').replace(/style [a-z]+-[a-z]+ fill:#f9f,stroke:#333,stroke-width:4px/g, '')
 });
 md = header + "\n" + sgnw + "\n" + sgnwDetail.join("\n");
-fs.writeFileSync('./SGNW-COMPONENTS.md', md,'utf8');
+mdTemp = md.replace('- sgnw-components',sgnwLinks.join("\n"))
+fs.writeFileSync('./SGNW-COMPONENTS.md', mdTemp,'utf8');
+
+md = md.replace('- sgnw-components',sgnwLinksPlus.join("\n"))
 md = replaceCommon(md);
-sgnwList.map( item => {
-  md = md.replace(item + ')',item + ') with [additional examples](' + item + '.html)')
-})
 html = create({markdown: md, document: doc})
 fs.writeFileSync('./docs/sgnw-components.html', html,'utf8');
 
