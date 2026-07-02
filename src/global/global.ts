@@ -1,7 +1,7 @@
 
 import { StyleObject } from '@sutton-signwriting/core/style';
 import { cssAppend, cssLoaded, symbolSize } from '@sutton-signwriting/font-ttf/font/font';
-import { rgb2hex } from '@sutton-signwriting/core/style'
+import { rgb2hex, rgba2hex } from '@sutton-signwriting/core/style'
 
 declare global {
   interface Window { sgnw: boolean; }
@@ -11,26 +11,129 @@ window['sgnw'] = false;
 
 const event = new Event('sgnw');
 
+// getComputedStyle no longer guarantees the legacy "rgb(r, g, b)" serialization
+// that rgb2hex/rgba2hex parse: colors declared with modern CSS (color-mix(),
+// oklch(), color()) compute to strings like "color(srgb 0.1 0.2 0.3 / 0.6)".
+// Normalize any color the browser understands to a legacy rgb/rgba string.
+
+const parseAlpha = (alpha: string): number => {
+  if (alpha === undefined || alpha === '') return 1;
+  const num = parseFloat(alpha);
+  return alpha.indexOf('%') === -1 ? num : num / 100;
+}
+
+const srgbToByte = (channel: string): number => {
+  const num = parseFloat(channel);
+  const scaled = channel.indexOf('%') === -1 ? num * 255 : num * 255 / 100;
+  return Math.round(Math.min(255, Math.max(0, scaled)));
+}
+
+const rgbaString = (r: number, g: number, b: number, a: number): string =>
+  a >= 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${a})`;
+
+const RGB_MODERN = /^rgba?\(\s*([\d.%]+)\s+([\d.%]+)\s+([\d.%]+)\s*(?:\/\s*([\d.%]+)\s*)?\)$/i;
+const COLOR_SRGB = /^color\(srgb\s+([\d.%]+)\s+([\d.%]+)\s+([\d.%]+)\s*(?:\/\s*([\d.%]+)\s*)?\)$/i;
+
+let normalizeContext: CanvasRenderingContext2D | null;
+
+export const normalizeColor = function (color: string): string {
+  if (typeof color !== 'string' || color === '') return color;
+  const value = color.trim();
+  if (/^rgba?\(/i.test(value) && value.indexOf(',') !== -1) {
+    return value;
+  }
+  const modern = value.match(RGB_MODERN);
+  if (modern) {
+    return rgbaString(Math.round(parseFloat(modern[1])), Math.round(parseFloat(modern[2])), Math.round(parseFloat(modern[3])), parseAlpha(modern[4]));
+  }
+  const srgb = value.match(COLOR_SRGB);
+  if (srgb) {
+    return rgbaString(srgbToByte(srgb[1]), srgbToByte(srgb[2]), srgbToByte(srgb[3]), parseAlpha(srgb[4]));
+  }
+  // anything else (oklch, oklab, lab, display-p3, ...): paint a pixel and read
+  // it back — the canvas understands every color the page does
+  if (normalizeContext === undefined) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1;
+    canvas.height = 1;
+    normalizeContext = typeof canvas.getContext === 'function' ? canvas.getContext('2d', { willReadFrequently: true }) : null;
+  }
+  if (!normalizeContext || typeof normalizeContext.getImageData !== 'function') {
+    return value;
+  }
+  normalizeContext.clearRect(0, 0, 1, 1);
+  normalizeContext.fillStyle = value;
+  normalizeContext.fillRect(0, 0, 1, 1);
+  const pixel = normalizeContext.getImageData(0, 0, 1, 1).data;
+  if (!pixel || pixel.length < 4 || typeof pixel[0] !== 'number') {
+    return value;
+  }
+  return rgbaString(pixel[0], pixel[1], pixel[2], pixel[3] / 255);
+}
+
+const isTransparent = (color: string): boolean =>
+  color === '' || rgb2hex(color) == 'transparent';
+
 export const cssValues = function(el: Element): StyleObject {
-  let css = window.getComputedStyle(el, null);
-  let styleObj: StyleObject = {
-    "background": rgb2hex(css.getPropertyValue("background-color")),
+  const css = window.getComputedStyle(el, null);
+  const ownBackground = normalizeColor(css.getPropertyValue("background-color"));
+
+  // walk up to the first non-transparent ancestor background; below the root
+  // the page canvas is effectively white
+  let background = ownBackground;
+  let elem: Element = el;
+  while (isTransparent(background)) {
+    elem = elem.parentElement;
+    if (elem == null) {
+      background = "rgb(255, 255, 255)";
+      break;
+    }
+    background = normalizeColor(window.getComputedStyle(elem, null).getPropertyValue("background-color"));
+  }
+
+  return {
+    "background": isTransparent(ownBackground) ? "transparent" : rgb2hex(ownBackground),
     "detail": [
-      rgb2hex(css.getPropertyValue("color")),
-      rgb2hex(css.getPropertyValue("background-color"))
+      // flatten a semi-transparent text color over its real backdrop instead
+      // of dropping the alpha channel
+      rgba2hex(normalizeColor(css.getPropertyValue("color")), background),
+      rgb2hex(background)
     ],
     "zoom": parseInt(css.getPropertyValue("font-size").slice(0,-2))/30
   }
-  let elem = el;
-  while(styleObj.detail[1] == "transparent"){
-    elem = elem.parentElement;
-    if (elem == null) {
-      elem = document.body;
+}
+
+// The rendered SVG bakes in the colors read at render time, so a page theme
+// change (a dark-mode class/attribute toggle or an OS-level scheme flip) must
+// trigger a re-render. Components subscribe here; observation is lazy and
+// shared. Returns an unsubscribe function.
+const themeCallbacks: Array<() => void> = [];
+let themeObserver: MutationObserver = null;
+
+const notifyThemeChange = () => {
+  themeCallbacks.slice().forEach(callback => callback());
+}
+
+export const onThemeChange = function (callback: () => void): () => void {
+  if (themeObserver == null && typeof MutationObserver !== 'undefined') {
+    themeObserver = new MutationObserver(notifyThemeChange);
+    const options = { attributes: true, attributeFilter: ['class', 'style', 'data-theme'] };
+    themeObserver.observe(document.documentElement, options);
+    if (document.body) {
+      themeObserver.observe(document.body, options);
     }
-    css = window.getComputedStyle(elem, null);
-    styleObj.detail[1] = rgb2hex(css.getPropertyValue("background-color"));
+    const media = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    if (media && typeof media.addEventListener === 'function') {
+      media.addEventListener('change', notifyThemeChange);
+    }
   }
-  return styleObj;
+  themeCallbacks.push(callback);
+  return () => {
+    const index = themeCallbacks.indexOf(callback);
+    if (index !== -1) {
+      themeCallbacks.splice(index, 1);
+    }
+  };
 }
 
 export const padArray = function (arr: string[], len: number): string[] {

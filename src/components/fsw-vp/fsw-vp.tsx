@@ -5,6 +5,7 @@ import { info, parse as parseFSW } from '@sutton-signwriting/core/fsw/fsw';
 import { compose as composeStyle } from '@sutton-signwriting/core/style/style';
 
 import { cssValues } from '../../global/global';
+import { ColorWatch } from '../../global/color-watch';
 
 @Component({
   tag: 'fsw-vp',
@@ -15,6 +16,8 @@ import { cssValues } from '../../global/global';
 export class FswVp {
 
   @Element() el: HTMLElement; //this.el
+
+  private colorWatch: ColorWatch;
 
   /** FSW text */
   @Prop({mutable: true, reflect: true}) vp: string;
@@ -34,6 +37,7 @@ export class FswVp {
   }
 
   connectedCallback(){
+    this.colorWatch = new ColorWatch(this.el, this);
     if (!this.vp){
       this.vp = this.el.innerHTML;
     } else {
@@ -47,6 +51,10 @@ export class FswVp {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
+  }
+
+  disconnectedCallback(){
+    this.colorWatch.dispose();
   }
 
   render() {
