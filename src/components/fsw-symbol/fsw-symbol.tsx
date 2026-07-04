@@ -7,6 +7,7 @@ import { parse as parseStyle, compose as composeStyle, merge as mergeStyle } fro
 import { symbolSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
 import { cssValues } from '../../global/global';
+import { ColorWatch } from '../../global/color-watch';
 
 @Component({
   tag: 'fsw-symbol',
@@ -18,6 +19,8 @@ export class FswSymbol {
 
   @Element() el: HTMLElement; //this.el
 
+  private colorWatch: ColorWatch;
+
   /** FSW key for symbol */
   @Prop({mutable: true, reflect: true}) symbol: string;
   /** Style String for symbol */
@@ -26,6 +29,7 @@ export class FswSymbol {
   @State() sgnw: boolean = window.sgnw;
 
   connectedCallback(){
+    this.colorWatch = new ColorWatch(this.el, this);
     if (!this.symbol){
       let symbol = parseFSW.symbol(this.el.innerHTML);
       if (symbol.style) {
@@ -41,6 +45,10 @@ export class FswSymbol {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
+  }
+
+  disconnectedCallback(){
+    this.colorWatch.dispose();
   }
 
   render() {

@@ -6,6 +6,7 @@ import { info, parse as parseSGNW } from '@sutton-signwriting/core/swu/swu';
 import { compose as composeStyle } from '@sutton-signwriting/core/style/style';
 
 import { cssValues } from '../../global/global';
+import { ColorWatch } from '../../global/color-watch';
 
 @Component({
   tag: 'sgnw-vp',
@@ -16,6 +17,8 @@ import { cssValues } from '../../global/global';
 export class SgnwVp {
 
   @Element() el: HTMLElement; //this.el
+
+  private colorWatch: ColorWatch;
 
   /** SWU text */
   @Prop({mutable: true, reflect: true}) vp: string;
@@ -35,6 +38,7 @@ export class SgnwVp {
   }
 
   connectedCallback(){
+    this.colorWatch = new ColorWatch(this.el, this);
     if (!this.vp){
       this.vp = this.el.innerHTML;
     } else {
@@ -48,6 +52,10 @@ export class SgnwVp {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
+  }
+
+  disconnectedCallback(){
+    this.colorWatch.dispose();
   }
 
   render() {

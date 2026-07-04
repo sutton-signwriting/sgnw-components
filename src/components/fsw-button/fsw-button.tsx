@@ -6,6 +6,7 @@ import { compose as composeStyle } from '@sutton-signwriting/core/style/style';
 import { symbolSvg, signSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
 import { cssValues } from '../../global/global';
+import { ColorWatch } from '../../global/color-watch';
 
 
 @Component({
@@ -18,6 +19,8 @@ export class FswButton {
 
   @Element() el: HTMLElement; //this.el
 
+  private colorWatch: ColorWatch;
+
   /** FSW key for symbol */
   @Prop({mutable: true, reflect: true}) symbol: string;
   /** FSW string for sign */
@@ -28,6 +31,7 @@ export class FswButton {
   @State() sgnw: boolean = window.sgnw;
 
   connectedCallback(){
+    this.colorWatch = new ColorWatch(this.el, this);
     if (!this.sgnw){
       let self = this;
       function handleSgnw(){
@@ -36,6 +40,10 @@ export class FswButton {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
+  }
+
+  disconnectedCallback(){
+    this.colorWatch.dispose();
   }
 
   render() {

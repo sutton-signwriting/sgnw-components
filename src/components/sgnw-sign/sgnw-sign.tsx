@@ -8,6 +8,7 @@ import { parse as parseStyle, compose as composeStyle, merge as mergeStyle } fro
 import { signSvg } from '@sutton-signwriting/font-ttf/swu/swu';
 
 import { cssValues } from '../../global/global';
+import { ColorWatch } from '../../global/color-watch';
 
 @Component({
   tag: 'sgnw-sign',
@@ -19,6 +20,8 @@ export class SgnwSign {
 
   @Element() el: HTMLElement; //this.el
 
+  private colorWatch: ColorWatch;
+
   /** SWU string for sign */
   @Prop({mutable: true, reflect: true}) sign: string;
   /** Style String for sign */
@@ -27,6 +30,7 @@ export class SgnwSign {
   @State() sgnw: boolean = window.sgnw;
 
   connectedCallback(){
+    this.colorWatch = new ColorWatch(this.el, this);
     if (!this.sign){
       let sign = parseSWU.sign(this.el.innerHTML);
       if (sign.style) {
@@ -43,6 +47,10 @@ export class SgnwSign {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
+  }
+
+  disconnectedCallback(){
+    this.colorWatch.dispose();
   }
 
   render() {

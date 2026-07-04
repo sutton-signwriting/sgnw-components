@@ -20,3 +20,10 @@ sgnw-sign, sgnw-symbol {
   vertical-align: middle; 
   box-sizing: content-box; 
 }
+
+/* A near-zero transition makes the browser emit `transitionend` whenever
+   the computed color changes (theme switch, parent restyle, media query),
+   which re-renders the SVG with the new colors. */
+:host {
+  transition: color 1ms, background-color 1ms;
+}
