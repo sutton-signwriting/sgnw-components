@@ -6,6 +6,7 @@ import { compose as composeStyle } from '@sutton-signwriting/core/style/style';
 import { symbolSvg, signSvg } from '@sutton-signwriting/font-ttf/swu/swu';
 
 import { cssValues } from '../../global/global';
+import { ColorWatch } from '../../global/color-watch';
 
 
 @Component({
@@ -18,6 +19,8 @@ export class SgnwButton {
 
   @Element() el: HTMLElement; //this.el
 
+  private colorWatch: ColorWatch;
+
   /** SWU character for symbol */
   @Prop({mutable: true, reflect: true}) symbol: string;
   /** SWU string for sign */
@@ -28,6 +31,7 @@ export class SgnwButton {
   @State() sgnw: boolean = window.sgnw;
 
   connectedCallback(){
+    this.colorWatch = new ColorWatch(this.el, this);
     if (!this.sgnw){
       let self = this;
       function handleSgnw(){
@@ -36,6 +40,10 @@ export class SgnwButton {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
+  }
+
+  disconnectedCallback(){
+    this.colorWatch.dispose();
   }
 
   render() {

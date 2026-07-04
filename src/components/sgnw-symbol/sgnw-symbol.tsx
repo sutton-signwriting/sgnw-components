@@ -8,6 +8,7 @@ import { parse as parseStyle, compose as composeStyle, merge as mergeStyle } fro
 import { symbolSvg } from '@sutton-signwriting/font-ttf/swu/swu';
 
 import { cssValues } from '../../global/global';
+import { ColorWatch } from '../../global/color-watch';
 
 @Component({
   tag: 'sgnw-symbol',
@@ -19,6 +20,8 @@ export class SgnwSymbol {
 
   @Element() el: HTMLElement; //this.el
 
+  private colorWatch: ColorWatch;
+
   /** SWU character for symbol */
   @Prop({mutable: true, reflect: true}) symbol: string;
   /** Style String for symbol */
@@ -27,6 +30,7 @@ export class SgnwSymbol {
   @State() sgnw: boolean = window.sgnw;
 
   connectedCallback(){
+    this.colorWatch = new ColorWatch(this.el, this);
     if (!this.symbol){
       let symbol = parseSWU.symbol(this.el.innerHTML);
       if (symbol.style) {
@@ -43,6 +47,10 @@ export class SgnwSymbol {
       }
       window.addEventListener('sgnw', handleSgnw, false);
     }
+  }
+
+  disconnectedCallback(){
+    this.colorWatch.dispose();
   }
 
   render() {
