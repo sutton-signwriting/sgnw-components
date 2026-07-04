@@ -23,30 +23,37 @@ export namespace Components {
     interface FswPalette {
         /**
           * set of symbols
+          * @default {   "S10000": ["S10000", "S10110", "S10210", "S10310", "S10410", "S10510", "S10610", "S10710", "S10810", "S10910", "S10a10", "S10b10", "S10c10", "S10d10"],   "S10e00": ["S10e00", "S10f10", "S11010", "S11110", "S11210", "S11310", "S11410", "S11510", "S11610", "S11710", "S11810", "S11910", "S11a10", "S11b10", "S11c10", "S11d10"],   "S11e00": ["S11e00", "S11f10", "S12010", "S12110", "S12210", "S12310", "S12410", "S12510", "S12610", "S12710", "S12810", "S12910", "S12a10", "S12b10", "S12c10", "S12d10", "S12e10", "S12f10", "S13010", "S13110", "S13210", "S13310", "S13410", "S13510", "S13610", "S13710", "S13810", "S13910", "S13a10", "S13b10", "S13c10", "S13d10", "S13e10", "S13f10", "S14010", "S14110", "S14210", "S14310"],   "S14400": ["S14400", "S14510", "S14610", "S14710", "S14810", "S14910", "S14a10", "S14b10"],   "S14c00": ["S14c00", "S14d10", "S14e10", "S14f10", "S15010", "S15110", "S15210", "S15310", "S15410", "S15510", "S15610", "S15710", "S15810", "S15910", "S15a10", "S15b10", "S15c10", "S15d10", "S15e10", "S15f10", "S16010", "S16110", "S16210", "S16310", "S16410", "S16510", "S16610", "S16710", "S16810", "S16910", "S16a10", "S16b10", "S16c10", "S16d10", "S16e10", "S16f10", "S17010", "S17110", "S17210", "S17310", "S17410", "S17510", "S17610", "S17710", "S17810", "S17910", "S17a10", "S17b10", "S17c10", "S17d10", "S17e10", "S17f10", "S18010", "S18110", "S18210", "S18310", "S18410", "S18510"],   "S18600": ["S18600", "S18710", "S18810", "S18910", "S18a10", "S18b10", "S18c10", "S18d10", "S18e10", "S18f10", "S19010", "S19110", "S19210", "S19310", "S19410", "S19510", "S19610", "S19710", "S19810", "S19910", "S19a10", "S19b10", "S19c10", "S19d10", "S19e10", "S19f10", "S1a010", "S1a110", "S1a210", "S1a310"],   "S1a400": ["S1a400", "S1a510", "S1a610", "S1a710", "S1a810", "S1a910", "S1aa10", "S1ab10", "S1ac10", "S1ad10", "S1ae10", "S1af10", "S1b010", "S1b110", "S1b210", "S1b310", "S1b410", "S1b510", "S1b610", "S1b710", "S1b810", "S1b910"],   "S1ba00": ["S1ba00", "S1bb10", "S1bc10", "S1bd10", "S1be10", "S1bf10", "S1c010", "S1c110", "S1c210", "S1c310", "S1c410", "S1c510", "S1c610", "S1c710", "S1c810", "S1c910", "S1ca10", "S1cb10", "S1cc10"],   "S1cd00": ["S1cd00", "S1ce10", "S1cf10", "S1d010", "S1d110", "S1d210", "S1d310", "S1d410", "S1d510", "S1d610", "S1d710", "S1d810", "S1d910", "S1da10", "S1db10", "S1dc10", "S1dd10", "S1de10", "S1df10", "S1e010", "S1e110", "S1e200", "S1e310", "S1e410", "S1e510", "S1e610", "S1e710", "S1e810", "S1e910", "S1ea10", "S1eb10", "S1ec10", "S1ed10", "S1ee10", "S1ef10", "S1f010", "S1f110", "S1f210", "S1f310", "S1f410"],   "S1f500": ["S1f500", "S1f610", "S1f710", "S1f810", "S1f910", "S1fa10", "S1fb10", "S1fc10", "S1fd10", "S1fe10", "S1ff10", "S20010", "S20110", "S20210", "S20310", "S20410"],   "S20500": ["S20500", "S20600", "S20700", "S20800", "S20900", "S20a00", "S20b00", "S20c00", "S20d00", "S20e00", "S20f00", "S21000", "S21100", "S21200", "S21300", "S21400", "S21500"],   "S21600": ["S21600", "S21700", "S21800", "S21900", "S21a00", "S21b00", "S21c00", "S21d00", "S21e00", "S21f00", "S22000", "S22100", "S22200", "S22300", "S22400", "S22500", "S22600", "S22700", "S22800", "S22900"],   "S22a00": ["S22a00", "S22b00", "S22c00", "S22d00", "S22e00", "S22f00", "S23000", "S23100", "S23200", "S23300", "S23400", "S23500", "S23600", "S23700", "S23800", "S23900", "S23a00", "S23b00", "S23c00", "S23d00", "S23e00", "S23f00", "S24000", "S24100", "S24200", "S24300", "S24400", "S24500", "S24600", "S24700", "S24800", "S24900", "S24a00", "S24b00", "S24c00", "S24d00", "S24e00", "S24f00", "S25000", "S25100", "S25200", "S25300", "S25400"],   "S25500": ["S25500", "S25600", "S25700", "S25800", "S25900", "S25a00", "S25b00", "S25c00", "S25d00", "S25e00", "S25f00", "S26000", "S26100", "S26200", "S26300", "S26400"],   "S26500": ["S26500", "S26600", "S26700", "S26800", "S26900", "S26a00", "S26b00", "S26c00", "S26d00", "S26e00", "S26f00", "S27000", "S27100", "S27200", "S27300", "S27400", "S27500", "S27600", "S27700", "S27800", "S27900", "S27a00", "S27b00", "S27c00", "S27d00", "S27e00", "S27f00", "S28000", "S28100", "S28200", "S28300", "S28400", "S28500", "S28600", "S28700"],   "S28800": ["S28800", "S28900", "S28a00", "S28b00", "S28c00", "S28d00", "S28e00", "S28f00", "S29000", "S29100", "S29200", "S29300", "S29400", "S29500", "S29600", "S29700", "S29800", "S29900", "S29a00", "S29b00", "S29c00", "S29d00", "S29e00", "S29f00", "S2a000", "S2a100", "S2a200", "S2a300", "S2a400", "S2a500"],   "S2a600": ["S2a600", "S2a700", "S2a800", "S2a900", "S2aa00", "S2ab00", "S2ac00", "S2ad00", "S2ae00", "S2af00", "S2b000", "S2b100", "S2b200", "S2b300", "S2b400", "S2b500", "S2b600"],   "S2b700": ["S2b700", "S2b800", "S2b900", "S2ba00", "S2bb00", "S2bc00", "S2bd00", "S2be00", "S2bf00", "S2c000", "S2c100", "S2c200", "S2c300", "S2c400", "S2c500", "S2c600", "S2c700", "S2c800", "S2c900", "S2ca00", "S2cb00", "S2cc00", "S2cd00", "S2ce00", "S2cf00", "S2d000", "S2d100", "S2d200", "S2d300", "S2d400"],   "S2d500": ["S2d500", "S2d600", "S2d700", "S2d800", "S2d900", "S2da00", "S2db00", "S2dc00", "S2dd00", "S2de00", "S2df00", "S2e000", "S2e100", "S2e200"],   "S2e300": ["S2e300", "S2e400", "S2e500", "S2e600", "S2e700", "S2e800", "S2e900", "S2ea00", "S2eb00", "S2ec00", "S2ed00", "S2ee00", "S2ef00", "S2f000", "S2f100", "S2f200", "S2f300", "S2f400", "S2f500", "S2f600"],   "S2f700": ["S2f700", "S2f800", "S2f900", "S2fa00", "S2fb00", "S2fc00", "S2fd00", "S2fe00"],   "S2ff00": ["S2ff00", "S30000", "S30100", "S30200", "S30300", "S30400", "S30500", "S30600", "S30700", "S30800", "S30900"],   "S30a00": ["S30a00", "S30b00", "S30c00", "S30d00", "S30e00", "S30f00", "S31000", "S31100", "S31200", "S31300", "S31400", "S31500", "S31600", "S31700", "S31800", "S31900", "S31a00", "S31b00", "S31c00", "S31d00", "S31e00", "S31f00", "S32000", "S32100", "S32200", "S32300", "S32400", "S32500", "S32600", "S32700", "S32800", "S32900"],   "S32a00": ["S32a00", "S32b00", "S32c00", "S32d00", "S32e00", "S32f00", "S33000", "S33100", "S33200", "S33300", "S33400", "S33500", "S33600", "S33700", "S33800", "S33900", "S33a00"],   "S33b00": ["S33b00", "S33c00", "S33d00", "S33e00", "S33f00", "S34000", "S34100", "S34200", "S34300", "S34400", "S34500", "S34600", "S34700", "S34800", "S34900", "S34a00", "S34b00", "S34c00", "S34d00", "S34e00", "S34f00", "S35000", "S35100", "S35200", "S35300", "S35400", "S35500", "S35600", "S35700", "S35800"],   "S35900": ["S35900", "S35a00", "S35b00", "S35c00", "S35d00", "S35e00", "S35f00", "S36000", "S36100", "S36200", "S36300", "S36400", "S36500", "S36600", "S36700", "S36800", "S36900", "S36a00", "S36b00", "S36c00"],   "S36d00": ["S36d00", "S36e00", "S36f00", "S37000", "S37100", "S37200", "S37300", "S37400", "S37500"],   "S37600": ["S37600", "S37700", "S37800", "S37900", "S37a00", "S37b00", "S37c00", "S37d00", "S37e00"],   "S37f00": ["S37f00", "S38000", "S38100", "S38200", "S38300", "S38400", "S38500", "S38600"],   "S38700": ["S38700", "S38800", "S38900", "S38a00", "S38b00"] }
          */
         "alphabet": object | string;
         /**
           * mid level symbol selection
+          * @default null
          */
         "base": string;
         /**
           * top level symbol selection
+          * @default null
          */
         "group": string;
         /**
           * flag for small and medium palette
+          * @default false
          */
         "lower": boolean;
         /**
           * flag for small palette
+          * @default false
          */
         "more": boolean;
         /**
           * orientation of palette
+          * @default "vertical"
          */
         "orientation": "horizontal" | "vertical";
         /**
           * size of palette
+          * @default "small"
          */
         "size": "small" | "medium" | "large";
     }
@@ -107,30 +114,37 @@ export namespace Components {
     interface SgnwPalette {
         /**
           * set of symbols
+          * @default {   "񀀁": ["񀀁", "񀁱", "񀃑", "񀄱", "񀆑", "񀇱", "񀉑", "񀊱", "񀌑", "񀍱", "񀏑", "񀐱", "񀒑", "񀓱"],   "񀕁": ["񀕁", "񀖱", "񀘑", "񀙱", "񀛑", "񀜱", "񀞑", "񀟱", "񀡑", "񀢱", "񀤑", "񀥱", "񀧑", "񀨱", "񀪑", "񀫱"],   "񀭁": ["񀭁", "񀮱", "񀰑", "񀱱", "񀳑", "񀴱", "񀶑", "񀷱", "񀹑", "񀺱", "񀼑", "񀽱", "񀿑", "񁀱", "񁂑", "񁃱", "񁅑", "񁆱", "񁈑", "񁉱", "񁋑", "񁌱", "񁎑", "񁏱", "񁑑", "񁒱", "񁔑", "񁕱", "񁗑", "񁘱", "񁚑", "񁛱", "񁝑", "񁞱", "񁠑", "񁡱", "񁣑", "񁤱"],   "񁦁": ["񁦁", "񁧱", "񁩑", "񁪱", "񁬑", "񁭱", "񁯑", "񁰱"],   "񁲁": ["񁲁", "񁳱", "񁵑", "񁶱", "񁸑", "񁹱", "񁻑", "񁼱", "񁾑", "񁿱", "񂁑", "񂂱", "񂄑", "񂅱", "񂇑", "񂈱", "񂊑", "񂋱", "񂍑", "񂎱", "񂐑", "񂑱", "񂓑", "񂔱", "񂖑", "񂗱", "񂙑", "񂚱", "񂜑", "񂝱", "񂟑", "񂠱", "񂢑", "񂣱", "񂥑", "񂦱", "񂨑", "񂩱", "񂫑", "񂬱", "񂮑", "񂯱", "񂱑", "񂲱", "񂴑", "񂵱", "񂷑", "񂸱", "񂺑", "񂻱", "񂽑", "񂾱", "񃀑", "񃁱", "񃃑", "񃄱", "񃆑", "񃇱"],   "񃉁": ["񃉁", "񃊱", "񃌑", "񃍱", "񃏑", "񃐱", "񃒑", "񃓱", "񃕑", "񃖱", "񃘑", "񃙱", "񃛑", "񃜱", "񃞑", "񃟱", "񃡑", "񃢱", "񃤑", "񃥱", "񃧑", "񃨱", "񃪑", "񃫱", "񃭑", "񃮱", "񃰑", "񃱱", "񃳑", "񃴱"],   "񃶁": ["񃶁", "񃷱", "񃹑", "񃺱", "񃼑", "񃽱", "񃿑", "񄀱", "񄂑", "񄃱", "񄅑", "񄆱", "񄈑", "񄉱", "񄋑", "񄌱", "񄎑", "񄏱", "񄑑", "񄒱", "񄔑", "񄕱"],   "񄗁": ["񄗁", "񄘱", "񄚑", "񄛱", "񄝑", "񄞱", "񄠑", "񄡱", "񄣑", "񄤱", "񄦑", "񄧱", "񄩑", "񄪱", "񄬑", "񄭱", "񄯑", "񄰱", "񄲑"],   "񄳡": ["񄳡", "񄵑", "񄶱", "񄸑", "񄹱", "񄻑", "񄼱", "񄾑", "񄿱", "񅁑", "񅂱", "񅄑", "񅅱", "񅇑", "񅈱", "񅊑", "񅋱", "񅍑", "񅎱", "񅐑", "񅑱", "񅓁", "񅔱", "񅖑", "񅗱", "񅙑", "񅚱", "񅜑", "񅝱", "񅟑", "񅠱", "񅢑", "񅣱", "񅥑", "񅦱", "񅨑", "񅩱", "񅫑", "񅬱", "񅮑"],   "񅯡": ["񅯡", "񅱑", "񅲱", "񅴑", "񅵱", "񅷑", "񅸱", "񅺑", "񅻱", "񅽑", "񅾱", "񆀑", "񆁱", "񆃑", "񆄱", "񆆑"],   "񆇡": ["񆇡", "񆉁", "񆊡", "񆌁", "񆍡", "񆏁", "񆐡", "񆒁", "񆓡", "񆕁", "񆖡", "񆘁", "񆙡", "񆛁", "񆜡", "񆞁", "񆟡"],   "񆡁": ["񆡁", "񆢡", "񆤁", "񆥡", "񆧁", "񆨡", "񆪁", "񆫡", "񆭁", "񆮡", "񆰁", "񆱡", "񆳁", "񆴡", "񆶁", "񆷡", "񆹁", "񆺡", "񆼁", "񆽡"],   "񆿁": ["񆿁", "񇀡", "񇂁", "񇃡", "񇅁", "񇆡", "񇈁", "񇉡", "񇋁", "񇌡", "񇎁", "񇏡", "񇑁", "񇒡", "񇔁", "񇕡", "񇗁", "񇘡", "񇚁", "񇛡", "񇝁", "񇞡", "񇠁", "񇡡", "񇣁", "񇤡", "񇦁", "񇧡", "񇩁", "񇪡", "񇬁", "񇭡", "񇯁", "񇰡", "񇲁", "񇳡", "񇵁", "񇶡", "񇸁", "񇹡", "񇻁", "񇼡", "񇾁"],   "񇿡": ["񇿡", "񈁁", "񈂡", "񈄁", "񈅡", "񈇁", "񈈡", "񈊁", "񈋡", "񈍁", "񈎡", "񈐁", "񈑡", "񈓁", "񈔡", "񈖁"],   "񈗡": ["񈗡", "񈙁", "񈚡", "񈜁", "񈝡", "񈟁", "񈠡", "񈢁", "񈣡", "񈥁", "񈦡", "񈨁", "񈩡", "񈫁", "񈬡", "񈮁", "񈯡", "񈱁", "񈲡", "񈴁", "񈵡", "񈷁", "񈸡", "񈺁", "񈻡", "񈽁", "񈾡", "񉀁", "񉁡", "񉃁", "񉄡", "񉆁", "񉇡", "񉉁", "񉊡"],   "񉌁": ["񉌁", "񉍡", "񉏁", "񉐡", "񉒁", "񉓡", "񉕁", "񉖡", "񉘁", "񉙡", "񉛁", "񉜡", "񉞁", "񉟡", "񉡁", "񉢡", "񉤁", "񉥡", "񉧁", "񉨡", "񉪁", "񉫡", "񉭁", "񉮡", "񉰁", "񉱡", "񉳁", "񉴡", "񉶁", "񉷡"],   "񉹁": ["񉹁", "񉺡", "񉼁", "񉽡", "񉿁", "񊀡", "񊂁", "񊃡", "񊅁", "񊆡", "񊈁", "񊉡", "񊋁", "񊌡", "񊎁", "񊏡", "񊑁"],   "񊒡": ["񊒡", "񊔁", "񊕡", "񊗁", "񊘡", "񊚁", "񊛡", "񊝁", "񊞡", "񊠁", "񊡡", "񊣁", "񊤡", "񊦁", "񊧡", "񊩁", "񊪡", "񊬁", "񊭡", "񊯁", "񊰡", "񊲁", "񊳡", "񊵁", "񊶡", "񊸁", "񊹡", "񊻁", "񊼡", "񊾁"],   "񊿡": ["񊿡", "񋁁", "񋂡", "񋄁", "񋅡", "񋇁", "񋈡", "񋊁", "񋋡", "񋍁", "񋎡", "񋐁", "񋑡", "񋓁"],   "񋔡": ["񋔡", "񋖁", "񋗡", "񋙁", "񋚡", "񋜁", "񋝡", "񋟁", "񋠡", "񋢁", "񋣡", "񋥁", "񋦡", "񋨁", "񋩡", "񋫁", "񋬡", "񋮁", "񋯡", "񋱁"],   "񋲡": ["񋲡", "񋴁", "񋵡", "񋷁", "񋸡", "񋺁", "񋻡", "񋽁"],   "񋾡": ["񋾡", "񌀁", "񌁡", "񌃁", "񌄡", "񌆁", "񌇡", "񌉁", "񌊡", "񌌁", "񌍡"],   "񌏁": ["񌏁", "񌐡", "񌒁", "񌓡", "񌕁", "񌖡", "񌘁", "񌙡", "񌛁", "񌜡", "񌞁", "񌟡", "񌡁", "񌢡", "񌤁", "񌥡", "񌧁", "񌨡", "񌪁", "񌫡", "񌭁", "񌮡", "񌰁", "񌱡", "񌳁", "񌴡", "񌶁", "񌷡", "񌹁", "񌺡", "񌼁", "񌽡"],   "񌿁": ["񌿁", "񍀡", "񍂁", "񍃡", "񍅁", "񍆡", "񍈁", "񍉡", "񍋁", "񍌡", "񍎁", "񍏡", "񍑁", "񍒡", "񍔁", "񍕡", "񍗁"],   "񍘡": ["񍘡", "񍚁", "񍛡", "񍝁", "񍞡", "񍠁", "񍡡", "񍣁", "񍤡", "񍦁", "񍧡", "񍩁", "񍪡", "񍬁", "񍭡", "񍯁", "񍰡", "񍲁", "񍳡", "񍵁", "񍶡", "񍸁", "񍹡", "񍻁", "񍼡", "񍾁", "񍿡", "񎁁", "񎂡", "񎄁"],   "񎅡": ["񎅡", "񎇁", "񎈡", "񎊁", "񎋡", "񎍁", "񎎡", "񎐁", "񎑡", "񎓁", "񎔡", "񎖁", "񎗡", "񎙁", "񎚡", "񎜁", "񎝡", "񎟁", "񎠡", "񎢁"],   "񎣡": ["񎣡", "񎥁", "񎦡", "񎨁", "񎩡", "񎫁", "񎬡", "񎮁", "񎯡"],   "񎱁": ["񎱁", "񎲡", "񎴁", "񎵡", "񎷁", "񎸡", "񎺁", "񎻡", "񎽁"],   "񎾡": ["񎾡", "񏀁", "񏁡", "񏃁", "񏄡", "񏆁", "񏇡", "񏉁"],   "񏊡": ["񏊡", "񏌁", "񏍡", "񏏁", "񏐡"] }
          */
         "alphabet": object | string;
         /**
           * mid level symbol selection
+          * @default null
          */
         "base": string;
         /**
           * top level symbol selection
+          * @default null
          */
         "group": string;
         /**
           * flag for small and medium palette
+          * @default false
          */
         "lower": boolean;
         /**
           * flag for small palette
+          * @default false
          */
         "more": boolean;
         /**
           * orientation of palette
+          * @default "vertical"
          */
         "orientation": "horizontal" | "vertical";
         /**
           * size of palette
+          * @default "small"
          */
         "size": "small" | "medium" | "large";
     }
@@ -194,7 +208,19 @@ declare global {
         prototype: HTMLFswPaletteElement;
         new (): HTMLFswPaletteElement;
     };
+    interface HTMLFswPaletteSymbolElementEventMap {
+        "paletteSymbolClick": string;
+        "paletteSymbolDrop": {encoding:string,symbol:string,x:number,y:number};
+    }
     interface HTMLFswPaletteSymbolElement extends Components.FswPaletteSymbol, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFswPaletteSymbolElementEventMap>(type: K, listener: (this: HTMLFswPaletteSymbolElement, ev: FswPaletteSymbolCustomEvent<HTMLFswPaletteSymbolElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFswPaletteSymbolElementEventMap>(type: K, listener: (this: HTMLFswPaletteSymbolElement, ev: FswPaletteSymbolCustomEvent<HTMLFswPaletteSymbolElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLFswPaletteSymbolElement: {
         prototype: HTMLFswPaletteSymbolElement;
@@ -242,7 +268,19 @@ declare global {
         prototype: HTMLSgnwPaletteElement;
         new (): HTMLSgnwPaletteElement;
     };
+    interface HTMLSgnwPaletteSymbolElementEventMap {
+        "paletteSymbolClick": string;
+        "paletteSymbolDrop": {encoding:string,symbol:string,x:number,y:number};
+    }
     interface HTMLSgnwPaletteSymbolElement extends Components.SgnwPaletteSymbol, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLSgnwPaletteSymbolElementEventMap>(type: K, listener: (this: HTMLSgnwPaletteSymbolElement, ev: SgnwPaletteSymbolCustomEvent<HTMLSgnwPaletteSymbolElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLSgnwPaletteSymbolElementEventMap>(type: K, listener: (this: HTMLSgnwPaletteSymbolElement, ev: SgnwPaletteSymbolCustomEvent<HTMLSgnwPaletteSymbolElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLSgnwPaletteSymbolElement: {
         prototype: HTMLSgnwPaletteSymbolElement;
@@ -308,30 +346,37 @@ declare namespace LocalJSX {
     interface FswPalette {
         /**
           * set of symbols
+          * @default {   "S10000": ["S10000", "S10110", "S10210", "S10310", "S10410", "S10510", "S10610", "S10710", "S10810", "S10910", "S10a10", "S10b10", "S10c10", "S10d10"],   "S10e00": ["S10e00", "S10f10", "S11010", "S11110", "S11210", "S11310", "S11410", "S11510", "S11610", "S11710", "S11810", "S11910", "S11a10", "S11b10", "S11c10", "S11d10"],   "S11e00": ["S11e00", "S11f10", "S12010", "S12110", "S12210", "S12310", "S12410", "S12510", "S12610", "S12710", "S12810", "S12910", "S12a10", "S12b10", "S12c10", "S12d10", "S12e10", "S12f10", "S13010", "S13110", "S13210", "S13310", "S13410", "S13510", "S13610", "S13710", "S13810", "S13910", "S13a10", "S13b10", "S13c10", "S13d10", "S13e10", "S13f10", "S14010", "S14110", "S14210", "S14310"],   "S14400": ["S14400", "S14510", "S14610", "S14710", "S14810", "S14910", "S14a10", "S14b10"],   "S14c00": ["S14c00", "S14d10", "S14e10", "S14f10", "S15010", "S15110", "S15210", "S15310", "S15410", "S15510", "S15610", "S15710", "S15810", "S15910", "S15a10", "S15b10", "S15c10", "S15d10", "S15e10", "S15f10", "S16010", "S16110", "S16210", "S16310", "S16410", "S16510", "S16610", "S16710", "S16810", "S16910", "S16a10", "S16b10", "S16c10", "S16d10", "S16e10", "S16f10", "S17010", "S17110", "S17210", "S17310", "S17410", "S17510", "S17610", "S17710", "S17810", "S17910", "S17a10", "S17b10", "S17c10", "S17d10", "S17e10", "S17f10", "S18010", "S18110", "S18210", "S18310", "S18410", "S18510"],   "S18600": ["S18600", "S18710", "S18810", "S18910", "S18a10", "S18b10", "S18c10", "S18d10", "S18e10", "S18f10", "S19010", "S19110", "S19210", "S19310", "S19410", "S19510", "S19610", "S19710", "S19810", "S19910", "S19a10", "S19b10", "S19c10", "S19d10", "S19e10", "S19f10", "S1a010", "S1a110", "S1a210", "S1a310"],   "S1a400": ["S1a400", "S1a510", "S1a610", "S1a710", "S1a810", "S1a910", "S1aa10", "S1ab10", "S1ac10", "S1ad10", "S1ae10", "S1af10", "S1b010", "S1b110", "S1b210", "S1b310", "S1b410", "S1b510", "S1b610", "S1b710", "S1b810", "S1b910"],   "S1ba00": ["S1ba00", "S1bb10", "S1bc10", "S1bd10", "S1be10", "S1bf10", "S1c010", "S1c110", "S1c210", "S1c310", "S1c410", "S1c510", "S1c610", "S1c710", "S1c810", "S1c910", "S1ca10", "S1cb10", "S1cc10"],   "S1cd00": ["S1cd00", "S1ce10", "S1cf10", "S1d010", "S1d110", "S1d210", "S1d310", "S1d410", "S1d510", "S1d610", "S1d710", "S1d810", "S1d910", "S1da10", "S1db10", "S1dc10", "S1dd10", "S1de10", "S1df10", "S1e010", "S1e110", "S1e200", "S1e310", "S1e410", "S1e510", "S1e610", "S1e710", "S1e810", "S1e910", "S1ea10", "S1eb10", "S1ec10", "S1ed10", "S1ee10", "S1ef10", "S1f010", "S1f110", "S1f210", "S1f310", "S1f410"],   "S1f500": ["S1f500", "S1f610", "S1f710", "S1f810", "S1f910", "S1fa10", "S1fb10", "S1fc10", "S1fd10", "S1fe10", "S1ff10", "S20010", "S20110", "S20210", "S20310", "S20410"],   "S20500": ["S20500", "S20600", "S20700", "S20800", "S20900", "S20a00", "S20b00", "S20c00", "S20d00", "S20e00", "S20f00", "S21000", "S21100", "S21200", "S21300", "S21400", "S21500"],   "S21600": ["S21600", "S21700", "S21800", "S21900", "S21a00", "S21b00", "S21c00", "S21d00", "S21e00", "S21f00", "S22000", "S22100", "S22200", "S22300", "S22400", "S22500", "S22600", "S22700", "S22800", "S22900"],   "S22a00": ["S22a00", "S22b00", "S22c00", "S22d00", "S22e00", "S22f00", "S23000", "S23100", "S23200", "S23300", "S23400", "S23500", "S23600", "S23700", "S23800", "S23900", "S23a00", "S23b00", "S23c00", "S23d00", "S23e00", "S23f00", "S24000", "S24100", "S24200", "S24300", "S24400", "S24500", "S24600", "S24700", "S24800", "S24900", "S24a00", "S24b00", "S24c00", "S24d00", "S24e00", "S24f00", "S25000", "S25100", "S25200", "S25300", "S25400"],   "S25500": ["S25500", "S25600", "S25700", "S25800", "S25900", "S25a00", "S25b00", "S25c00", "S25d00", "S25e00", "S25f00", "S26000", "S26100", "S26200", "S26300", "S26400"],   "S26500": ["S26500", "S26600", "S26700", "S26800", "S26900", "S26a00", "S26b00", "S26c00", "S26d00", "S26e00", "S26f00", "S27000", "S27100", "S27200", "S27300", "S27400", "S27500", "S27600", "S27700", "S27800", "S27900", "S27a00", "S27b00", "S27c00", "S27d00", "S27e00", "S27f00", "S28000", "S28100", "S28200", "S28300", "S28400", "S28500", "S28600", "S28700"],   "S28800": ["S28800", "S28900", "S28a00", "S28b00", "S28c00", "S28d00", "S28e00", "S28f00", "S29000", "S29100", "S29200", "S29300", "S29400", "S29500", "S29600", "S29700", "S29800", "S29900", "S29a00", "S29b00", "S29c00", "S29d00", "S29e00", "S29f00", "S2a000", "S2a100", "S2a200", "S2a300", "S2a400", "S2a500"],   "S2a600": ["S2a600", "S2a700", "S2a800", "S2a900", "S2aa00", "S2ab00", "S2ac00", "S2ad00", "S2ae00", "S2af00", "S2b000", "S2b100", "S2b200", "S2b300", "S2b400", "S2b500", "S2b600"],   "S2b700": ["S2b700", "S2b800", "S2b900", "S2ba00", "S2bb00", "S2bc00", "S2bd00", "S2be00", "S2bf00", "S2c000", "S2c100", "S2c200", "S2c300", "S2c400", "S2c500", "S2c600", "S2c700", "S2c800", "S2c900", "S2ca00", "S2cb00", "S2cc00", "S2cd00", "S2ce00", "S2cf00", "S2d000", "S2d100", "S2d200", "S2d300", "S2d400"],   "S2d500": ["S2d500", "S2d600", "S2d700", "S2d800", "S2d900", "S2da00", "S2db00", "S2dc00", "S2dd00", "S2de00", "S2df00", "S2e000", "S2e100", "S2e200"],   "S2e300": ["S2e300", "S2e400", "S2e500", "S2e600", "S2e700", "S2e800", "S2e900", "S2ea00", "S2eb00", "S2ec00", "S2ed00", "S2ee00", "S2ef00", "S2f000", "S2f100", "S2f200", "S2f300", "S2f400", "S2f500", "S2f600"],   "S2f700": ["S2f700", "S2f800", "S2f900", "S2fa00", "S2fb00", "S2fc00", "S2fd00", "S2fe00"],   "S2ff00": ["S2ff00", "S30000", "S30100", "S30200", "S30300", "S30400", "S30500", "S30600", "S30700", "S30800", "S30900"],   "S30a00": ["S30a00", "S30b00", "S30c00", "S30d00", "S30e00", "S30f00", "S31000", "S31100", "S31200", "S31300", "S31400", "S31500", "S31600", "S31700", "S31800", "S31900", "S31a00", "S31b00", "S31c00", "S31d00", "S31e00", "S31f00", "S32000", "S32100", "S32200", "S32300", "S32400", "S32500", "S32600", "S32700", "S32800", "S32900"],   "S32a00": ["S32a00", "S32b00", "S32c00", "S32d00", "S32e00", "S32f00", "S33000", "S33100", "S33200", "S33300", "S33400", "S33500", "S33600", "S33700", "S33800", "S33900", "S33a00"],   "S33b00": ["S33b00", "S33c00", "S33d00", "S33e00", "S33f00", "S34000", "S34100", "S34200", "S34300", "S34400", "S34500", "S34600", "S34700", "S34800", "S34900", "S34a00", "S34b00", "S34c00", "S34d00", "S34e00", "S34f00", "S35000", "S35100", "S35200", "S35300", "S35400", "S35500", "S35600", "S35700", "S35800"],   "S35900": ["S35900", "S35a00", "S35b00", "S35c00", "S35d00", "S35e00", "S35f00", "S36000", "S36100", "S36200", "S36300", "S36400", "S36500", "S36600", "S36700", "S36800", "S36900", "S36a00", "S36b00", "S36c00"],   "S36d00": ["S36d00", "S36e00", "S36f00", "S37000", "S37100", "S37200", "S37300", "S37400", "S37500"],   "S37600": ["S37600", "S37700", "S37800", "S37900", "S37a00", "S37b00", "S37c00", "S37d00", "S37e00"],   "S37f00": ["S37f00", "S38000", "S38100", "S38200", "S38300", "S38400", "S38500", "S38600"],   "S38700": ["S38700", "S38800", "S38900", "S38a00", "S38b00"] }
          */
         "alphabet"?: object | string;
         /**
           * mid level symbol selection
+          * @default null
          */
         "base"?: string;
         /**
           * top level symbol selection
+          * @default null
          */
         "group"?: string;
         /**
           * flag for small and medium palette
+          * @default false
          */
         "lower"?: boolean;
         /**
           * flag for small palette
+          * @default false
          */
         "more"?: boolean;
         /**
           * orientation of palette
+          * @default "vertical"
          */
         "orientation"?: "horizontal" | "vertical";
         /**
           * size of palette
+          * @default "small"
          */
         "size"?: "small" | "medium" | "large";
     }
@@ -400,30 +445,37 @@ declare namespace LocalJSX {
     interface SgnwPalette {
         /**
           * set of symbols
+          * @default {   "񀀁": ["񀀁", "񀁱", "񀃑", "񀄱", "񀆑", "񀇱", "񀉑", "񀊱", "񀌑", "񀍱", "񀏑", "񀐱", "񀒑", "񀓱"],   "񀕁": ["񀕁", "񀖱", "񀘑", "񀙱", "񀛑", "񀜱", "񀞑", "񀟱", "񀡑", "񀢱", "񀤑", "񀥱", "񀧑", "񀨱", "񀪑", "񀫱"],   "񀭁": ["񀭁", "񀮱", "񀰑", "񀱱", "񀳑", "񀴱", "񀶑", "񀷱", "񀹑", "񀺱", "񀼑", "񀽱", "񀿑", "񁀱", "񁂑", "񁃱", "񁅑", "񁆱", "񁈑", "񁉱", "񁋑", "񁌱", "񁎑", "񁏱", "񁑑", "񁒱", "񁔑", "񁕱", "񁗑", "񁘱", "񁚑", "񁛱", "񁝑", "񁞱", "񁠑", "񁡱", "񁣑", "񁤱"],   "񁦁": ["񁦁", "񁧱", "񁩑", "񁪱", "񁬑", "񁭱", "񁯑", "񁰱"],   "񁲁": ["񁲁", "񁳱", "񁵑", "񁶱", "񁸑", "񁹱", "񁻑", "񁼱", "񁾑", "񁿱", "񂁑", "񂂱", "񂄑", "񂅱", "񂇑", "񂈱", "񂊑", "񂋱", "񂍑", "񂎱", "񂐑", "񂑱", "񂓑", "񂔱", "񂖑", "񂗱", "񂙑", "񂚱", "񂜑", "񂝱", "񂟑", "񂠱", "񂢑", "񂣱", "񂥑", "񂦱", "񂨑", "񂩱", "񂫑", "񂬱", "񂮑", "񂯱", "񂱑", "񂲱", "񂴑", "񂵱", "񂷑", "񂸱", "񂺑", "񂻱", "񂽑", "񂾱", "񃀑", "񃁱", "񃃑", "񃄱", "񃆑", "񃇱"],   "񃉁": ["񃉁", "񃊱", "񃌑", "񃍱", "񃏑", "񃐱", "񃒑", "񃓱", "񃕑", "񃖱", "񃘑", "񃙱", "񃛑", "񃜱", "񃞑", "񃟱", "񃡑", "񃢱", "񃤑", "񃥱", "񃧑", "񃨱", "񃪑", "񃫱", "񃭑", "񃮱", "񃰑", "񃱱", "񃳑", "񃴱"],   "񃶁": ["񃶁", "񃷱", "񃹑", "񃺱", "񃼑", "񃽱", "񃿑", "񄀱", "񄂑", "񄃱", "񄅑", "񄆱", "񄈑", "񄉱", "񄋑", "񄌱", "񄎑", "񄏱", "񄑑", "񄒱", "񄔑", "񄕱"],   "񄗁": ["񄗁", "񄘱", "񄚑", "񄛱", "񄝑", "񄞱", "񄠑", "񄡱", "񄣑", "񄤱", "񄦑", "񄧱", "񄩑", "񄪱", "񄬑", "񄭱", "񄯑", "񄰱", "񄲑"],   "񄳡": ["񄳡", "񄵑", "񄶱", "񄸑", "񄹱", "񄻑", "񄼱", "񄾑", "񄿱", "񅁑", "񅂱", "񅄑", "񅅱", "񅇑", "񅈱", "񅊑", "񅋱", "񅍑", "񅎱", "񅐑", "񅑱", "񅓁", "񅔱", "񅖑", "񅗱", "񅙑", "񅚱", "񅜑", "񅝱", "񅟑", "񅠱", "񅢑", "񅣱", "񅥑", "񅦱", "񅨑", "񅩱", "񅫑", "񅬱", "񅮑"],   "񅯡": ["񅯡", "񅱑", "񅲱", "񅴑", "񅵱", "񅷑", "񅸱", "񅺑", "񅻱", "񅽑", "񅾱", "񆀑", "񆁱", "񆃑", "񆄱", "񆆑"],   "񆇡": ["񆇡", "񆉁", "񆊡", "񆌁", "񆍡", "񆏁", "񆐡", "񆒁", "񆓡", "񆕁", "񆖡", "񆘁", "񆙡", "񆛁", "񆜡", "񆞁", "񆟡"],   "񆡁": ["񆡁", "񆢡", "񆤁", "񆥡", "񆧁", "񆨡", "񆪁", "񆫡", "񆭁", "񆮡", "񆰁", "񆱡", "񆳁", "񆴡", "񆶁", "񆷡", "񆹁", "񆺡", "񆼁", "񆽡"],   "񆿁": ["񆿁", "񇀡", "񇂁", "񇃡", "񇅁", "񇆡", "񇈁", "񇉡", "񇋁", "񇌡", "񇎁", "񇏡", "񇑁", "񇒡", "񇔁", "񇕡", "񇗁", "񇘡", "񇚁", "񇛡", "񇝁", "񇞡", "񇠁", "񇡡", "񇣁", "񇤡", "񇦁", "񇧡", "񇩁", "񇪡", "񇬁", "񇭡", "񇯁", "񇰡", "񇲁", "񇳡", "񇵁", "񇶡", "񇸁", "񇹡", "񇻁", "񇼡", "񇾁"],   "񇿡": ["񇿡", "񈁁", "񈂡", "񈄁", "񈅡", "񈇁", "񈈡", "񈊁", "񈋡", "񈍁", "񈎡", "񈐁", "񈑡", "񈓁", "񈔡", "񈖁"],   "񈗡": ["񈗡", "񈙁", "񈚡", "񈜁", "񈝡", "񈟁", "񈠡", "񈢁", "񈣡", "񈥁", "񈦡", "񈨁", "񈩡", "񈫁", "񈬡", "񈮁", "񈯡", "񈱁", "񈲡", "񈴁", "񈵡", "񈷁", "񈸡", "񈺁", "񈻡", "񈽁", "񈾡", "񉀁", "񉁡", "񉃁", "񉄡", "񉆁", "񉇡", "񉉁", "񉊡"],   "񉌁": ["񉌁", "񉍡", "񉏁", "񉐡", "񉒁", "񉓡", "񉕁", "񉖡", "񉘁", "񉙡", "񉛁", "񉜡", "񉞁", "񉟡", "񉡁", "񉢡", "񉤁", "񉥡", "񉧁", "񉨡", "񉪁", "񉫡", "񉭁", "񉮡", "񉰁", "񉱡", "񉳁", "񉴡", "񉶁", "񉷡"],   "񉹁": ["񉹁", "񉺡", "񉼁", "񉽡", "񉿁", "񊀡", "񊂁", "񊃡", "񊅁", "񊆡", "񊈁", "񊉡", "񊋁", "񊌡", "񊎁", "񊏡", "񊑁"],   "񊒡": ["񊒡", "񊔁", "񊕡", "񊗁", "񊘡", "񊚁", "񊛡", "񊝁", "񊞡", "񊠁", "񊡡", "񊣁", "񊤡", "񊦁", "񊧡", "񊩁", "񊪡", "񊬁", "񊭡", "񊯁", "񊰡", "񊲁", "񊳡", "񊵁", "񊶡", "񊸁", "񊹡", "񊻁", "񊼡", "񊾁"],   "񊿡": ["񊿡", "񋁁", "񋂡", "񋄁", "񋅡", "񋇁", "񋈡", "񋊁", "񋋡", "񋍁", "񋎡", "񋐁", "񋑡", "񋓁"],   "񋔡": ["񋔡", "񋖁", "񋗡", "񋙁", "񋚡", "񋜁", "񋝡", "񋟁", "񋠡", "񋢁", "񋣡", "񋥁", "񋦡", "񋨁", "񋩡", "񋫁", "񋬡", "񋮁", "񋯡", "񋱁"],   "񋲡": ["񋲡", "񋴁", "񋵡", "񋷁", "񋸡", "񋺁", "񋻡", "񋽁"],   "񋾡": ["񋾡", "񌀁", "񌁡", "񌃁", "񌄡", "񌆁", "񌇡", "񌉁", "񌊡", "񌌁", "񌍡"],   "񌏁": ["񌏁", "񌐡", "񌒁", "񌓡", "񌕁", "񌖡", "񌘁", "񌙡", "񌛁", "񌜡", "񌞁", "񌟡", "񌡁", "񌢡", "񌤁", "񌥡", "񌧁", "񌨡", "񌪁", "񌫡", "񌭁", "񌮡", "񌰁", "񌱡", "񌳁", "񌴡", "񌶁", "񌷡", "񌹁", "񌺡", "񌼁", "񌽡"],   "񌿁": ["񌿁", "񍀡", "񍂁", "񍃡", "񍅁", "񍆡", "񍈁", "񍉡", "񍋁", "񍌡", "񍎁", "񍏡", "񍑁", "񍒡", "񍔁", "񍕡", "񍗁"],   "񍘡": ["񍘡", "񍚁", "񍛡", "񍝁", "񍞡", "񍠁", "񍡡", "񍣁", "񍤡", "񍦁", "񍧡", "񍩁", "񍪡", "񍬁", "񍭡", "񍯁", "񍰡", "񍲁", "񍳡", "񍵁", "񍶡", "񍸁", "񍹡", "񍻁", "񍼡", "񍾁", "񍿡", "񎁁", "񎂡", "񎄁"],   "񎅡": ["񎅡", "񎇁", "񎈡", "񎊁", "񎋡", "񎍁", "񎎡", "񎐁", "񎑡", "񎓁", "񎔡", "񎖁", "񎗡", "񎙁", "񎚡", "񎜁", "񎝡", "񎟁", "񎠡", "񎢁"],   "񎣡": ["񎣡", "񎥁", "񎦡", "񎨁", "񎩡", "񎫁", "񎬡", "񎮁", "񎯡"],   "񎱁": ["񎱁", "񎲡", "񎴁", "񎵡", "񎷁", "񎸡", "񎺁", "񎻡", "񎽁"],   "񎾡": ["񎾡", "񏀁", "񏁡", "񏃁", "񏄡", "񏆁", "񏇡", "񏉁"],   "񏊡": ["񏊡", "񏌁", "񏍡", "񏏁", "񏐡"] }
          */
         "alphabet"?: object | string;
         /**
           * mid level symbol selection
+          * @default null
          */
         "base"?: string;
         /**
           * top level symbol selection
+          * @default null
          */
         "group"?: string;
         /**
           * flag for small and medium palette
+          * @default false
          */
         "lower"?: boolean;
         /**
           * flag for small palette
+          * @default false
          */
         "more"?: boolean;
         /**
           * orientation of palette
+          * @default "vertical"
          */
         "orientation"?: "horizontal" | "vertical";
         /**
           * size of palette
+          * @default "small"
          */
         "size"?: "small" | "medium" | "large";
     }
@@ -473,43 +525,103 @@ declare namespace LocalJSX {
          */
         "vp"?: string;
     }
+
+    interface FswButtonAttributes {
+        "symbol": string;
+        "sign": string;
+        "svg": string;
+    }
+    interface FswPaletteAttributes {
+        "orientation": "horizontal" | "vertical";
+        "size": "small" | "medium" | "large";
+        "alphabet": object | string;
+        "group": string;
+        "base": string;
+        "more": boolean;
+        "lower": boolean;
+    }
+    interface FswPaletteSymbolAttributes {
+        "symbol": string;
+    }
+    interface FswSignAttributes {
+        "sign": string;
+        "styling": string;
+    }
+    interface FswSymbolAttributes {
+        "symbol": string;
+        "styling": string;
+    }
+    interface FswVpAttributes {
+        "vp": string;
+        "colorize": boolean;
+    }
+    interface SgnwButtonAttributes {
+        "symbol": string;
+        "sign": string;
+        "svg": string;
+    }
+    interface SgnwPaletteAttributes {
+        "orientation": "horizontal" | "vertical";
+        "size": "small" | "medium" | "large";
+        "alphabet": object | string;
+        "group": string;
+        "base": string;
+        "more": boolean;
+        "lower": boolean;
+    }
+    interface SgnwPaletteSymbolAttributes {
+        "symbol": string;
+    }
+    interface SgnwSignAttributes {
+        "sign": string;
+        "styling": string;
+    }
+    interface SgnwSymbolAttributes {
+        "symbol": string;
+        "styling": string;
+    }
+    interface SgnwVpAttributes {
+        "vp": string;
+        "colorize": boolean;
+    }
+
     interface IntrinsicElements {
-        "fsw-button": FswButton;
-        "fsw-palette": FswPalette;
-        "fsw-palette-symbol": FswPaletteSymbol;
-        "fsw-sign": FswSign;
+        "fsw-button": Omit<FswButton, keyof FswButtonAttributes> & { [K in keyof FswButton & keyof FswButtonAttributes]?: FswButton[K] } & { [K in keyof FswButton & keyof FswButtonAttributes as `attr:${K}`]?: FswButtonAttributes[K] } & { [K in keyof FswButton & keyof FswButtonAttributes as `prop:${K}`]?: FswButton[K] };
+        "fsw-palette": Omit<FswPalette, keyof FswPaletteAttributes> & { [K in keyof FswPalette & keyof FswPaletteAttributes]?: FswPalette[K] } & { [K in keyof FswPalette & keyof FswPaletteAttributes as `attr:${K}`]?: FswPaletteAttributes[K] } & { [K in keyof FswPalette & keyof FswPaletteAttributes as `prop:${K}`]?: FswPalette[K] };
+        "fsw-palette-symbol": Omit<FswPaletteSymbol, keyof FswPaletteSymbolAttributes> & { [K in keyof FswPaletteSymbol & keyof FswPaletteSymbolAttributes]?: FswPaletteSymbol[K] } & { [K in keyof FswPaletteSymbol & keyof FswPaletteSymbolAttributes as `attr:${K}`]?: FswPaletteSymbolAttributes[K] } & { [K in keyof FswPaletteSymbol & keyof FswPaletteSymbolAttributes as `prop:${K}`]?: FswPaletteSymbol[K] };
+        "fsw-sign": Omit<FswSign, keyof FswSignAttributes> & { [K in keyof FswSign & keyof FswSignAttributes]?: FswSign[K] } & { [K in keyof FswSign & keyof FswSignAttributes as `attr:${K}`]?: FswSignAttributes[K] } & { [K in keyof FswSign & keyof FswSignAttributes as `prop:${K}`]?: FswSign[K] };
         "fsw-signbox": FswSignbox;
         "fsw-spatial": FswSpatial;
-        "fsw-symbol": FswSymbol;
-        "fsw-vp": FswVp;
-        "sgnw-button": SgnwButton;
-        "sgnw-palette": SgnwPalette;
-        "sgnw-palette-symbol": SgnwPaletteSymbol;
-        "sgnw-sign": SgnwSign;
+        "fsw-symbol": Omit<FswSymbol, keyof FswSymbolAttributes> & { [K in keyof FswSymbol & keyof FswSymbolAttributes]?: FswSymbol[K] } & { [K in keyof FswSymbol & keyof FswSymbolAttributes as `attr:${K}`]?: FswSymbolAttributes[K] } & { [K in keyof FswSymbol & keyof FswSymbolAttributes as `prop:${K}`]?: FswSymbol[K] };
+        "fsw-vp": Omit<FswVp, keyof FswVpAttributes> & { [K in keyof FswVp & keyof FswVpAttributes]?: FswVp[K] } & { [K in keyof FswVp & keyof FswVpAttributes as `attr:${K}`]?: FswVpAttributes[K] } & { [K in keyof FswVp & keyof FswVpAttributes as `prop:${K}`]?: FswVp[K] };
+        "sgnw-button": Omit<SgnwButton, keyof SgnwButtonAttributes> & { [K in keyof SgnwButton & keyof SgnwButtonAttributes]?: SgnwButton[K] } & { [K in keyof SgnwButton & keyof SgnwButtonAttributes as `attr:${K}`]?: SgnwButtonAttributes[K] } & { [K in keyof SgnwButton & keyof SgnwButtonAttributes as `prop:${K}`]?: SgnwButton[K] };
+        "sgnw-palette": Omit<SgnwPalette, keyof SgnwPaletteAttributes> & { [K in keyof SgnwPalette & keyof SgnwPaletteAttributes]?: SgnwPalette[K] } & { [K in keyof SgnwPalette & keyof SgnwPaletteAttributes as `attr:${K}`]?: SgnwPaletteAttributes[K] } & { [K in keyof SgnwPalette & keyof SgnwPaletteAttributes as `prop:${K}`]?: SgnwPalette[K] };
+        "sgnw-palette-symbol": Omit<SgnwPaletteSymbol, keyof SgnwPaletteSymbolAttributes> & { [K in keyof SgnwPaletteSymbol & keyof SgnwPaletteSymbolAttributes]?: SgnwPaletteSymbol[K] } & { [K in keyof SgnwPaletteSymbol & keyof SgnwPaletteSymbolAttributes as `attr:${K}`]?: SgnwPaletteSymbolAttributes[K] } & { [K in keyof SgnwPaletteSymbol & keyof SgnwPaletteSymbolAttributes as `prop:${K}`]?: SgnwPaletteSymbol[K] };
+        "sgnw-sign": Omit<SgnwSign, keyof SgnwSignAttributes> & { [K in keyof SgnwSign & keyof SgnwSignAttributes]?: SgnwSign[K] } & { [K in keyof SgnwSign & keyof SgnwSignAttributes as `attr:${K}`]?: SgnwSignAttributes[K] } & { [K in keyof SgnwSign & keyof SgnwSignAttributes as `prop:${K}`]?: SgnwSign[K] };
         "sgnw-signbox": SgnwSignbox;
-        "sgnw-symbol": SgnwSymbol;
-        "sgnw-vp": SgnwVp;
+        "sgnw-symbol": Omit<SgnwSymbol, keyof SgnwSymbolAttributes> & { [K in keyof SgnwSymbol & keyof SgnwSymbolAttributes]?: SgnwSymbol[K] } & { [K in keyof SgnwSymbol & keyof SgnwSymbolAttributes as `attr:${K}`]?: SgnwSymbolAttributes[K] } & { [K in keyof SgnwSymbol & keyof SgnwSymbolAttributes as `prop:${K}`]?: SgnwSymbol[K] };
+        "sgnw-vp": Omit<SgnwVp, keyof SgnwVpAttributes> & { [K in keyof SgnwVp & keyof SgnwVpAttributes]?: SgnwVp[K] } & { [K in keyof SgnwVp & keyof SgnwVpAttributes as `attr:${K}`]?: SgnwVpAttributes[K] } & { [K in keyof SgnwVp & keyof SgnwVpAttributes as `prop:${K}`]?: SgnwVp[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "fsw-button": LocalJSX.FswButton & JSXBase.HTMLAttributes<HTMLFswButtonElement>;
-            "fsw-palette": LocalJSX.FswPalette & JSXBase.HTMLAttributes<HTMLFswPaletteElement>;
-            "fsw-palette-symbol": LocalJSX.FswPaletteSymbol & JSXBase.HTMLAttributes<HTMLFswPaletteSymbolElement>;
-            "fsw-sign": LocalJSX.FswSign & JSXBase.HTMLAttributes<HTMLFswSignElement>;
-            "fsw-signbox": LocalJSX.FswSignbox & JSXBase.HTMLAttributes<HTMLFswSignboxElement>;
-            "fsw-spatial": LocalJSX.FswSpatial & JSXBase.HTMLAttributes<HTMLFswSpatialElement>;
-            "fsw-symbol": LocalJSX.FswSymbol & JSXBase.HTMLAttributes<HTMLFswSymbolElement>;
-            "fsw-vp": LocalJSX.FswVp & JSXBase.HTMLAttributes<HTMLFswVpElement>;
-            "sgnw-button": LocalJSX.SgnwButton & JSXBase.HTMLAttributes<HTMLSgnwButtonElement>;
-            "sgnw-palette": LocalJSX.SgnwPalette & JSXBase.HTMLAttributes<HTMLSgnwPaletteElement>;
-            "sgnw-palette-symbol": LocalJSX.SgnwPaletteSymbol & JSXBase.HTMLAttributes<HTMLSgnwPaletteSymbolElement>;
-            "sgnw-sign": LocalJSX.SgnwSign & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
-            "sgnw-signbox": LocalJSX.SgnwSignbox & JSXBase.HTMLAttributes<HTMLSgnwSignboxElement>;
-            "sgnw-symbol": LocalJSX.SgnwSymbol & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
-            "sgnw-vp": LocalJSX.SgnwVp & JSXBase.HTMLAttributes<HTMLSgnwVpElement>;
+            "fsw-button": LocalJSX.IntrinsicElements["fsw-button"] & JSXBase.HTMLAttributes<HTMLFswButtonElement>;
+            "fsw-palette": LocalJSX.IntrinsicElements["fsw-palette"] & JSXBase.HTMLAttributes<HTMLFswPaletteElement>;
+            "fsw-palette-symbol": LocalJSX.IntrinsicElements["fsw-palette-symbol"] & JSXBase.HTMLAttributes<HTMLFswPaletteSymbolElement>;
+            "fsw-sign": LocalJSX.IntrinsicElements["fsw-sign"] & JSXBase.HTMLAttributes<HTMLFswSignElement>;
+            "fsw-signbox": LocalJSX.IntrinsicElements["fsw-signbox"] & JSXBase.HTMLAttributes<HTMLFswSignboxElement>;
+            "fsw-spatial": LocalJSX.IntrinsicElements["fsw-spatial"] & JSXBase.HTMLAttributes<HTMLFswSpatialElement>;
+            "fsw-symbol": LocalJSX.IntrinsicElements["fsw-symbol"] & JSXBase.HTMLAttributes<HTMLFswSymbolElement>;
+            "fsw-vp": LocalJSX.IntrinsicElements["fsw-vp"] & JSXBase.HTMLAttributes<HTMLFswVpElement>;
+            "sgnw-button": LocalJSX.IntrinsicElements["sgnw-button"] & JSXBase.HTMLAttributes<HTMLSgnwButtonElement>;
+            "sgnw-palette": LocalJSX.IntrinsicElements["sgnw-palette"] & JSXBase.HTMLAttributes<HTMLSgnwPaletteElement>;
+            "sgnw-palette-symbol": LocalJSX.IntrinsicElements["sgnw-palette-symbol"] & JSXBase.HTMLAttributes<HTMLSgnwPaletteSymbolElement>;
+            "sgnw-sign": LocalJSX.IntrinsicElements["sgnw-sign"] & JSXBase.HTMLAttributes<HTMLSgnwSignElement>;
+            "sgnw-signbox": LocalJSX.IntrinsicElements["sgnw-signbox"] & JSXBase.HTMLAttributes<HTMLSgnwSignboxElement>;
+            "sgnw-symbol": LocalJSX.IntrinsicElements["sgnw-symbol"] & JSXBase.HTMLAttributes<HTMLSgnwSymbolElement>;
+            "sgnw-vp": LocalJSX.IntrinsicElements["sgnw-vp"] & JSXBase.HTMLAttributes<HTMLSgnwVpElement>;
         }
     }
 }

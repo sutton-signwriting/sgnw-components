@@ -123,8 +123,10 @@ export const onThemeChange = function (callback: () => void): () => void {
       themeObserver.observe(document.body, options);
     }
     const media = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-    if (media && typeof media.addEventListener === 'function') {
+    if (media && typeof media.addEventListener === 'function' && media.addEventListener.length <= 2) {
       media.addEventListener('change', notifyThemeChange);
+    } else if (media && typeof media.addListener === 'function') {
+      media.addListener(notifyThemeChange);
     }
   }
   themeCallbacks.push(callback);

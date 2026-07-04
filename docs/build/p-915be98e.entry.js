@@ -1,0 +1,4 @@
+/*!
+ * The Sutton SignWriting Web Components
+ */
+import{r as s,d as a,H as r,e as t}from"./p-BAJUTSOF.js";import{d as o}from"./p-gk_3xxae.js";const e=class{constructor(a){s(this,a)}componentDidLoad(){this.draggie=new o(this.el)}render(){return a(r,{key:"78c3286448f38aca70aff5ff1b9a374a2feea401"},a("slot",{key:"a6ccf2542155fb159bad405242bcd437f92c5e73"}))}get el(){return t(this)}};e.style=".sc-fsw-spatial-h{width:140px;height:140px;background:#F90;border-radius:10px;cursor:move;display:block}.is-pointer-down.sc-fsw-spatial-h{background:#09F}.is-dragging.sc-fsw-spatial-h{opacity:0.7}";export{e as fsw_spatial}

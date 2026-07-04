@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/sgnw-components",
   "description": "a javascript package of web components for use with the SignWriting script.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "keywords": [
     "SignWriting",
     "sign language",
@@ -26,8 +26,8 @@
   },
   "funding": [
     {
-      "type" : "patreon",
-      "url" : "https://www.patreon.com/signwriting"
+      "type": "patreon",
+      "url": "https://www.patreon.com/signwriting"
     },
     "https://donate.sutton-signwriting.io"
   ],

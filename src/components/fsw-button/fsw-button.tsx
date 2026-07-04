@@ -7,7 +7,9 @@ import { symbolSvg, signSvg } from '@sutton-signwriting/font-ttf/fsw/fsw';
 
 import { cssValues } from '../../global/global';
 import { ColorWatch } from '../../global/color-watch';
+import { addSvgStyle } from '../../global/svg';
 
+const BUTTON_SVG_STYLE = 'position:absolute;top:10%;bottom:10%;left:5%;right:5%;margin:auto;max-width:90%;max-height:80%;cursor:default;fill:var(--font-color)';
 
 @Component({
   tag: 'fsw-button',
@@ -57,7 +59,7 @@ export class FswButton {
       svg = this.svg;
     }
     return (
-      <Host innerHTML={svg}></Host>
+      <Host innerHTML={addSvgStyle(svg, BUTTON_SVG_STYLE)}></Host>
     )
   }
 }

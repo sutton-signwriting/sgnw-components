@@ -4,6 +4,13 @@ import { symbolSvg } from '@sutton-signwriting/font-ttf/swu/swu';
 
 import draggabilly from 'draggabilly';
 
+import { addSvgClassStyle, addSvgStyle } from '../../global/svg';
+
+const PALETTE_SYMBOL_SVG_STYLE = 'position:absolute;display:block;top:2.5%;bottom:2.5%;left:2.5%;right:2.5%;margin:auto;max-width:95%;max-height:95%;cursor:default';
+const PALETTE_SYMBOL_DRAGGING_SVG_STYLE = 'position:absolute;display:block;top:0;bottom:initial;left:0;right:initial;margin:0;max-width:initial;max-height:initial;cursor:default';
+const SYMBOL_LINE_STYLE = 'fill:var(--font-color) !important';
+const SYMBOL_FILL_STYLE = 'fill:var(--bg-color) !important';
+
 @Component({
   tag: 'sgnw-palette-symbol',
   styleUrl: 'sgnw-palette-symbol.css',
@@ -19,6 +26,7 @@ export class SgnwPaletteSymbol {
   @Prop({mutable: true, reflect: true}) symbol: string;
 
   @State() sgnw: boolean = window.sgnw;
+  @State() dragging: boolean = false;
 
   /** click event for the symbol palette */
   @Event() paletteSymbolClick: EventEmitter<string>;
@@ -29,9 +37,14 @@ export class SgnwPaletteSymbol {
   /** drop event for the signbox and sequence  */
   @Event() paletteSymbolDrop: EventEmitter<{encoding:string,symbol:string,x:number,y:number}>;
   paletteSymbolDropHandler({}, pointer) {  // {} rather than event parameter
+    this.dragging = false;
     this.paletteSymbolDrop.emit({encoding:"swu",symbol:this.symbol,x:pointer.pageX,y:pointer.pageY});
     this.el.style.top="0";
     this.el.style.left="0";
+  }
+
+  paletteSymbolDragStartHandler() {
+    this.dragging = true;
   }
 
   connectedCallback(){
@@ -48,12 +61,18 @@ export class SgnwPaletteSymbol {
   componentDidLoad(){
     this.draggie = new draggabilly(this.el);
     this.draggie.on( 'staticClick', this.paletteSymbolClickHandler.bind(this) );
+    this.draggie.on( 'dragStart', this.paletteSymbolDragStartHandler.bind(this) );
     this.draggie.on( 'dragEnd', this.paletteSymbolDropHandler.bind(this) );
   }
 
   render() {
+    let svg = this.sgnw?symbolSvg(this.symbol):'';
+    svg = addSvgStyle(svg, this.dragging?PALETTE_SYMBOL_DRAGGING_SVG_STYLE:PALETTE_SYMBOL_SVG_STYLE);
+    svg = addSvgClassStyle(svg, 'sym-line', SYMBOL_LINE_STYLE);
+    svg = addSvgClassStyle(svg, 'sym-fill', SYMBOL_FILL_STYLE);
+
     return (
-      <Host symbol={this.symbol} innerHTML={this.sgnw?symbolSvg(this.symbol):''}></Host>
+      <Host symbol={this.symbol} innerHTML={svg}></Host>
     )
   }
 }
